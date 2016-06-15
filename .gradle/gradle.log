@@ -1,0 +1,32 @@
+#################################################
+         ForgeGradle 2.2-SNAPSHOT-59f33ec        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
+:extractMcpMappings SKIPPED
+:deobfCompileDeobfDepTask0 SKIPPED
+:deobfCompileRemapDepSourcesTask1 SKIPPED
+:deobfCompileDummyTask
+:deobfProvidedDummyTask
+:eclipseClasspath
+:eclipseJdt
+:eclipseProject
+:getVersionJson
+:extractNatives SKIPPED
+:extractUserdev UP-TO-DATE
+:getAssetIndex UP-TO-DATE
+:getAssets
+Current status: 243/1049   23%
+Current status: 843/1049   80%
+:makeStart
+:makeEclipseCleanRunClient UP-TO-DATE
+:makeEclipseCleanRunServer UP-TO-DATE
+:eclipse
+
+BUILD SUCCESSFUL
+
+Total time: 48.894 secs

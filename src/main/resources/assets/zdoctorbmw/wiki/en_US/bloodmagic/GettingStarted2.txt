@@ -1,0 +1,5 @@
+After the lost period, little documentations from the ways of old survived. However, it is known that Demonic Will was a relatively new discovery with several therioes on its sudden apperance.
+
+It is unknown who designed the Hellfire Forge, but its prominence in the arts are clear. At one point or another in a Blood Mage's career, a Hellfire Forge will be needed.
+
+[hellfire{200,150,key=item/BloodMagic.baseComponent.frameParts}] 
