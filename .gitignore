@@ -1,3 +1,5 @@
 /bin/
 /build/
-git rm --cached /build/
+BloodMagicWiki_Client.launch
+BloodMagicWiki_Server.launch
+git rm --cached
