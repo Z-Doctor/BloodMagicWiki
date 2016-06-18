@@ -12,23 +12,31 @@ public class WikiEvents {
 	public static void postInit() {
 		MinecraftForge.EVENT_BUS.register(new Events());
 	}
+
 	private static class Events {
 		@SubscribeEvent
 		public void wikiEvent(ItemWikiEvent e) {
 			String modId = WikiUtils.getOwningModId(e.itemStack);
 			System.out.println("Item From: " + modId);
-			if(modId.equalsIgnoreCase(Constants.Mod.MODID)) {
+			if (modId.equalsIgnoreCase(Constants.Mod.MODID)) {
 				System.out.println("Redirecting: " + WikiUtils.getNameFromStack(e.itemStack));
-				e.pageOpened = ModMain.MODID.toLowerCase() + ":" + WikiUtils.getNameFromStack(e.itemStack);
+				e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/"
+						+ WikiUtils.getNameFromStack(e.itemStack).replace("BloodMagic.", "").replaceFirst("\\..*", "");
+				System.out.println(e.pageOpened);
 			}
 		}
+
 		@SubscribeEvent
 		public void wikiEvent(BlockWikiEvent e) {
 			String modId = WikiUtils.getOwningModId(e.itemStackPicked);
 			System.out.println("Item From: " + modId);
-			if(modId.equalsIgnoreCase(Constants.Mod.MODID)) {
+			if (modId.equalsIgnoreCase(Constants.Mod.MODID)) {
 				System.out.println("Redirecting: " + WikiUtils.getNameFromStack(e.itemStackPicked));
-				e.pageOpened = ModMain.MODID.toLowerCase() + ":" + WikiUtils.getNameFromStack(e.itemStackPicked);
+				e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/"
+						+ WikiUtils.getNameFromStack(e.itemStackPicked).replace("BloodMagic.", "")
+								.replace("BloodMagic.", "").replaceFirst("\\..*", "");
+				;
+				System.out.println(e.pageOpened);
 			}
 		}
 	}

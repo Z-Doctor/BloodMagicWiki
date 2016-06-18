@@ -36,7 +36,7 @@ Blood Altar:
 
 In order to use to Blood Altar, a Sacrificial Knife of some kind is need to put Blood (measured in Life Points or LP) into it. The most common knife used is created like so:
 
-[hellfire{200,585,key=item/BloodMagic.sacrificialDagger.normal}]
+[crafting{200,585,key=item/BloodMagic.sacrificialDagger.normal}]
 
 
 

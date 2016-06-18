@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-	deobfCompile "com.wayoftime.bloodmagic:BloodMagic:1.9.4-2.0.1-42"
+	deobfCompile "com.wayoftime.bloodmagic:BloodMagic:1.9.4-2.0.1-44"
 }
 
 repositories {

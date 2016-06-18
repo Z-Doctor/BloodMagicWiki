@@ -20,8 +20,7 @@
 :extractUserdev UP-TO-DATE
 :getAssetIndex UP-TO-DATE
 :getAssets
-Current status: 243/1049   23%
-Current status: 843/1049   80%
+Current status: 271/1049   25%
 :makeStart
 :makeEclipseCleanRunClient UP-TO-DATE
 :makeEclipseCleanRunServer UP-TO-DATE
@@ -29,4 +28,4 @@ Current status: 843/1049   80%
 
 BUILD SUCCESSFUL
 
-Total time: 48.894 secs
+Total time: 53.797 secs

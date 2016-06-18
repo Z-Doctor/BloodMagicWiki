@@ -1,0 +1,3 @@
+Incense Altars are a new discovery. Blood Mages have found that similarly to Blood Runes, they increase the potency of self sacrifice. More research is required to fully understand the Altars, but their is talk about roads and even increasing effiecieny. Currently, the best way to create them is as follows:
+
+[bmcrafting{200,130,key=block/BloodMagic.incenseAltar}]

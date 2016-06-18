@@ -2,9 +2,14 @@ wikitab.bloodmagic.name=Blood Magic Wiki
 
 wiki.bloodmagic.GettingStarted1.page=Entering the Arts
 wiki.bloodmagic.GettingStarted2.page=Soul Forging
-wiki.bloodmagic.GettingStarted3.page=Preforming Rituals
+wiki.bloodmagic.GettingStarted3.page=Crystal Farming
+wiki.bloodmagic.GettingStarted4.page=Preforming Rituals
 wiki.bloodmagic.Items.page=Known Items
+wiki.bloodmagic.AltarUpgrade.page=Upgrading the Altar
 wiki.bloodmagic.Blocks.page=Known Blocks
 wiki.bloodmagic.Rituals.page=Known Rituals
+
+
+bmw.gui.crafting.shapedorb=Shaped Orb Crafting
 
 intergrator.zdoctorbmw.gui.forge=Hellfire Fogre

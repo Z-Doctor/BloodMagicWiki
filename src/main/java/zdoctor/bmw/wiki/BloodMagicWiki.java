@@ -1,6 +1,5 @@
 package zdoctor.bmw.wiki;
 
-import WayofTime.bloodmagic.BloodMagic;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
 import igwmod.api.WikiRegistry;
@@ -19,6 +18,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 		pageEntries.add("GettingStarted1");
 		pageEntries.add("GettingStarted2");
 		pageEntries.add("GettingStarted3");
+		pageEntries.add("AltarUpgrade");
 		pageEntries.add("Items");
 		pageEntries.add("Blocks");
 		pageEntries.add("Rituals");

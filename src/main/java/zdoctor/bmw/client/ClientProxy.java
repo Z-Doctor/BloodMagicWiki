@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zdoctor.bmw.common.CommonProxy;
+import zdoctor.bmw.recipeintegrator.IntegratorAltarRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
 import zdoctor.bmw.wiki.BloodMagicWiki;
 import zdoctor.bmw.wiki.events.WikiEvents;
@@ -26,26 +27,18 @@ public class ClientProxy extends CommonProxy {
 	public void postInit(FMLPostInitializationEvent e) {
 		super.postInit(e);
 		WikiEvents.postInit();
-		Iterator<TartaricForgeRecipe> recipes = TartaricForgeRecipeRegistry.getRecipeList().iterator();
-		while (recipes.hasNext()) {
-			TartaricForgeRecipe recipe = recipes.next();
-			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.", "block/");
+		Iterator<TartaricForgeRecipe> gemRecipes = TartaricForgeRecipeRegistry.getRecipeList().iterator();
+		while (gemRecipes.hasNext()) {
+			TartaricForgeRecipe recipe = gemRecipes.next();
+			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
+					"block/");
 			if (!IntegratorHellfireRecipe.autoMappedRecipes.containsKey(key)) {
-				TartaricForgeRecipe value = recipe;
-				IntegratorHellfireRecipe.autoMappedRecipes.put(key, value);
+				IntegratorHellfireRecipe.autoMappedRecipes.put(key, recipe);
 				System.out.println(key);
 			}
 		}
-		
+
 		WikiRegistry.registerRecipeIntegrator(new IntegratorHellfireRecipe());
-		// Iterator<String> recipes =
-		// IntegratorCraftingRecipe.autoMappedRecipes.keySet().iterator();
-		// Iterator<String> recipes =
-		// IntegratorFurnace.autoMappedFurnaceRecipes.keySet().iterator();
-		// while(recipes.hasNext()) {
-		// String name = recipes.next();
-		// if(name.contains("BloodMagic"))
-		// System.out.println(name);
-		// }
+		WikiRegistry.registerRecipeIntegrator(new IntegratorAltarRecipe());
 	}
 }
