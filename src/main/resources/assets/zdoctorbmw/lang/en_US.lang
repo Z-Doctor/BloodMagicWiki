@@ -1,15 +1,20 @@
 wikitab.bloodmagic.name=Blood Magic Wiki
 
+wiki.bloodmagic.Intro.page=Introductions
 wiki.bloodmagic.GettingStarted1.page=Entering the Arts
 wiki.bloodmagic.GettingStarted2.page=Soul Forging
 wiki.bloodmagic.GettingStarted3.page=Crystal Farming
-wiki.bloodmagic.GettingStarted4.page=Preforming Rituals
-wiki.bloodmagic.Items.page=Known Items
-wiki.bloodmagic.AltarUpgrade.page=Upgrading the Altar
-wiki.bloodmagic.Blocks.page=Known Blocks
-wiki.bloodmagic.Rituals.page=Known Rituals
+wiki.bloodmagic.GettingStarted4.page=Sigil Creation
+wiki.bloodmagic.GettingStarted5.page=Upgrading the Altar
+wiki.bloodmagic.GettingStarted6.page=Preforming Rituals
+wiki.bloodmagic.GettingStarted7.page=Demon Summoning
+wiki.bloodmagic.Index.page=Index
+wiki.bloodmagic.Acknowledgments.page=Acknowledgments
 
 
 bmw.gui.crafting.shapedorb=Shaped Orb Crafting
+bmw.gui.altar.requiredTier.recipe=Tier
+bmw.gui.altar.requiredLP.recipe=LP
 
-intergrator.zdoctorbmw.gui.forge=Hellfire Fogre
+intergrator.zdoctorbmw.minimumSouls.forge=Minimum Will
+intergrator.zdoctorbmw.minimumDrain.forge=Minimum Drain

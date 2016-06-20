@@ -15,13 +15,16 @@ public class BloodMagicWiki extends BaseWikiTab {
 	}
 	
 	public BloodMagicWiki() {
+		pageEntries.add("Intro");
 		pageEntries.add("GettingStarted1");
 		pageEntries.add("GettingStarted2");
 		pageEntries.add("GettingStarted3");
-		pageEntries.add("AltarUpgrade");
-		pageEntries.add("Items");
-		pageEntries.add("Blocks");
-		pageEntries.add("Rituals");
+		pageEntries.add("GettingStarted4");
+		pageEntries.add("GettingStarted5");
+		pageEntries.add("GettingStarted6");
+		pageEntries.add("GettingStarted7");
+		pageEntries.add("Index");
+		pageEntries.add("Acknowledgments");
 	}
 
 	@Override

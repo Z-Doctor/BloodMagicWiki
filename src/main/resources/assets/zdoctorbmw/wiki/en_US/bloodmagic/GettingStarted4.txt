@@ -1,0 +1,1 @@
+[altar{200,300,key=item/BloodMagic.slate.imbued}]

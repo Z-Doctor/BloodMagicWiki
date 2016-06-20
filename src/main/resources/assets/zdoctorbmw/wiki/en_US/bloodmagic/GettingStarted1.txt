@@ -51,4 +51,20 @@ In order to use to Blood Altar, a Sacrificial Knife of some kind is need to put 
 
 Only one step remains before one can trully be called a Blood Mage. That is to setup their Soul Network. The Soul Network is a Blood Mages link to the Arcane, it is what allows them to store LP in the Ethereal Plane in order to be used when the time arises. In order to reach this higher exsistance, one must transmute a Diamond with 1000 LP in the Blood Altar to create a Blood Orb. By interacting with it, a Blood Mages Soul Network will be created.
 
+Weak Blood Orb:
+
+[altar{200,825,key=item/BloodMagic.orb.weak}]
+
+
+
+
+
+
+
+
+
+
+
+
+
 Congratulations, you have successfully taken the first steps in becomming a full fledged Blood Mage.

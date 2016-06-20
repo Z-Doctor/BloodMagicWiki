@@ -32,9 +32,12 @@ public class WikiEvents {
 			System.out.println("Item From: " + modId);
 			if (modId.equalsIgnoreCase(Constants.Mod.MODID)) {
 				System.out.println("Redirecting: " + WikiUtils.getNameFromStack(e.itemStackPicked));
-				e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/"
-						+ WikiUtils.getNameFromStack(e.itemStackPicked).replace("BloodMagic.", "")
-								.replace("BloodMagic.", "").replaceFirst("\\..*", "");
+				if (e.pageOpened.toLowerCase().contains("ritual") && e.pageOpened.toLowerCase().contains("stone"))
+					e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/block/ritualStone";
+				else
+					e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/"
+							+ WikiUtils.getNameFromStack(e.itemStackPicked).replace("BloodMagic.", "")
+									.replace("BloodMagic.", "").replaceFirst("\\..*", "");
 				;
 				System.out.println(e.pageOpened);
 			}

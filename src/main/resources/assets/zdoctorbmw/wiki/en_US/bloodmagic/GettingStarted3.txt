@@ -40,3 +40,12 @@ Demonic Will can only fill so much of an area, and does not naturally spread. To
 
 Demon Pylon:
 [hellfire{200,660,key=block/BloodMagic.demonPylon}]
+
+
+
+
+
+
+
+
+Blood Mages have noted that a Demon Crucible accepts input from devices such as hoppers and have theoriezed that automated growning, harvesting and emiting Will into the air is possible.

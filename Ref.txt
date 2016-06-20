@@ -9,44 +9,52 @@ item/upgradeTrainer
 block/alchemyTable
 item/soulGem.grand
 block/teleposer
-block/rune.blank
 item/itemFilter.exact
-block/rune.speed
+
+block/rune
+- blank
+- speed
+- sacrifice
+- orb
+- augcapacity
+- displacement
+- selfsacrifice
+- acceleration
+- capacity
+
 item/itemFilter.ignoreNBT
 block/path.obsidian
 item/soulGem.petty
 item/ritualReader
 block/path.woodtile
-block/rune.sacrifice
 item/ritualDivinerdusk
+
 block/stone.ritual.imperfect
+block/stone.ritual.master
+
 item/focus.demonic
-block/rune.orb
+
 block/path
 - stone
 - wornstone
-
-block/rune.augcapacity
 block/path.stonetile
 item/focus.reinforced
 item/activationCrystal.awakened
-block/rune.displacement
+
 item/sacrificialDagger.normal
 block/ritualStone.blank
 block/path.wornstonetile
 item/pack.sacrifice
 item/soulGem.greater
-block/rune.selfsacrifice
+
 block/soulForge
 block/bloodstonebrick.large
 block/path.wood
 block/altar
 item/soulGem.lesser
 block/path.obsidiantile
-block/stone.ritual.master
 item/lavaCrystal
-block/rune.acceleration
-block/rune.capacity
+
 block/bloodstonebrick.brick
 item/experienceTome
 
@@ -59,6 +67,7 @@ item/soulGem.grand
 item/sentientSword
 item/sentientBow
 item/arcaneAshes
+
 item/baseComponent
 - reagentWater
 - reagentLava
@@ -78,6 +87,7 @@ item/baseComponent
 - reagentCompression
 - reagentTeleposition
 - reagentTransposition
+
 item/sentientArmourGem
 frameParts
 item/nodeRouter
@@ -93,3 +103,28 @@ block/demonCrystalSTEADFAST
 block/demonCrucible
 block/demonPylon
 block/demonCrystallizer
+
+
+Altar Recipes:
+item/BloodMagic.scribe.dusk
+item/BloodMagic.slate.reinforced
+item/BloodMagic.scribe.water
+item/BloodMagic.slate.imbued
+item/BloodMagic.activationCrystal.weak
+item/BloodMagic.orb.magician
+item/BloodMagic.slate.blank
+item/BloodMagic.slate.demonic
+item/BloodMagic.scribe.air
+item/BloodMagic.slate.ethereal
+item/BloodMagic.focus.weak
+item/BloodMagic.daggerOfSacrifice
+item/BloodMagic.bucket.lifeEssence
+item/BloodMagic.orb.archmage
+item/BloodMagic.orb.apprentice
+item/BloodMagic.orb.weak
+item/BloodMagic.scribe.earth
+item/BloodMagic.scribe.dawn
+item/BloodMagic.orb.master
+item/BloodMagic.orb.transcendent
+item/BloodMagic.focus.enhanced
+item/BloodMagic.scribe.fire

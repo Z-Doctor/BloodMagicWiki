@@ -1,8 +1,8 @@
 # BloodMagicWiki
-A wiki for Blood Magic
+Creates an In game wiki that documents game mechanics in an encyclopedia like fashion, while adding lore.
 
 # For Developers
-Will eventually clean it up, but should be usuable if you copy the repository. Just run gradlew setupDevWorkspace from the folder.
+Clone the repository to your workspace as a general project, then run in command prompt "gradlew setupDevWorkspace" and then run "gradlew eclipse". You are now ready to develop (hopefully :P)
 
 # For Contributors
-IGW is designed to be highly usuable for people with no coding experience, although it really helps. Only Hellfire Forge recipes are integrated, but soon others will be as well. You can design and setup pages, but the will be edited before comitted to a released version. More to be added as people actually want to contribute. :P
+You do not be a coder in order to contribute, although it can be useful for yourself. You can contribute by submitting lore, filling in missing or incomplete information. More info on this at a latter time.
