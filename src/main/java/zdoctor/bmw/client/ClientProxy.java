@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zdoctor.bmw.common.CommonProxy;
 import zdoctor.bmw.recipeintegrator.IntegratorAltarRecipe;
+import zdoctor.bmw.recipeintegrator.IntegratorArrayCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBMCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBindingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
@@ -29,10 +30,12 @@ public class ClientProxy extends CommonProxy {
 		IntegratorBMCraftingRecipe.mapRecipes();
 		IntegratorAltarRecipe.mapRecipes();
 		IntegratorBindingRecipe.mapRecipes();
+		IntegratorArrayCraftingRecipe.mapRecipes();
 
 		WikiRegistry.registerRecipeIntegrator(new IntegratorHellfireRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorBMCraftingRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorAltarRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorBindingRecipe());
+		WikiRegistry.registerRecipeIntegrator(new IntegratorArrayCraftingRecipe());
 	}
 }

@@ -1,15 +1,17 @@
 package zdoctor.bmw.recipeintegrator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.BiMap;
 
-import WayofTime.bloodmagic.alchemyArray.AlchemyArrayEffectBinding;
 import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffect;
+import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffectCrafting;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
+import WayofTime.bloodmagic.compat.jei.alchemyArray.AlchemyArrayCraftingRecipeJEI;
 import WayofTime.bloodmagic.registry.ModItems;
 import igwmod.TextureSupplier;
 import igwmod.api.IRecipeIntegrator;
@@ -23,7 +25,7 @@ import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
 
-public class IntegratorBindingRecipe implements IRecipeIntegrator {
+public class IntegratorArrayCraftingRecipe implements IRecipeIntegrator {
 
 	public static Map<String, SimpleArrayRecipe> autoMappedRecipes = new HashMap<String, SimpleArrayRecipe>();
 	public static final int INPUT_X_OFFSET = 1;
@@ -35,7 +37,7 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 
 	@Override
 	public String getCommandKey() {
-		return "binding";
+		return "array";
 	}
 
 	@Override
@@ -94,6 +96,8 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 		Map<List<ItemStack>, AlchemyArrayRecipeRegistry.AlchemyArrayRecipe> alchemyArrayRecipeMap = AlchemyArrayRecipeRegistry
 				.getRecipes();
 
+		ArrayList<AlchemyArrayCraftingRecipeJEI> recipes = new ArrayList<AlchemyArrayCraftingRecipeJEI>();
+
 		for (Map.Entry<List<ItemStack>, AlchemyArrayRecipeRegistry.AlchemyArrayRecipe> itemStackAlchemyArrayRecipeEntry : alchemyArrayRecipeMap
 				.entrySet()) {
 			List<ItemStack> input = itemStackAlchemyArrayRecipeEntry.getValue().getInput();
@@ -103,8 +107,8 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 			for (Map.Entry<ItemStackWrapper, AlchemyArrayEffect> entry : catalystMap.entrySet()) {
 				ItemStack catalyst = entry.getKey().toStack();
 				if (AlchemyArrayRecipeRegistry.getAlchemyArrayEffect(input,
-						catalyst) instanceof AlchemyArrayEffectBinding) {
-					ItemStack output = ((AlchemyArrayEffectBinding) itemStackAlchemyArrayRecipeEntry.getValue()
+						catalyst) instanceof AlchemyArrayEffectCrafting) {
+					ItemStack output = ((AlchemyArrayEffectCrafting) itemStackAlchemyArrayRecipeEntry.getValue()
 							.getAlchemyArrayEffectForCatalyst(catalyst)).getOutputStack();
 
 					SimpleArrayRecipe recipe = new SimpleArrayRecipe(input, catalyst, output);
@@ -113,7 +117,7 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 
 					if (!autoMappedRecipes.containsKey(key)) {
 						autoMappedRecipes.put(key, recipe);
-						// System.out.println("Binding: " + key);
+						// System.out.println("Arrary: " + key);
 					}
 				}
 			}

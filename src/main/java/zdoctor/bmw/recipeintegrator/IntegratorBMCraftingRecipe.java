@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.recipe.ShapedBloodOrbRecipe;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import igwmod.TextureSupplier;
+import igwmod.WikiUtils;
 import igwmod.api.IRecipeIntegrator;
 import igwmod.gui.GuiWiki;
 import igwmod.gui.IReservedSpace;
@@ -152,9 +154,10 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 			IRecipe recipe = recipes.next();
 			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
 					"block/");
-			if (!autoMappedRecipes.containsKey(key)) {
+			if (!autoMappedRecipes.containsKey(key)
+					&& WikiUtils.getOwningModId(recipe.getRecipeOutput()) == Constants.Mod.MODID) {
 				autoMappedRecipes.put(key, recipe);
-				// System.out.println("BMCrafting: " + key);
+				System.out.println("BMCrafting: " + key);
 			}
 		}
 	}

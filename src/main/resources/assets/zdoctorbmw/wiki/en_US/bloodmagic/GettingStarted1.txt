@@ -1,9 +1,7 @@
-Before the Lost Period, Blood Mages would craft their tools by hand. These ways are lost to us now, but, through trial and error, Blood Mages have devised new ways to replicate the ways of old. This encyclopedia was created with the intention of preserving these new methods and developing the talents of the young Blood Mage. Be warned, the arts are not for the weak willd, spirited. Keep this in mind.
-
 The first item any aspiring Blood Mage should craft is a Rudimentary Snare. These snares will be used to collect an atifact known as "Demonic Will." To use the snare, simply throw a number of them at a monster. Each snare has a chance to snare the monsters soul. Once snared, slay the beast. You will know the monster soul is snared when they begin radating white particles.
 
 Rudimentary Snare:
-[crafting{200,210,key=item/BloodMagic.soulSnare.base}]
+[crafting{200,120,key=item/BloodMagic.soulSnare.base}]
 
 
 
@@ -21,7 +19,7 @@ It is recommened to obtain at least two pieces of Demonic Will, and to progress,
 Once a sufficient amount of Demonic Will is obtained, a Blood Altar should be crafted using the methods below.
 
 Blood Altar:
-[crafting{200,420,key=block/BloodMagic.altar}]
+[crafting{200,330,key=block/BloodMagic.altar}]
 
 
 
@@ -36,7 +34,7 @@ Blood Altar:
 
 In order to use to Blood Altar, a Sacrificial Knife of some kind is need to put Blood (measured in Life Points or LP) into it. The most common knife used is created like so:
 
-[crafting{200,585,key=item/BloodMagic.sacrificialDagger.normal}]
+[crafting{200,495,key=item/BloodMagic.sacrificialDagger.normal}]
 
 
 
@@ -53,8 +51,7 @@ Only one step remains before one can trully be called a Blood Mage. That is to s
 
 Weak Blood Orb:
 
-[altar{200,825,key=item/BloodMagic.orb.weak}]
-
+[altar{200,735,key=item/BloodMagic.orb.weak}]
 
 
 

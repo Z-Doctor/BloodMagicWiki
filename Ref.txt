@@ -106,16 +106,16 @@ block/demonCrystallizer
 
 
 Altar Recipes:
-item/BloodMagic.scribe.dusk
+item/BloodMagic.slate.blank
 item/BloodMagic.slate.reinforced
-item/BloodMagic.scribe.water
 item/BloodMagic.slate.imbued
+item/BloodMagic.slate.demonic
+item/BloodMagic.slate.ethereal
+item/BloodMagic.scribe.dusk
+item/BloodMagic.scribe.water
 item/BloodMagic.activationCrystal.weak
 item/BloodMagic.orb.magician
-item/BloodMagic.slate.blank
-item/BloodMagic.slate.demonic
 item/BloodMagic.scribe.air
-item/BloodMagic.slate.ethereal
 item/BloodMagic.focus.weak
 item/BloodMagic.daggerOfSacrifice
 item/BloodMagic.bucket.lifeEssence
@@ -128,3 +128,34 @@ item/BloodMagic.orb.master
 item/BloodMagic.orb.transcendent
 item/BloodMagic.focus.enhanced
 item/BloodMagic.scribe.fire
+
+
+Binding Recipes:
+item/BloodMagic.bound.pickaxe
+item/BloodMagic.bound.shovel
+item/BloodMagic.livingArmour.legs
+item/BloodMagic.livingArmour.chest
+item/BloodMagic.livingArmour.boots
+item/BloodMagic.bound.axe
+item/BloodMagic.bound.sword
+item/BloodMagic.livingArmour.helmet
+
+Array Rcipes:
+item/BloodMagic.sigil.compression
+item/BloodMagic.sigil.fastMiner
+item/BloodMagic.sigil.greenGrove
+item/BloodMagic.sigil.elementalAffinity
+item/BloodMagic.sigil.seer
+item/BloodMagic.sigil.transposition
+item/BloodMagic.sigil.enderSeverance
+item/BloodMagic.sigil.lava
+item/BloodMagic.sigil.water
+item/BloodMagic.sigil.void
+item/BloodMagic.sigil.suppression
+item/BloodMagic.sigil.haste
+item/BloodMagic.sigil.divination
+item/BloodMagic.sigil.air
+item/BloodMagic.sigil.bloodLight
+item/BloodMagic.sigil.teleposition
+item/BloodMagic.sigil.magnetism
+item/BloodMagic.sigil.phantomBridge
