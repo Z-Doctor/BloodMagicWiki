@@ -5,23 +5,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.recipe.ShapedBloodOrbRecipe;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
-import igwmod.TextureSupplier;
-import igwmod.WikiUtils;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
-import igwmod.lib.Paths;
-import igwmod.recipeintegration.IntegratorCraftingRecipe;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import tweaked.igwmod.TextureSupplier;
+import tweaked.igwmod.api.IRecipeIntegrator;
+import tweaked.igwmod.gui.GuiWiki;
+import tweaked.igwmod.gui.IReservedSpace;
+import tweaked.igwmod.gui.IWidget;
+import tweaked.igwmod.gui.LocatedStack;
+import tweaked.igwmod.gui.LocatedString;
+import tweaked.igwmod.gui.LocatedTexture;
+import tweaked.igwmod.recipeintegration.IntegratorCraftingRecipe;
+import zdoctor.bmw.ModMain;
 
 public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 
@@ -57,7 +55,7 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 					"The second parameter (the y coordinate) contains an invalid number. Check for spaces or invalid characters!");
 		}
 		locatedTextures.add(
-				new LocatedTexture(TextureSupplier.getTexture(Paths.MOD_ID_WITH_COLON + "textures/GuiCrafting.png"), x,
+				new LocatedTexture(TextureSupplier.getTexture(ModMain.MODID + ":textures/gui/GuiCrafting.png"), x,
 						y, (int) (116 / GuiWiki.TEXT_SCALE), (int) (54 / GuiWiki.TEXT_SCALE)));
 
 		if (arguments[2].startsWith("key=")) {
@@ -154,10 +152,9 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 			IRecipe recipe = recipes.next();
 			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
 					"block/");
-			if (!autoMappedRecipes.containsKey(key)
-					&& WikiUtils.getOwningModId(recipe.getRecipeOutput()) == Constants.Mod.MODID) {
+			if (!autoMappedRecipes.containsKey(key) && recipe instanceof ShapedBloodOrbRecipe) {
 				autoMappedRecipes.put(key, recipe);
-				System.out.println("BMCrafting: " + key);
+//				System.out.println("BMCrafting: " + key);
 			}
 		}
 	}

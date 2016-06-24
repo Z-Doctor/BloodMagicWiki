@@ -1,9 +1,5 @@
 [link{zdoctorbmw:bloodmagic/AltarTiers}]Altar Tiers
 
-[link{zdoctorbmw:bloodmagic/Blocks}]Known Blocks
+[link{zdoctorbmw:bloodmagic/item/BloodOrbs}]Blood Orbs
 
-[link{zdoctorbmw:bloodmagic/Items}]Known Items
-
-[link{zdoctorbmw:bloodmagic/Rituals}]Known Rituals
-
-[link{zdoctorbmw:bloodmagic/Sigils}]Known Sigils
+[link{zdoctorbmw:bloodmagic/Rituals}]Rituals

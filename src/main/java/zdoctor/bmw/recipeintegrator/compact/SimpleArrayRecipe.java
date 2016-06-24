@@ -1,9 +1,7 @@
 package zdoctor.bmw.recipeintegrator.compact;
 
 import java.util.List;
-import java.util.Map;
 
-import igwmod.gui.IReservedSpace;
 import net.minecraft.item.ItemStack;
 
 public class SimpleArrayRecipe {

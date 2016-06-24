@@ -1,0 +1,86 @@
+Blood Orbs are the eptiome of Blood Magic and to progress more powerful Orbs are required. Below is a list of known Blood Orbs and their recipes.
+
+Weak Blood Orb:
+[altar{200,70,key=item/BloodMagic.orb.weak}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+A Weak Blood Orb is the first Blood Orb created by a mage. When first used, if not previously bound, expands the users Soul Network to 5 000 LP.
+
+Apprentice Blood Orb:
+[altar{200,250,key=item/BloodMagic.orb.apprentice}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+A Apprentice Blood Orb when first used, if not previously bound, expands the users Soul Network to 25 000 LP.
+
+Magician Blood Orb:
+[altar{200,430,key=item/BloodMagic.orb.magician}]
+
+
+
+
+
+
+
+
+
+
+
+
+A Magician Blood Orb when first used, if not previously bound, expands the users Soul Network to 150 000 LP.
+
+Master Blood Orb:
+[altar{200,600,key=item/BloodMagic.orb.master}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+A Master Blood Orb when first used, if not previously bound, expands the users Soul Network to 1 000 000 LP.
+
+Archmage Blood Orb:
+[altar{200,770,key=item/BloodMagic.orb.archmage}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A Archmage Blood Orb when first used, if not previously bound, expands the users Soul Network to 10 000 000 LP.

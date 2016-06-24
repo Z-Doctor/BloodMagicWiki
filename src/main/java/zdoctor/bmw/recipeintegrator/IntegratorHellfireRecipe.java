@@ -12,17 +12,18 @@ import WayofTime.bloodmagic.api.soul.EnumDemonWillType;
 import WayofTime.bloodmagic.api.soul.IDemonWill;
 import WayofTime.bloodmagic.api.soul.IDemonWillGem;
 import WayofTime.bloodmagic.compat.jei.forge.TartaricForgeRecipeJEI;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import tweaked.igwmod.TextureSupplier;
+import tweaked.igwmod.api.IRecipeIntegrator;
+import tweaked.igwmod.gui.GuiWiki;
+import tweaked.igwmod.gui.IReservedSpace;
+import tweaked.igwmod.gui.IWidget;
+import tweaked.igwmod.gui.LocatedStack;
+import tweaked.igwmod.gui.LocatedString;
+import tweaked.igwmod.gui.LocatedTexture;
 import zdoctor.bmw.ModMain;
+import zdoctor.bmw.recipeintegrator.compact.SimpleTartaricForgeRecipe;
 
 public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 
@@ -70,8 +71,7 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 			addAutomaticCraftingRecipe(arguments[2], locatedStacks, locatedTextures, locatedStrings,
 					(int) (x * GuiWiki.TEXT_SCALE), (int) (y * GuiWiki.TEXT_SCALE));
 		} else {
-			addManualCraftingRecipe(arguments, locatedStacks, locatedTextures, (int) (x * GuiWiki.TEXT_SCALE),
-					(int) (y * GuiWiki.TEXT_SCALE));
+			System.out.println("Manual recipes not supported");
 		}
 	}
 
@@ -102,8 +102,8 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 					} else
 						break;
 				}
-				TartaricForgeRecipeJEI jeiRecipe = new TartaricForgeRecipeJEI(recipe);
-				ItemStack gem = jeiRecipe.getValidGems().get(0);
+				SimpleTartaricForgeRecipe forgeRecipe = new SimpleTartaricForgeRecipe(recipe);
+				ItemStack gem = forgeRecipe.getValidGems().get(0);
 				if (gem.getItem() instanceof IDemonWill) {
 					IDemonWill item = (IDemonWill) gem.getItem();
 					item.setWill(gem, recipe.getMinimumSouls());
@@ -130,39 +130,6 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 			System.out.println("Not Found: " + key);
 	}
 
-	private void addManualCraftingRecipe(String[] codeParts, List<LocatedStack> locatedStacks,
-			List<IWidget> locatedTextures, int x, int y) throws IllegalArgumentException {
-		String[] ingredients = new String[codeParts.length - 3];
-		// TODO - Add Manual Support
-		// for (int i = 3; i < codeParts.length; i++)
-		// ingredients[i - 3] = codeParts[i];
-		// // ingredients[codeParts.length - 2] = lastTwoArguments[0];
-		// String result = codeParts[2];
-		// Map<String, ItemStack> ingredientMap = new HashMap<String,
-		// ItemStack>();
-		// for (int i = 3; i < ingredients.length; i++) {
-		// String[] ingredient = ingredients[i].split("=");
-		// ingredientMap.put(ingredient[0],
-		// WikiUtils.getStackFromName(ingredient[1]));
-		// }
-		// for (int i = 0; i < 3; i++) {
-		// for (int j = 0; j < 3; j++) {
-		// ItemStack ingredientStack =
-		// ingredientMap.get(ingredients[i].substring(j, j + 1));
-		// if (ingredientStack != null) {
-		// locatedStacks.add(new LocatedStack(ingredientStack, x +
-		// STACKS_X_OFFSET + j * 18,
-		// y + STACKS_Y_OFFSET + i * 18));
-		// }
-		// }
-		// }
-		// ItemStack resultStack = WikiUtils.getStackFromName(result);
-		// if (resultStack != null) {
-		// locatedStacks.add(new LocatedStack(resultStack, x +
-		// RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
-		// }
-	}
-
 	public static void mapRecipes() {
 		Iterator<TartaricForgeRecipe> gemRecipes = TartaricForgeRecipeRegistry.getRecipeList().iterator();
 		while (gemRecipes.hasNext()) {
@@ -171,7 +138,7 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 					"block/");
 			if (!autoMappedRecipes.containsKey(key)) {
 				autoMappedRecipes.put(key, recipe);
-				// System.out.println("Forge: " + key);
+				System.out.println("Forge: " + key);
 			}
 		}
 	}

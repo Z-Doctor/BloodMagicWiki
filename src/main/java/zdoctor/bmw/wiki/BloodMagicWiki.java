@@ -2,11 +2,12 @@ package zdoctor.bmw.wiki;
 
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
-import igwmod.api.WikiRegistry;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.tabs.BaseWikiTab;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import tweaked.igwmod.InfoSupplier;
+import tweaked.igwmod.api.WikiRegistry;
+import tweaked.igwmod.gui.GuiWiki;
+import tweaked.igwmod.gui.tabs.BaseWikiTab;
 import zdoctor.bmw.ModMain;
 
 public class BloodMagicWiki extends BaseWikiTab {
@@ -23,6 +24,8 @@ public class BloodMagicWiki extends BaseWikiTab {
 		pageEntries.add("GettingStarted5");
 		pageEntries.add("GettingStarted6");
 		pageEntries.add("GettingStarted7");
+		pageEntries.add("GettingStarted8");
+		pageEntries.add("GettingStarted9");
 		pageEntries.add("Index");
 		pageEntries.add("Acknowledgments");
 	}
@@ -31,7 +34,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 	public String getName() {
 		return "wikitab.bloodmagic.name";
 	}
-
+	
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
 		return OrbRegistry.getOrbStack(ModItems.orbWeak);

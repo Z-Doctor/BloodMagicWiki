@@ -106,29 +106,28 @@ block/demonCrystallizer
 
 
 Altar Recipes:
+item/BloodMagic.activationCrystal.weak
+item/BloodMagic.bucket.lifeEssence
+item/BloodMagic.daggerOfSacrifice
+item/BloodMagic.focus.weak
+item/BloodMagic.focus.enhanced
+item/BloodMagic.scribe.dusk
+item/BloodMagic.scribe.water
+item/BloodMagic.scribe.air
+item/BloodMagic.scribe.earth
+item/BloodMagic.scribe.dawn
+item/BloodMagic.scribe.fire
 item/BloodMagic.slate.blank
 item/BloodMagic.slate.reinforced
 item/BloodMagic.slate.imbued
 item/BloodMagic.slate.demonic
 item/BloodMagic.slate.ethereal
-item/BloodMagic.scribe.dusk
-item/BloodMagic.scribe.water
-item/BloodMagic.activationCrystal.weak
-item/BloodMagic.orb.magician
-item/BloodMagic.scribe.air
-item/BloodMagic.focus.weak
-item/BloodMagic.daggerOfSacrifice
-item/BloodMagic.bucket.lifeEssence
-item/BloodMagic.orb.archmage
-item/BloodMagic.orb.apprentice
 item/BloodMagic.orb.weak
-item/BloodMagic.scribe.earth
-item/BloodMagic.scribe.dawn
+item/BloodMagic.orb.apprentice
+item/BloodMagic.orb.magician
 item/BloodMagic.orb.master
+item/BloodMagic.orb.archmage
 item/BloodMagic.orb.transcendent
-item/BloodMagic.focus.enhanced
-item/BloodMagic.scribe.fire
-
 
 Binding Recipes:
 item/BloodMagic.bound.pickaxe
@@ -159,3 +158,19 @@ item/BloodMagic.sigil.bloodLight
 item/BloodMagic.sigil.teleposition
 item/BloodMagic.sigil.magnetism
 item/BloodMagic.sigil.phantomBridge
+
+Shaped Orb Recipes:
+block/BloodMagic.incenseAltar
+item/BloodMagic.upgradeTrainer
+block/BloodMagic.alchemyTable
+block/BloodMagic.rune.blank
+item/BloodMagic.ritualReader
+block/BloodMagic.rune.sacrifice
+block/BloodMagic.stone.ritual.imperfect
+block/BloodMagic.rune.orb
+block/BloodMagic.rune.augcapacity
+block/BloodMagic.ritualStone.blank
+block/BloodMagic.rune.selfsacrifice
+block/BloodMagic.stone.ritual.master
+block/BloodMagic.rune.acceleration
+item/BloodMagic.experienceTome

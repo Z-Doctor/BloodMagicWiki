@@ -1,6 +1,6 @@
-After the lost period, little documentations from the ways of old survived. However, it is known that Demonic Will was a relatively new discovery with several therioes on its sudden apperance.
+After the lost period, little documentations from the ways of old survived. However, it is known that Demonic Will was a relatively new discovery with several theories on its sudden appearance.
 
-It is unknown who designed the Hellfire Forge, but its prominence in the arts is clear. At some point during a Blood Mage's career, a Hellfire Forge will be needed. The following is a recored blueprint on its design.
+It is unknown who designed the Hellfire Forge, but its prominence in the arts is clear. At some point during a Blood Mage's career, a Hellfire Forge will be needed. The following is a recorded blueprint on its design.
 
 Hellfire Forge:
 [crafting{200,130,key=block/BloodMagic.soulForge}]
@@ -16,9 +16,9 @@ Hellfire Forge:
 
 
 
-Along with the ingredients, each recipe created in a Hellfire Forge has two additonal values. The minimum amount of Will required, and the amount of Will consumed per session. The recipe can not be forged if there isn't enough Will to be consumed and, likewise, the recipe can not be forged if there is less than the minimum amount of Will.
+Along with the ingredients, each recipe created in a Hellfire Forge has two additional values. The minimum amount of Will required, and the amount of Will consumed per session. The recipe can not be forged if there isn't enough Will to be consumed and, likewise, the recipe can not be forged if there is less than the minimum amount of Will.
 
-It is inefficient, as well as impossible, by known means, to obtain Demonic Will of high enough quality to power most of the known recipes. To combat this, Blood Mages have forged Tartaric Gems that store Demonic Will in dorminacy until the time has come for their need. The first of which has the lowest storage, but is arguably the most important Tartaric Gem.
+It is inefficient, as well as impossible, by known means, to obtain Demonic Will of high enough quality to power most of the known recipes. To combat this, Blood Mages have forged Tartaric Gems that store Demonic Will in dormancy until the time has come for their need. The first of which has the lowest storage, but is arguably the most important Tartaric Gem.
 
 Petty Tartaric Gem:
 [hellfire{200,420,key=item/BloodMagic.soulGem.petty}]
@@ -31,4 +31,4 @@ Petty Tartaric Gem:
 
 
 
-A Petty Tartaric Gem automatically adds any Demonic Will of the same type you may come into contact with to its internal storage. The benifit in doing so is access to high tier Tartaric Forging, as well as empowering items which draw their power from Demonic Will and a reserve for tasks which require Demonic Will. Higher tier Tartaric Gems can be created and contents can be transfered between two Gems.
+A Petty Tartaric Gem automatically adds any Demonic Will of the same type you may come into contact with to its internal storage. The benefit in doing so is access to stronger Tartaric Forging, as well as empowering items which draw their power from Demonic Will and a reserve for tasks which require Demonic Will. Higher tier Tartaric Gems can be created and contents can be transferred between two Gems.

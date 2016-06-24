@@ -1,11 +1,9 @@
-One of the surviving documents from the Lost Period is the subject of Altar Tiers and Upgrades. In short, the higher the tier the Altar, the more powerful aspect of Blood Magic can be preformed. Upgrades are in the form of Runes that can either be netural or have special properties that can be tailored to a Blood Mage.
+Sigils are powerful artifacts used by Blood Mages as tools. New Sigils are constantly being developed by Blood Mags, but this page aims to introduce any student of the arts to the basic concept.
 
-Blank Rune:
-[bmcrafting{200,110,key=block/BloodMagic.rune.blank}]
+There are two parts of Sigil Creation: the Reagent and the Slate. Reagents can range from regular Items to exotic material, with the latter be the more common. The Slate is the surface to which the Magic is etched in and called when needed.
 
-
-
-
+The most rudimentary of Slates is known as the Blank Slate. It is the building block of any Sigil and subsequent creations, such as runes. The method of creation is as follows:
+[altar{200,175,key=item/BloodMagic.slate.blank}]
 
 
 
@@ -14,12 +12,12 @@ Blank Rune:
 
 
 
-A Blank Rune is the epitome of Altar Upgrades. As they are, Blank Runes have no benefits other than increasing the Altars Level (if configured correctly). However, they are used as ingredients towards special Runes. 
+As shown, it is the most basic of slates, but can be used to create one of the most, useful tools for a Blood Mage known as a Divination Sigil.
 
-Speed Rune:
-[crafting{200,300,key=block/BloodMagic.rune.speed}]
+The actual process of creating a Sigil requires one more item: Arcane Ashes. Arcane Ashes are used in Binding (talked about later) as well as assisting in the Sigil Creation process. It is forged in the Hellfire Forged using these ingredients:
 
-
+Arcane Ashes:
+[hellfire{200,410,key=item/BloodMagic.arcaneAshes}]
 
 
 
@@ -30,23 +28,9 @@ Speed Rune:
 
 
 
-The Speed Rune is used to increase the speed at which the altar trasmutes LP into its item. More information and about this Rune and the other known Runes can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/Blocks}]Known Blocks,[link{}] subsection [link{zdoctorbmw:block/rune}]Runes.[link{}]
+To prepare the Ashes, place it on a flat surface. When this is ready, place the reagent, followed by the Slate, and stand back as it finishes. The order in which these ingredients are placed is crucial. A wrong ingredient will ruin the circle and another batch of Arcane Ashes will need to be created.
 
-Runes like these can be used to increase an Altar's Tier. Placing 8 Runes of any type (in any configuration) will create a Tier 2 Altar
+With this in mind, you are now ready to Craft a Sigil. Prepare a batch of Arcane Ashes and use these ingredients to create a Divination Sigil.
 
-Tier 2 Altar:
-[image{200,530,.2,zdoctorbmw:textures/screenshots/T2.png}]
-
-
-
-
-
-
-
-
-
-
-
-
-
-For more information check in [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/AltarTiers}]Altar Tiers.
+Divination Sigil:
+[array{200,630,key=item/BloodMagic.sigil.divination}]

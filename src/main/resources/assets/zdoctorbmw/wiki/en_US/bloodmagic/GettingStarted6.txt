@@ -1,0 +1,52 @@
+One of the surviving documents from the Lost Period is the subject of Altar Tiers and Upgrades. In short, the higher the tier, the more powerful aspect of Blood Magic that can be performed. Upgrades are in the form of Runes that can either be netural or have special properties that can be tailored to a Blood Mage.
+
+Blank Rune:
+[bmcrafting{200,110,key=block/BloodMagic.rune.blank}]
+
+
+
+
+
+
+
+
+
+
+
+
+A Blank Rune is the epitome of Altar Upgrades. As they are, Blank Runes have no benefits other than increasing the Altars Level (if configured correctly). However, they are used as ingredients towards special Runes. 
+
+Speed Rune:
+[crafting{200,300,key=block/BloodMagic.rune.speed}]
+
+
+
+
+
+
+
+
+
+
+
+
+The Speed Rune is used to increase the speed at which the altar transmutes LP into its item. More information and about this Rune and the other known Runes can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/Blocks}]Known Blocks,[link{}] subsection [link{zdoctorbmw:block/rune}]Runes.[link{}]
+
+Runes like these can be used to increase an Altar's Tier. Placing 8 Runes of any type will create a Tier 2 Altar
+
+Tier 2 Altar:
+[image{200,530,.2,zdoctorbmw:textures/screenshots/T2.png}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+For more information check in [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/AltarTiers}]Altar Tiers.

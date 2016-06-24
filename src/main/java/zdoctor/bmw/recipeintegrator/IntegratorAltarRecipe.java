@@ -10,16 +10,16 @@ import org.lwjgl.opengl.GL11;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.util.helper.NumeralHelper;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import tweaked.igwmod.TextureSupplier;
+import tweaked.igwmod.api.IRecipeIntegrator;
+import tweaked.igwmod.gui.GuiWiki;
+import tweaked.igwmod.gui.IReservedSpace;
+import tweaked.igwmod.gui.IWidget;
+import tweaked.igwmod.gui.LocatedStack;
+import tweaked.igwmod.gui.LocatedString;
+import tweaked.igwmod.gui.LocatedTexture;
 import zdoctor.bmw.ModMain;
 
 public class IntegratorAltarRecipe implements IRecipeIntegrator {

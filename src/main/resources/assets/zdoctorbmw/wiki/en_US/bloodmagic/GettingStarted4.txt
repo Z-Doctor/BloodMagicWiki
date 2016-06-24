@@ -1,23 +1,9 @@
-Sigils are powerful artifacts used by Blood Mages as tools. New Sigil are constantly being developed by Blood Mags, but this page aims to introduce any student of the arts to the basic concept.
+Through testing, Blood Mages have found that by releasing Demonic Will into the air, and providing a suitable space, one can grow Will Crystals Clusters. The apparatus used to release Will into the air and to grow crystals clusters from that Will are known as a Demon Crucible, and a Demon Crystallizer, respectively. 
 
-There are two parts of Sigil Creation: the Reagent and the Slate. Reagents can range from regular Items to exotic material, with the latter be the more common. The Slate is the surface to which the Magic is etched in and called when needed.
+Documented is the current technique for creating them:
 
-The most rudimentry of Slates is known as the Blank Slate. It is the building block of any Sigil and subsequent creations, such as, runes. The method of creation is as follows:
-[altar{200,175,key=item/BloodMagic.slate.blank}]
-
-
-
-
-
-
-
-
-As shown, it is the most basic of slates, but can be used to create one of the most, arguably, useful tools for a Blood Mage best known as a Divination Sigil.
-
-The actual process of creating a Sigil requires one more item: Arcane Ashes. Arcane Ashes are used in Binding (talked about later) as well as assiting in the Sigil Creation process. It is forged in the Hellfire Forged using these ingedients:
-
-Arcane Ashes:
-[hellfire{200,410,key=item/BloodMagic.arcaneAshes}]
+Demon Crucible:
+[hellfire{200,140,key=block/BloodMagic.demonCrucible}]
 
 
 
@@ -26,11 +12,40 @@ Arcane Ashes:
 
 
 
+Demon Crystallizer:
+[hellfire{200,230,key=block/BloodMagic.demonCrystallizer}]
 
 
-To prepare the Ashes, place it on a flat surface. When this is ready, place the reagent, followed by the Slate, and stand back as it finishes. The order in which this ingredients are placed is crucial. A wrong ingredient will ruin the circle and another batch of Arcane Ashes will need to be created.
 
-With this in mind, you are now ready to Craft a Sigil. Prepare a batch of Arcane Ashes and use this ingredients to create a Divination Sigil.
 
-Divination Sigil:
-[array{200,630,key=item/BloodMagic.sigil.divination}]
+
+
+
+
+Blood Mages have observed that growing Will Crystal Cluster in this way has had an unexpected result. They have discovered several variants of Demonic Will besides the Natural Will found from slaying beasts. Currently, Blood Mages have found and categorized four types of Will: Corrosive, Destructive, Vengeful, and Steadfast. What's more, Tartaric Gems can be created from the variants by introducing them to any Tartaric Gem either by hand or Crafting Table.
+
+Demonic Will Clusters can only be translocated by recombining four Crystals of the same type inside of a Hellfire Forge like so:
+[hellfire{200,440,key=block/BloodMagic.demonCrystalDEFAULT}]
+
+
+
+
+
+
+
+
+Demonic Will Clusters can also absorb Will in the air, and by doing so, crystals can branch off them. These crystals can be harvested by mining the crystal, or by interacting with at least 1024 of Demonic Will contained in a gem, with the latter preserving the crystal.
+
+Demonic Will can only fill so much of an area, and does not naturally spread. To combat this, Blood Mages have developed a device which equalizes the Will contained within given spaces. This device is known as a Demon Pylon, and can be used for rudimentary automatic will transportation.
+
+Demon Pylon:
+[hellfire{200,670,key=block/BloodMagic.demonPylon}]
+
+
+
+
+
+
+
+
+Blood Mages have noted that a Demon Crucible accepts input from devices such as hoppers and have theorized that automated growing, harvesting and emitting Will into the air is possible.
