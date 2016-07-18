@@ -1,23 +1,25 @@
-Sigils are powerful artifacts used by Blood Mages as tools. New Sigils are constantly being developed by Blood Mags, but this page aims to introduce any student of the arts to the basic concept.
-
-There are two parts of Sigil Creation: the Reagent and the Slate. Reagents can range from regular Items to exotic material, with the latter be the more common. The Slate is the surface to which the Magic is etched in and called when needed.
-
-The most rudimentary of Slates is known as the Blank Slate. It is the building block of any Sigil and subsequent creations, such as runes. The method of creation is as follows:
-[altar{200,175,key=item/BloodMagic.slate.blank}]
-
-
-
-
-
-
-
-
-As shown, it is the most basic of slates, but can be used to create one of the most, useful tools for a Blood Mage known as a Divination Sigil.
-
-The actual process of creating a Sigil requires one more item: Arcane Ashes. Arcane Ashes are used in Binding (talked about later) as well as assisting in the Sigil Creation process. It is forged in the Hellfire Forged using these ingredients:
+Arcane Ashes are the basis of Sigil Creation and Binding, and are relatively cheap to produce. Both Sigil Creation and Binding are introduced here, but full listing of recipes can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under[link{zdoctorbmw:bloodmagic/Sigils}] Sigils[link{}] or[link{zdoctorbmw:bloodmagic/BoundEquipment}] Bound Equipment[link{}] for more recipes.
 
 Arcane Ashes:
-[hellfire{200,410,key=item/BloodMagic.arcaneAshes}]
+[hellfire{200,90,key=item/BloodMagic.arcaneAshes}]
+
+
+
+
+
+
+
+
+Sigils are powerful artifacts used by Blood Mages with a varirty of functions, and new Sigils are constantly being developed by Blood Mages. 
+
+Though similar, Binding is the process of transforming an item to a more powerful version. This item can then be connected to your Soul Network through interaction. Once connected, they will draw from their owners Soul Network in place of damage to the item. Bound Tools can be charge to perform a more powerful version of their intended use, check in [link{zdoctorbmw:bloodmagic/BoundEquipment}] Bound Equipment[link{}] for a listing of recipes.
+
+There are two parts to Sigil Creation and Binding: the Reagent and the Catalyst. Reagents can range from regular Items to exotic material, with the latter be the more common. The Catalyst needs to be either a Slate or a peice of equipment, respectively.
+
+The most rudimentary of Slates is known as the Blank Slate. It is the building block of any Sigil and subsequent creations, such as runes. 
+
+Blank Slate:
+[altar{200,410,key=item/BloodMagic.slate.blank}]
 
 
 
@@ -28,9 +30,14 @@ Arcane Ashes:
 
 
 
-To prepare the Ashes, place it on a flat surface. When this is ready, place the reagent, followed by the Slate, and stand back as it finishes. The order in which these ingredients are placed is crucial. A wrong ingredient will ruin the circle and another batch of Arcane Ashes will need to be created.
 
-With this in mind, you are now ready to Craft a Sigil. Prepare a batch of Arcane Ashes and use these ingredients to create a Divination Sigil.
+
+
+Once created, it can be used to create one of the most useful tools for a Blood Mage known as a Divination Sigil.
+
+To prepare the Ashes, place it on a flat surface. When this is ready, place the reagent, followed by the Catalyst, and stand back as it finishes. The order in which these ingredients are placed is crucial. A wrong ingredient will ruin the circle and another batch of Arcane Ashes will need to be created.
+
+With this in mind, you are now ready to Craft a Divination Sigil. Prepare a batch of Arcane Ashes and use these ingredients to create a Divination Sigil.
 
 Divination Sigil:
-[array{200,630,key=item/BloodMagic.sigil.divination}]
+[array{200,700,key=item/BloodMagic.sigil.divination}]

@@ -11,12 +11,14 @@ import zdoctor.bmw.recipeintegrator.IntegratorBMCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBindingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
 import zdoctor.bmw.wiki.BloodMagicWiki;
+import zdoctor.bmw.wiki.RitualWiki;
 import zdoctor.bmw.wiki.events.WikiEvents;
 
 public class ClientProxy extends CommonProxy {
 	public void preInit(FMLPreInitializationEvent e) {
 		super.preInit(e);
 		BloodMagicWiki.preInit();
+		RitualWiki.preInit();
 	}
 
 	public void init(FMLInitializationEvent e) {

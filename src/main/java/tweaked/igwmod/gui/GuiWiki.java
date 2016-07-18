@@ -51,21 +51,8 @@ import zdoctor.bmw.ModMain;
 
 public class GuiWiki extends GuiContainer {
 	private static String currentFile = ""; // path (ResourceLocation) of the
-											// current wikipage
 	private static List<String> fileInfo = new ArrayList<String>(); // The raw
-																	// info
-																	// directly
-																	// retrieved
-																	// from the
-																	// .txt
-																	// file.
-
 	public static List<IWikiTab> wikiTabs = new ArrayList<IWikiTab>();// A list
-																		// of
-																		// all
-																		// the
-																		// tabs
-																		// registered.
 	private static IWikiTab currentTab;
 	private static int currentTabPage = 0;
 	private static String currentModIdPage = ModMain.MODID.toLowerCase();
@@ -276,6 +263,7 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	public void setCurrentFile(String file, Object... metadata) {
+//		System.out.println("File: " + file);
 		BrowseHistory.updateHistory(currentPageScroll);
 		if (metadata.length == 0) {
 			ItemStack displayedStack = WikiUtils.getStackFromName(file);
@@ -654,10 +642,10 @@ public class GuiWiki extends GuiContainer {
 					if (tabItem != null && tabItem.getItem() != null) {
 						modid = WikiUtils.getOwningModId(tabItem);
 					}
-					if (ConfigHandler.debugMode) {
-						IGWLog.info("Tracked down the mod owner of the page \"" + currentFile
-								+ "\" by getting the mod owner of the tab ItemStack. This is not recommended. Please prefix page links with <modid>:, so for example: pneumaticcraft:menu/baseConcepts");
-					}
+//					if (ConfigHandler.debugMode) {
+//						IGWLog.info("Tracked down the mod owner of the page \"" + currentFile
+//								+ "\" by getting the mod owner of the tab ItemStack. This is not recommended. Please prefix page links with <modid>:, so for example: pneumaticcraft:menu/baseConcepts");
+//					}
 				}
 			}
 

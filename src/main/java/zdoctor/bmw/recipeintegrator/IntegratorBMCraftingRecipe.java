@@ -65,8 +65,7 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 			addAutomaticCraftingRecipe(arguments[2], locatedStacks, locatedTextures, locatedStrings,
 					(int) (x * GuiWiki.TEXT_SCALE), (int) (y * GuiWiki.TEXT_SCALE));
 		} else {
-			addManualCraftingRecipe(arguments, locatedStacks, locatedTextures, (int) (x * GuiWiki.TEXT_SCALE),
-					(int) (y * GuiWiki.TEXT_SCALE));
+			System.out.println("Manual BMCrafting not supported, use crafting");
 		}
 	}
 
@@ -112,39 +111,6 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 			System.out.println("Null");
 	}
 
-	private void addManualCraftingRecipe(String[] codeParts, List<LocatedStack> locatedStacks,
-			List<IWidget> locatedTextures, int x, int y) throws IllegalArgumentException {
-		String[] ingredients = new String[codeParts.length - 3];
-		// TODO - Add Manual Support
-		// for (int i = 3; i < codeParts.length; i++)
-		// ingredients[i - 3] = codeParts[i];
-		// // ingredients[codeParts.length - 2] = lastTwoArguments[0];
-		// String result = codeParts[2];
-		// Map<String, ItemStack> ingredientMap = new HashMap<String,
-		// ItemStack>();
-		// for (int i = 3; i < ingredients.length; i++) {
-		// String[] ingredient = ingredients[i].split("=");
-		// ingredientMap.put(ingredient[0],
-		// WikiUtils.getStackFromName(ingredient[1]));
-		// }
-		// for (int i = 0; i < 3; i++) {
-		// for (int j = 0; j < 3; j++) {
-		// ItemStack ingredientStack =
-		// ingredientMap.get(ingredients[i].substring(j, j + 1));
-		// if (ingredientStack != null) {
-		// locatedStacks.add(new LocatedStack(ingredientStack, x +
-		// STACKS_X_OFFSET + j * 18,
-		// y + STACKS_Y_OFFSET + i * 18));
-		// }
-		// }
-		// }
-		// ItemStack resultStack = WikiUtils.getStackFromName(result);
-		// if (resultStack != null) {
-		// locatedStacks.add(new LocatedStack(resultStack, x +
-		// RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
-		// }
-	}
-
 	public static void mapRecipes() {
 
 		Iterator<IRecipe> recipes = IntegratorCraftingRecipe.autoMappedRecipes.values().iterator();
@@ -154,7 +120,7 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 					"block/");
 			if (!autoMappedRecipes.containsKey(key) && recipe instanceof ShapedBloodOrbRecipe) {
 				autoMappedRecipes.put(key, recipe);
-//				System.out.println("BMCrafting: " + key);
+				System.out.println("BMCrafting: " + key);
 			}
 		}
 	}

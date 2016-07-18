@@ -56,21 +56,21 @@ public class InfoSupplier{
         }
 
         //Let's see if we can find the page where it used to be by default, in the igwmod folder.
-        if(!modid.equals("igwmod")) {
-            info = getInfo("igwmod", objectName, language);
-            if(info != null) {
-                if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
-                return info;
-            }
-
-            if(!language.equals("en_US")) {
-                info = getInfo("igwmod", objectName, "en_US");
-                if(info != null) {
-                    if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
-                    return info;
-                }
-            }
-        }
+//        if(!modid.equals("igwmod")) {
+//            info = getInfo("igwmod", objectName, language);
+//            if(info != null) {
+//                if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
+//                return info;
+//            }
+//
+//            if(!language.equals("en_US")) {
+//                info = getInfo("igwmod", objectName, "en_US");
+//                if(info != null) {
+//                    if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
+//                    return info;
+//                }
+//            }
+//        }
 
         if(returnNullIfUnavailable) return null;
         objectName = "/assets/" + modid + "/wiki/" + language + "/" + objectName.replace(":", "/") + ".txt";

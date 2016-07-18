@@ -5,11 +5,10 @@ wiki.bloodmagic.GettingStarted1.page=Entering the Arts
 wiki.bloodmagic.GettingStarted2.page=Soul Forging
 wiki.bloodmagic.GettingStarted3.page=Sentient Equipment
 wiki.bloodmagic.GettingStarted4.page=Crystal Farming
-wiki.bloodmagic.GettingStarted5.page=Sigil Creation
+wiki.bloodmagic.GettingStarted5.page=Arcane Ashes
 wiki.bloodmagic.GettingStarted6.page=Upgrading the Altar
-wiki.bloodmagic.GettingStarted7.page=Binding Equipment
-wiki.bloodmagic.GettingStarted8.page=Preforming Rituals
-wiki.bloodmagic.GettingStarted9.page=Demon Summoning
+wiki.bloodmagic.GettingStarted7.page=Preforming Rituals
+wiki.bloodmagic.GettingStarted8.page=Demon Summoning
 wiki.bloodmagic.Index.page=Index
 wiki.bloodmagic.Acknowledgments.page=Acknowledgments
 
@@ -18,7 +17,7 @@ bmw.gui.crafting.shapedorb=Shaped Orb Crafting
 bmw.gui.altar.requiredTier.recipe=Tier
 bmw.gui.altar.requiredLP.recipe=LP
 
-intergrator.zdoctorbmw.minimumSouls.forge=Minimum Will
+intergrator.zdoctorbmw.minimumSouls.forge=Minimum WP
 intergrator.zdoctorbmw.minimumDrain.forge=Minimum Drain
 
 bmw.keys.wiki=Open Wiki
@@ -26,3 +25,5 @@ bmw.keys.category=Blood Magic Wiki
 
 bmw.gui.crafting.shaped=Shaped Crafting
 bmw.gui.crafting.shapeless=Shapeless Crafting
+
+bmw.info.text=for more info

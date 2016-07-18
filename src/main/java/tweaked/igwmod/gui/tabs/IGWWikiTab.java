@@ -11,12 +11,12 @@ public class IGWWikiTab extends BaseWikiTab{
     public IGWWikiTab(){
         pageEntries.add("intro");
         pageEntries.add("forServers");
-        if(ConfigHandler.debugMode) {
-            pageEntries.add("devIntro");
-            pageEntries.add("devItemAndBlock");
-            pageEntries.add("devPageCommands");
-            pageEntries.add("devForModders");
-        }
+//        if(ConfigHandler.debugMode) {
+//            pageEntries.add("devIntro");
+//            pageEntries.add("devItemAndBlock");
+//            pageEntries.add("devPageCommands");
+//            pageEntries.add("devForModders");
+//        }
     }
 
     @Override

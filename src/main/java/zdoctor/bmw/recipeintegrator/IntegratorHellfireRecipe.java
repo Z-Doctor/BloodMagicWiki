@@ -138,7 +138,7 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 					"block/");
 			if (!autoMappedRecipes.containsKey(key)) {
 				autoMappedRecipes.put(key, recipe);
-				System.out.println("Forge: " + key);
+//				System.out.println("Forge: " + key);
 			}
 		}
 	}

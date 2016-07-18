@@ -1,0 +1,13 @@
+Blood Mages have categorized two types of rituals: Imperfect and Regular Rituals. Both have their own benefits, limitations, and distinctive operations.
+
+Both types of rituals have an activation cost, however, Regular Rituals have a reoccurring cost for keeping it active. 
+
+Both types of rituals also need certain blocks to dictate which ritual is to be performed and a Ritual Stone to determine the type of ritual being performed. The key difference here is that Imperfect Rituals require an Imperfect Ritual Stone and, typically, a regular block on top, while a Regular Ritual requires a Master Ritual Stone and a configuration of Rituals Stones placed around it with different symbols drawn onto each block.
+
+Imperfect and Regular Rituals also have different activation methods, but both still require LP. The former can be activated by merely interacting with it, while the latter requires a tool, known as Activation Crystals. These crystals channel LP from their respective owners Soul Network to activate these rituals. It should be noted that only regular rituals are forgiving if a Blood Mage tries to perform them with insufficient LP.
+
+For a beginner Blood Mage, it is recommended to read about [link{zdoctorbmw:bloodmagic/ritual/ImperfectRituals}]Imperfect Rituals.[link{}]
+
+For a more experienced Blood Mage, more information about regular rituals can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/Rituals}] Rituals,[link{}] subsection [link{zdoctorbmw:bloodmagic/ritual/RegularRituals}]Regular Rituals.[link{}]
+
+In the same section, a list of [link{zdoctorbmw:bloodmagic/ritual/KnownRituals}]Known Rituals[link{}] can be found.

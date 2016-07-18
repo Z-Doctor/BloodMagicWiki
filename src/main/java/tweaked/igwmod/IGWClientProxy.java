@@ -56,7 +56,7 @@ public class IGWClientProxy implements IProxy{
         ClientRegistry.registerKeyBinding(openInterfaceKey);
         MinecraftForge.EVENT_BUS.register(this);//subscribe to key events.
 
-        ConfigHandler.init(event.getSuggestedConfigurationFile());
+//        ConfigHandler.init(event.getSuggestedConfigurationFile());
 
 
         WikiRegistry.registerRecipeIntegrator(new IntegratorImage());

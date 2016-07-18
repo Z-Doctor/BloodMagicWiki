@@ -4,7 +4,6 @@ import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import tweaked.igwmod.InfoSupplier;
 import tweaked.igwmod.api.WikiRegistry;
 import tweaked.igwmod.gui.GuiWiki;
 import tweaked.igwmod.gui.tabs.BaseWikiTab;
@@ -14,7 +13,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 	public static void preInit() {
 		WikiRegistry.registerWikiTab(new BloodMagicWiki());
 	}
-	
+
 	public BloodMagicWiki() {
 		pageEntries.add("Intro");
 		pageEntries.add("GettingStarted1");
@@ -25,7 +24,6 @@ public class BloodMagicWiki extends BaseWikiTab {
 		pageEntries.add("GettingStarted6");
 		pageEntries.add("GettingStarted7");
 		pageEntries.add("GettingStarted8");
-		pageEntries.add("GettingStarted9");
 		pageEntries.add("Index");
 		pageEntries.add("Acknowledgments");
 	}
@@ -34,7 +32,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 	public String getName() {
 		return "wikitab.bloodmagic.name";
 	}
-	
+
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
 		return OrbRegistry.getOrbStack(ModItems.orbWeak);
@@ -48,5 +46,17 @@ public class BloodMagicWiki extends BaseWikiTab {
 	@Override
 	protected String getPageLocation(String pageEntry) {
 		return ModMain.MODID.toLowerCase() + ":bloodmagic/" + pageEntry;
+	}
+
+	public static String getItemPage(String pageOpened) {
+		if (pageOpened.toLowerCase().contains("routing")) {
+			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/block/Routing";
+		} else if (pageOpened.toLowerCase().contains("item/orb")) {
+			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/BloodOrb";
+		} else if (pageOpened.toLowerCase().contains("soulgem")
+				|| pageOpened.toLowerCase().contains("monstersoul")) {
+			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/SoulGems";
+		}
+		return pageOpened;
 	}
 }
