@@ -1,5 +1,7 @@
+This mapping 'snapshot_20161220' was designed for MC 1.11! Use at your own peril.This mapping 'snapshot_20161220' was designed for MC 1.11! Use at your own peril.
+
 #################################################
-         ForgeGradle 2.2-SNAPSHOT-0447b4e        
+         ForgeGradle 2.2-SNAPSHOT-7f5a769        
   https://github.com/MinecraftForge/ForgeGradle  
 #################################################
                Powered by MCP unknown               
@@ -7,35 +9,17 @@
          by: Searge, ProfMobius, Fesh0r,         
          R4wk, ZeuX, IngisKahn, bspkrs           
 #################################################
-:extractMcpMappings
-:deobfCompileDeobfDepTask0 SKIPPED
-:deobfCompileRemapDepSourcesTask1 SKIPPED
 :deobfCompileDummyTask
-:getVersionJson
-:extractUserdev UP-TO-DATE
-:downloadClient SKIPPED
-:downloadServer SKIPPED
-:splitServerJar SKIPPED
-:mergeJars SKIPPED
-:applyBinaryPatches SKIPPED
 :deobfProvidedDummyTask
-:extractDependencyATs SKIPPED
-:extractMcpData SKIPPED
-:genSrgs
-:deobfMcMCP SKIPPED
 :sourceApiJava UP-TO-DATE
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava
-:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Note: Some input files use unchecked or unsafe operations.
+:sourceMainJava UP-TO-DATE
+:compileJavaNote: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-1 warning
 
-:processResources
+:processResources UP-TO-DATE
 :classes
 :jar
 :sourceTestJava UP-TO-DATE
@@ -43,9 +27,14 @@ Note: Recompile with -Xlint:unchecked for details.
 :processTestResources UP-TO-DATE
 :testClasses UP-TO-DATE
 :test UP-TO-DATE
+:extractMcpData SKIPPED
+:extractMcpMappings SKIPPED
+:getVersionJson
+:extractUserdev UP-TO-DATE
+:genSrgs SKIPPED
 :reobfJar
 :extractRangemapReplacedMain
-C:\Users\Programming\OneDrive\Modding\Minecraft\1.9.4\BloodMagicWiki\build\sources\main\java
+E:\OneDrive\Modding\Minecraft\1.11\BloodBaubles\build\sources\main\java
 :retromapReplacedMain
 remapping source...
 :sourceJar
@@ -55,4 +44,4 @@ remapping source...
 
 BUILD SUCCESSFUL
 
-Total time: 1 mins 49.835 secs
+Total time: 6.718 secs
