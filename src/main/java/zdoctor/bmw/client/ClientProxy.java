@@ -1,9 +1,9 @@
 package zdoctor.bmw.client;
 
+import igwmod.api.WikiRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import tweaked.igwmod.api.WikiRegistry;
 import zdoctor.bmw.common.CommonProxy;
 import zdoctor.bmw.recipeintegrator.IntegratorAltarRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorArrayCraftingRecipe;

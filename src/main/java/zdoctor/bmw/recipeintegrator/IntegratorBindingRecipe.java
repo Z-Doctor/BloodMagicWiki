@@ -11,15 +11,15 @@ import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffect;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
+import igwmod.TextureSupplier;
+import igwmod.api.IRecipeIntegrator;
+import igwmod.gui.GuiWiki;
+import igwmod.gui.IReservedSpace;
+import igwmod.gui.IWidget;
+import igwmod.gui.LocatedStack;
+import igwmod.gui.LocatedString;
+import igwmod.gui.LocatedTexture;
 import net.minecraft.item.ItemStack;
-import tweaked.igwmod.TextureSupplier;
-import tweaked.igwmod.api.IRecipeIntegrator;
-import tweaked.igwmod.gui.GuiWiki;
-import tweaked.igwmod.gui.IReservedSpace;
-import tweaked.igwmod.gui.IWidget;
-import tweaked.igwmod.gui.LocatedStack;
-import tweaked.igwmod.gui.LocatedString;
-import tweaked.igwmod.gui.LocatedTexture;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
 
@@ -83,7 +83,7 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 			locatedStacks.add(new LocatedStack(recipe.getCatalyst(), x + CATALYST_X_OFFSET, y + CATALYST_Y_OFFSET));
 			locatedStacks
 					.add(new LocatedStack(recipe.getOutput(), x + RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
-			locatedStacks.add(new LocatedStack(new ItemStack(ModItems.arcaneAshes), x + CATALYST_X_OFFSET + 20,
+			locatedStacks.add(new LocatedStack(new ItemStack(ModItems.ARCANE_ASHES), x + CATALYST_X_OFFSET + 20,
 					y + CATALYST_Y_OFFSET));
 		} else
 			System.out.println("Not Found: " + key);

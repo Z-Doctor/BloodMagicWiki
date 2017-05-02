@@ -1,12 +1,13 @@
 package zdoctor.bmw.wiki;
 
+import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
+import igwmod.api.WikiRegistry;
+import igwmod.gui.GuiWiki;
+import igwmod.gui.tabs.BaseWikiTab;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import tweaked.igwmod.api.WikiRegistry;
-import tweaked.igwmod.gui.GuiWiki;
-import tweaked.igwmod.gui.tabs.BaseWikiTab;
 import zdoctor.bmw.ModMain;
 
 public class BloodMagicWiki extends BaseWikiTab {
@@ -35,7 +36,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
-		return OrbRegistry.getOrbStack(ModItems.orbWeak);
+		return OrbRegistry.getOrbStack(ModItems.ORB_WEAK);
 	}
 
 	@Override
@@ -45,7 +46,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID.toLowerCase() + ":bloodmagic/" + pageEntry;
+		return ModMain.MODID + ":" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
 	}
 
 	public static String getItemPage(String pageOpened) {
@@ -53,8 +54,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/block/Routing";
 		} else if (pageOpened.toLowerCase().contains("item/orb")) {
 			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/BloodOrb";
-		} else if (pageOpened.toLowerCase().contains("soulgem")
-				|| pageOpened.toLowerCase().contains("monstersoul")) {
+		} else if (pageOpened.toLowerCase().contains("soulgem") || pageOpened.toLowerCase().contains("monstersoul")) {
 			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/SoulGems";
 		}
 		return pageOpened;

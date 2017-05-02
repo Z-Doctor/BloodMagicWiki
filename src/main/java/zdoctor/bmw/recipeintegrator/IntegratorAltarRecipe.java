@@ -7,19 +7,20 @@ import java.util.Map;
 
 import org.lwjgl.opengl.GL11;
 
+import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.util.helper.NumeralHelper;
+import igwmod.TextureSupplier;
+import igwmod.api.IRecipeIntegrator;
+import igwmod.gui.GuiWiki;
+import igwmod.gui.IReservedSpace;
+import igwmod.gui.IWidget;
+import igwmod.gui.LocatedStack;
+import igwmod.gui.LocatedString;
+import igwmod.gui.LocatedTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import tweaked.igwmod.TextureSupplier;
-import tweaked.igwmod.api.IRecipeIntegrator;
-import tweaked.igwmod.gui.GuiWiki;
-import tweaked.igwmod.gui.IReservedSpace;
-import tweaked.igwmod.gui.IWidget;
-import tweaked.igwmod.gui.LocatedStack;
-import tweaked.igwmod.gui.LocatedString;
-import tweaked.igwmod.gui.LocatedTexture;
 import zdoctor.bmw.ModMain;
 
 public class IntegratorAltarRecipe implements IRecipeIntegrator {
@@ -76,11 +77,11 @@ public class IntegratorAltarRecipe implements IRecipeIntegrator {
 		String key = code.substring(4);
 		AltarRecipe recipe = autoMappedRecipes.get(key);
 		if (recipe != null) {
-			Iterator<ItemStack> req = recipe.getInput().iterator();
+			Iterator<ItemStackWrapper> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {
 				for (int j = 0; j < 2; j++) {
 					if (req.hasNext()) {
-						ItemStack ingredientStack = req.next().copy();
+						ItemStack ingredientStack = req.next().toStack().copy();
 						if (ingredientStack != null)
 							locatedStacks.add(new LocatedStack(ingredientStack, x + STACKS_X_OFFSET + j * 18,
 									y + STACKS_Y_OFFSET + i * 18));

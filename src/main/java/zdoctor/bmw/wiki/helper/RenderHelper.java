@@ -27,7 +27,7 @@ public class RenderHelper {
 	}
 
 	public static void applyTETranslatef(TileEntity entity, float x, float y, float z) {
-		EntityPlayer player = Minecraft.getMinecraft().thePlayer;
+		EntityPlayer player = Minecraft.getMinecraft().player;
 
 		float diffX = (float) (entity.getPos().getX() - RenderHelper.calcRenderPos(player.posX, player.prevPosX));
 		float diffY = (float) (entity.getPos().getY() - RenderHelper.calcRenderPos(player.posY, player.prevPosY));
@@ -37,7 +37,7 @@ public class RenderHelper {
 	}
 
 	public static void applyTETranslated(TileEntity entity, double x, double y, double z) {
-		EntityPlayer player = Minecraft.getMinecraft().thePlayer;
+		EntityPlayer player = Minecraft.getMinecraft().player;
 
 		double diffX = entity.getPos().getX() - RenderHelper.calcRenderPos(player.posX, player.prevPosX);
 		double diffY = entity.getPos().getY() - RenderHelper.calcRenderPos(player.posY, player.prevPosY);
