@@ -1,0 +1,29 @@
+wikitab.bloodmagic.name=Blood Magic Wiki
+
+wiki.bloodmagic.intro.page=Introductions
+wiki.bloodmagic.gettingstarted1.page=Entering the Arts
+wiki.bloodmagic.gettingstarted2.page=Soul Forging
+wiki.bloodmagic.gettingstarted3.page=Sentient Equipment
+wiki.bloodmagic.gettingstarted4.page=Crystal Farming
+wiki.bloodmagic.gettingstarted5.page=Arcane Ashes
+wiki.bloodmagic.gettingstarted6.page=Upgrading the Altar
+wiki.bloodmagic.gettingstarted7.page=Preforming Rituals
+wiki.bloodmagic.gettingstarted8.page=Demon Summoning
+wiki.bloodmagic.index.page=Index
+wiki.bloodmagic.acknowledgments.page=Acknowledgments
+
+
+bmw.gui.crafting.shapedorb=Shaped Orb Crafting
+bmw.gui.altar.requiredTier.recipe=Tier
+bmw.gui.altar.requiredLP.recipe=LP
+
+intergrator.bloodmagicwiki.minimumSouls.forge=Minimum WP
+intergrator.bloodmagicwiki.minimumDrain.forge=Minimum Drain
+
+bmw.keys.wiki=Open Wiki
+bmw.keys.category=Blood Magic Wiki
+
+bmw.gui.crafting.shaped=Shaped Crafting
+bmw.gui.crafting.shapeless=Shapeless Crafting
+
+bmw.info.text=for more info

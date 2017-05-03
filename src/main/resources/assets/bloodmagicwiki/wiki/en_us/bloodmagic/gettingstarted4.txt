@@ -3,7 +3,7 @@ Through testing, Blood Mages have found that by releasing Demonic Will into the 
 Documented is the current technique for creating them:
 
 Demon Crucible:
-[hellfire{200,140,key=block/BloodMagic.demonCrucible}]
+[hellfire{200,140,key=block/bloodmagic.demonCrucible}]
 
 
 
@@ -13,7 +13,7 @@ Demon Crucible:
 
 
 Demon Crystallizer:
-[hellfire{200,230,key=block/BloodMagic.demonCrystallizer}]
+[hellfire{200,230,key=block/bloodmagic.demonCrystallizer}]
 
 
 
@@ -25,7 +25,7 @@ Demon Crystallizer:
 Blood Mages have observed that growing Will Crystal Cluster in this way has had an unexpected result. They have discovered several variants of Demonic Will besides the Natural Will found from slaying beasts. Currently, Blood Mages have found and categorized four types of Will: Corrosive, Destructive, Vengeful, and Steadfast. What's more, Tartaric Gems can be created from the variants by introducing them to any Tartaric Gem either by hand or Crafting Table.
 
 Demonic Will Clusters can only be translocated by recombining four Crystals of the same type inside of a Hellfire Forge like so:
-[hellfire{200,440,key=block/BloodMagic.demonCrystalDEFAULT}]
+[hellfire{200,440,key=block/bloodmagic.demonCrystal.default}]
 
 
 
@@ -39,7 +39,7 @@ Demonic Will Clusters can also absorb Will in the air, and by doing so, crystals
 Demonic Will can only fill so much of an area, and does not naturally spread. To combat this, Blood Mages have developed a device which equalizes the Will contained within given spaces. This device is known as a Demon Pylon, and can be used for rudimentary automatic will transportation.
 
 Demon Pylon:
-[hellfire{200,670,key=block/BloodMagic.demonPylon}]
+[hellfire{200,670,key=block/bloodmagic.demonPylon}]
 
 
 

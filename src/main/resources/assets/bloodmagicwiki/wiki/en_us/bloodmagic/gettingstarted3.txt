@@ -1,7 +1,7 @@
-Constantly having the craft Rudimentary Snares to obtain Demonic Will is ineffiecient and a waste of resources. To combat this, Blood Mages developed a line of weaponary inspired by the advances in Blood Magic. The most basic of which being a Sentient Sword.
+Constantly having to craft Rudimentary Snares to obtain Demonic Will is ineffiecient and a waste of resources. To combat this, Blood Mages developed a line of weaponary inspired by the advances in Blood Magic. The most basic of which being a Sentient Sword.
 
 Sentient Sword:
-[hellfire{200,90,key=item/BloodMagic.sentientSword}]
+[hellfire{200,90,key=item/bloodmagic.sentientSword}]
 
 
 
@@ -10,14 +10,14 @@ Sentient Sword:
 
 
 
-There are several advantages in obtaining Demonic Will thi way. First, along with the cheep recipe, killing most monsters with this sword will drop Demonic Will whose initial quality is proportionate to health of the beast. The second advantage is, in tune with being enchantable like a regular sword, a Sentient Sword gets stronger the more Demonic Will you have on your person. Finally, special effects can be applied to the sword naturally, dependent on which variant of Demonic Will you currently are carrying the most of.
+There are several advantages in obtaining Demonic Will this way. First, along with the cheep recipe, killing most monsters with this sword will drop Demonic Will whose initial quality is proportionate to health of the beast. The second advantage is, along with being enchantable like a regular sword, a Sentient Sword gets stronger the more Demonic Will you have on your person. Finally, special effects can be applied to the sword naturally, dependent on which variant of Demonic Will you currently are carrying the most of.
 
 It should be noted that a Sentient Sword can only be repaired with another Sentient Sword in an anvil.
 
-Complimentary to a Sentient Sword, Blood Mages have also developed a modified version of the Bow that acts similarly. This Bow is apporiately named a Sentient Bow. It fires the same artillery, but has one major difference. That is, it cannot be fired without at least 16 WP in a players inventory. This can be in the form of a collective count of indiviual Monster Souls or WP inside of Soul Gems, with the latter infinetly more useful. Demonic Will obtained this way is instantly stored inside a Soul Gem if the Blood Mage has one with room, otherwise, it is lost.
+Complimentary to a Sentient Sword, Blood Mages have also developed a modified version of the Bow that acts similarly. This Bow is apporiately named the Sentient Bow. It fires the same artillery, but has one major difference. That is, it cannot be fired without at least 16 WP in a players inventory. This can be in the form of a collective count of indiviual Monster Souls or WP inside of Soul Gems, with the latter infinetly more useful. Demonic Will obtained this way is instantly stored inside a Soul Gem if the Blood Mage has one with room, otherwise, it is lost.
 
 Sentient Bow:
-[hellfire{200,440,key=item/BloodMagic.sentientBow}]
+[hellfire{200,440,key=item/bloodmagic.sentientBow}]
 
 
 

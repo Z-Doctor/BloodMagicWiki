@@ -1,7 +1,7 @@
 Arcane Ashes are the basis of Sigil Creation and Binding, and are relatively cheap to produce. Both Sigil Creation and Binding are introduced here, but full listing of recipes can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under[link{zdoctorbmw:bloodmagic/Sigils}] Sigils[link{}] or[link{zdoctorbmw:bloodmagic/BoundEquipment}] Bound Equipment[link{}] for more recipes.
 
 Arcane Ashes:
-[hellfire{200,90,key=item/BloodMagic.arcaneAshes}]
+[hellfire{200,90,key=item/bloodmagic.arcaneAshes}]
 
 
 
@@ -19,7 +19,7 @@ There are two parts to Sigil Creation and Binding: the Reagent and the Catalyst.
 The most rudimentary of Slates is known as the Blank Slate. It is the building block of any Sigil and subsequent creations, such as runes. 
 
 Blank Slate:
-[altar{200,410,key=item/BloodMagic.slate.blank}]
+[altar{200,410,key=item/bloodmagic.slate.blank}]
 
 
 
@@ -40,4 +40,4 @@ To prepare the Ashes, place it on a flat surface. When this is ready, place the 
 With this in mind, you are now ready to Craft a Divination Sigil. Prepare a batch of Arcane Ashes and use these ingredients to create a Divination Sigil.
 
 Divination Sigil:
-[array{200,700,key=item/BloodMagic.sigil.divination}]
+[array{200,700,key=item/bloodmagic.sigil.divination}]

@@ -3,7 +3,7 @@ After the lost period, little documentations from the ways of old survived. Howe
 It is unknown who designed the Hellfire Forge, but its prominence in the arts is clear. At some point during a Blood Mage's career, a Hellfire Forge will be needed. The following is a recorded blueprint on its design.
 
 Hellfire Forge:
-[crafting{200,130,key=block/BloodMagic.soulForge}]
+[crafting{200,130,key=block/bloodmagic.soulForge}]
 
 
 
@@ -21,7 +21,7 @@ Along with the ingredients, each recipe created in a Hellfire Forge has two addi
 It is inefficient, as well as impossible, by known means, to obtain Demonic Will of high enough quality to power most of the known recipes. To combat this, Blood Mages have forged Tartaric Gems that store Demonic Will in dormancy until the time has come for their need. The first of which has the lowest storage, but is arguably the most important Tartaric Gem.
 
 Petty Tartaric Gem:
-[hellfire{200,420,key=item/BloodMagic.soulGem.petty}]
+[hellfire{200,420,key=item/bloodmagic.soulGem.petty}]
 
 
 
