@@ -117,7 +117,7 @@ public class IntegratorArrayCraftingRecipe implements IRecipeIntegrator {
 
 					if (!autoMappedRecipes.containsKey(key)) {
 						autoMappedRecipes.put(key, recipe);
-						 System.out.println("Arrary: " + key);
+//						 System.out.println("Arrary: " + key);
 					}
 				}
 			}

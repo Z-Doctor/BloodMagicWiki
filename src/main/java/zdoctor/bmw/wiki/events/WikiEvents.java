@@ -25,8 +25,8 @@ public class WikiEvents {
 						+ WikiUtils.getNameFromStack(e.itemStack).replace("BloodMagic.", "").replaceFirst("\\..*", "");
 				e.pageOpened = BloodMagicWiki.getItemPage(e.pageOpened);
 			} 
-//			else if (e.isCancelable())
-//				e.setCanceled(true);
+			else if (e.isCancelable())
+				e.setCanceled(true);
 		}
 
 		@SubscribeEvent
@@ -42,13 +42,13 @@ public class WikiEvents {
 							+ WikiUtils.getNameFromStack(e.itemStackPicked).replace("BloodMagic.", "")
 									.replace("BloodMagic.", "").replaceFirst("\\..*", "");
 			} 
-//			else
-//				e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/Intro";
+			else
+				e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/intro";
 		}
 
 		@SubscribeEvent
 		public void wikiEvent(EntityWikiEvent e) {
-			e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/Intro";
+			e.pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/intro";
 		}
 	}
 }

@@ -124,8 +124,7 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 			if (!autoMappedRecipes.containsKey(key) && recipe instanceof ShapedBloodOrbRecipe) {
 				autoMappedRecipes.put(key, recipe);
 //				System.out.println("OrbCrafting: " + key);
-			} else
-				System.out.println("Crafting: " + key);
+			}
 		}
 	}
 

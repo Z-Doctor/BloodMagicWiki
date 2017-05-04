@@ -81,6 +81,10 @@ public class LocatedString extends Gui implements IPageLink, GuiYesNoCallback{
                 if(linkAddress.contains("www")) {
                     parentGui = Minecraft.getMinecraft().currentScreen;
                     Minecraft.getMinecraft().displayGuiScreen(new GuiConfirmOpenLink(this, linkAddress, 0, false));
+                } else if(linkAddress.contains("href=")) {
+                	linkAddress = linkAddress.replaceFirst("href=", "");
+                	parentGui = Minecraft.getMinecraft().currentScreen;
+                    Minecraft.getMinecraft().displayGuiScreen(new GuiConfirmOpenLink(this, linkAddress, 0, false));
                 } else {
                     gui.setCurrentFile(linkAddress);
                 }

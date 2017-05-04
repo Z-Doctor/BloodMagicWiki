@@ -131,14 +131,14 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 	}
 
 	public static void mapRecipes() {
-		Iterator<TartaricForgeRecipe> gemRecipes = ClientProxy.gemRecipes.iterator();
+		Iterator<TartaricForgeRecipe> gemRecipes = ClientProxy.GemRecipes.iterator();
 		while (gemRecipes.hasNext()) {
 			TartaricForgeRecipe recipe = gemRecipes.next();
 			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
 					"block/");
 			if (!autoMappedRecipes.containsKey(key)) {
 				autoMappedRecipes.put(key, recipe);
-				System.out.println("Forge: " + key);
+//				System.out.println("Forge: " + key);
 			}
 		}
 	}

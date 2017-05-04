@@ -65,11 +65,11 @@ import zdoctor.bmw.wiki.RitualWiki;
 import zdoctor.bmw.wiki.events.WikiEvents;
 
 public class ClientProxy extends CommonProxy {
-	public static final List<TartaricForgeRecipe> gemRecipes = TartaricForgeRecipeRegistry.getRecipeList();
 	public static final List<IRecipe> GameRecipes = CraftingManager.getInstance().getRecipeList();
 	public static final List<IRecipe> BloodMagicRecipes = new ArrayList<>();
-	public static final Set<AltarRecipe> AltarRecipes = AltarRecipeRegistry.getRecipes().values();
-	public static final Set<AlchemyArrayRecipe> BindingRecipes = AlchemyArrayRecipeRegistry.getRecipes().values();
+	public static List<TartaricForgeRecipe> GemRecipes;
+	public static Set<AltarRecipe> AltarRecipes;
+	public static Set<AlchemyArrayRecipe> BindingRecipes;
 	
 	
 //	BMRecipes = Gamere
@@ -110,17 +110,15 @@ public class ClientProxy extends CommonProxy {
 				BloodMagicRecipes.add(recipe);
 			}
 		});
+		GemRecipes = TartaricForgeRecipeRegistry.getRecipeList();
+		AltarRecipes = AltarRecipeRegistry.getRecipes().values();
+		BindingRecipes = AlchemyArrayRecipeRegistry.getRecipes().values();
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
 		super.postInit(e);
 		postInit();
 
-//		GameRegistry.findRegistry(Item.class).getEntries().forEach(map -> {
-//			if (map.getKey().getResourceDomain().equalsIgnoreCase(WayofTime.bloodmagic.api.Constants.Mod.MODID))
-//				System.out.println(map.getKey());
-//		});
-		
 		WikiRegistry.registerRecipeIntegrator(new IntegratorImage());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorCraftingRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorFurnace());

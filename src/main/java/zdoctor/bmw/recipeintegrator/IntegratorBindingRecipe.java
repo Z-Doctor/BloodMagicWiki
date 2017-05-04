@@ -107,7 +107,7 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 
 						if (!autoMappedRecipes.containsKey(key)) {
 							autoMappedRecipes.put(key, simpleRecipe);
-							System.out.println("Binding: " + key);
+//							System.out.println("Binding: " + key);
 						}
 					}
 				}
