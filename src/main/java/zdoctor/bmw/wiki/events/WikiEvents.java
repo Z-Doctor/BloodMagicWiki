@@ -1,10 +1,10 @@
 package zdoctor.bmw.wiki.events;
 
 import WayofTime.bloodmagic.api.Constants;
-import igwmod.WikiUtils;
-import igwmod.api.BlockWikiEvent;
-import igwmod.api.EntityWikiEvent;
-import igwmod.api.ItemWikiEvent;
+import embedded.igwmod.WikiUtils;
+import embedded.igwmod.api.BlockWikiEvent;
+import embedded.igwmod.api.EntityWikiEvent;
+import embedded.igwmod.api.ItemWikiEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zdoctor.bmw.ModMain;

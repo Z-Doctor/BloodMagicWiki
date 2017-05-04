@@ -11,17 +11,18 @@ import WayofTime.bloodmagic.api.registry.TartaricForgeRecipeRegistry;
 import WayofTime.bloodmagic.api.soul.EnumDemonWillType;
 import WayofTime.bloodmagic.api.soul.IDemonWill;
 import WayofTime.bloodmagic.api.soul.IDemonWillGem;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
+import embedded.igwmod.TextureSupplier;
+import embedded.igwmod.api.IRecipeIntegrator;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.IReservedSpace;
+import embedded.igwmod.gui.IWidget;
+import embedded.igwmod.gui.LocatedStack;
+import embedded.igwmod.gui.LocatedString;
+import embedded.igwmod.gui.LocatedTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
+import zdoctor.bmw.client.ClientProxy;
 import zdoctor.bmw.recipeintegrator.compact.SimpleTartaricForgeRecipe;
 
 public class IntegratorHellfireRecipe implements IRecipeIntegrator {
@@ -105,7 +106,7 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 				ItemStack gem = forgeRecipe.getValidGems().get(0);
 				if (gem.getItem() instanceof IDemonWill) {
 					IDemonWill item = (IDemonWill) gem.getItem();
-					item.setWill(gem, recipe.getMinimumSouls());
+					item.setWill(EnumDemonWillType.DEFAULT, gem, recipe.getMinimumSouls());
 				} else if (gem.getItem() instanceof IDemonWillGem) {
 					IDemonWillGem item = (IDemonWillGem) gem.getItem();
 					item.setWill(EnumDemonWillType.DEFAULT, gem, recipe.getMinimumSouls());
@@ -130,14 +131,14 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 	}
 
 	public static void mapRecipes() {
-		Iterator<TartaricForgeRecipe> gemRecipes = TartaricForgeRecipeRegistry.getRecipeList().iterator();
+		Iterator<TartaricForgeRecipe> gemRecipes = ClientProxy.gemRecipes.iterator();
 		while (gemRecipes.hasNext()) {
 			TartaricForgeRecipe recipe = gemRecipes.next();
 			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
 					"block/");
 			if (!autoMappedRecipes.containsKey(key)) {
 				autoMappedRecipes.put(key, recipe);
-//				System.out.println("Forge: " + key);
+				System.out.println("Forge: " + key);
 			}
 		}
 	}

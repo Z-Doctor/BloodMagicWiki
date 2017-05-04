@@ -7,19 +7,23 @@ import java.util.Map;
 
 import WayofTime.bloodmagic.api.recipe.ShapedBloodOrbRecipe;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
-import igwmod.recipeintegration.IntegratorCraftingRecipe;
+import embedded.igwmod.TextureSupplier;
+import embedded.igwmod.api.IRecipeIntegrator;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.IReservedSpace;
+import embedded.igwmod.gui.IWidget;
+import embedded.igwmod.gui.LocatedStack;
+import embedded.igwmod.gui.LocatedString;
+import embedded.igwmod.gui.LocatedTexture;
+import embedded.igwmod.recipeintegration.IntegratorCraftingRecipe;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import zdoctor.bmw.ModMain;
+import zdoctor.bmw.client.ClientProxy;
 
 public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 
@@ -31,7 +35,7 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 
 	@Override
 	public String getCommandKey() {
-		return "bmcrafting";
+		return "orbcrafting";
 	}
 
 	@Override
@@ -112,16 +116,16 @@ public class IntegratorBMCraftingRecipe implements IRecipeIntegrator {
 	}
 
 	public static void mapRecipes() {
-
-		Iterator<IRecipe> recipes = IntegratorCraftingRecipe.autoMappedRecipes.values().iterator();
+		Iterator<IRecipe> recipes = ClientProxy.BloodMagicRecipes.iterator();
 		while (recipes.hasNext()) {
 			IRecipe recipe = recipes.next();
 			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
 					"block/");
 			if (!autoMappedRecipes.containsKey(key) && recipe instanceof ShapedBloodOrbRecipe) {
 				autoMappedRecipes.put(key, recipe);
-				System.out.println("BMCrafting: " + key);
-			}
+//				System.out.println("OrbCrafting: " + key);
+			} else
+				System.out.println("Crafting: " + key);
 		}
 	}
 

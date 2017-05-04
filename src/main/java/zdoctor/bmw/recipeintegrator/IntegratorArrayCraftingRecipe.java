@@ -13,14 +13,14 @@ import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffectCrafting;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
 import WayofTime.bloodmagic.compat.jei.alchemyArray.AlchemyArrayCraftingRecipeJEI;
 import WayofTime.bloodmagic.registry.ModItems;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
+import embedded.igwmod.TextureSupplier;
+import embedded.igwmod.api.IRecipeIntegrator;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.IReservedSpace;
+import embedded.igwmod.gui.IWidget;
+import embedded.igwmod.gui.LocatedStack;
+import embedded.igwmod.gui.LocatedString;
+import embedded.igwmod.gui.LocatedTexture;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
@@ -117,7 +117,7 @@ public class IntegratorArrayCraftingRecipe implements IRecipeIntegrator {
 
 					if (!autoMappedRecipes.containsKey(key)) {
 						autoMappedRecipes.put(key, recipe);
-						// System.out.println("Arrary: " + key);
+						 System.out.println("Arrary: " + key);
 					}
 				}
 			}

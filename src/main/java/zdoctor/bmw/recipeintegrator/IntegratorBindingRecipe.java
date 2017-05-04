@@ -3,24 +3,25 @@ package zdoctor.bmw.recipeintegrator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-import com.google.common.collect.BiMap;
-
-import WayofTime.bloodmagic.alchemyArray.AlchemyArrayEffectBinding;
 import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffect;
+import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffectCrafting;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
+import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry.AlchemyArrayRecipe;
 import WayofTime.bloodmagic.registry.ModItems;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
+import embedded.igwmod.TextureSupplier;
+import embedded.igwmod.api.IRecipeIntegrator;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.IReservedSpace;
+import embedded.igwmod.gui.IWidget;
+import embedded.igwmod.gui.LocatedStack;
+import embedded.igwmod.gui.LocatedString;
+import embedded.igwmod.gui.LocatedTexture;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
+import zdoctor.bmw.client.ClientProxy;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
 
 public class IntegratorBindingRecipe implements IRecipeIntegrator {
@@ -91,29 +92,23 @@ public class IntegratorBindingRecipe implements IRecipeIntegrator {
 	}
 
 	public static void mapRecipes() {
-		Map<List<ItemStack>, AlchemyArrayRecipeRegistry.AlchemyArrayRecipe> alchemyArrayRecipeMap = AlchemyArrayRecipeRegistry
-				.getRecipes();
+		Set<AlchemyArrayRecipe> recipes = ClientProxy.BindingRecipes;
 
-		for (Map.Entry<List<ItemStack>, AlchemyArrayRecipeRegistry.AlchemyArrayRecipe> itemStackAlchemyArrayRecipeEntry : alchemyArrayRecipeMap
-				.entrySet()) {
-			List<ItemStack> input = itemStackAlchemyArrayRecipeEntry.getValue().getInput();
-			BiMap<ItemStackWrapper, AlchemyArrayEffect> catalystMap = itemStackAlchemyArrayRecipeEntry
-					.getValue().catalystMap;
+		for (AlchemyArrayRecipe recipe : recipes) {
+			if (recipe != null && recipes.size() > 0) {
+				for (Map.Entry<ItemStackWrapper, AlchemyArrayEffect> effectEntry : recipe.getCatalystMap().entrySet()) {
+					if (effectEntry.getValue() instanceof AlchemyArrayEffectCrafting) {
+						AlchemyArrayEffectCrafting craftingEffect = (AlchemyArrayEffectCrafting) effectEntry.getValue();
+						ItemStack output = craftingEffect.getOutputStack();
+						ItemStack[] recipeArray = AlchemyArrayRecipeRegistry.getRecipeForOutputStack(output);
+						SimpleArrayRecipe simpleRecipe = new SimpleArrayRecipe(recipe.getInput(), recipeArray[1],
+								output);
+						String key = output.getUnlocalizedName().replace("item.", "item/").replace("tile.", "block/");
 
-			for (Map.Entry<ItemStackWrapper, AlchemyArrayEffect> entry : catalystMap.entrySet()) {
-				ItemStack catalyst = entry.getKey().toStack();
-				if (AlchemyArrayRecipeRegistry.getAlchemyArrayEffect(input,
-						catalyst) instanceof AlchemyArrayEffectBinding) {
-					ItemStack output = ((AlchemyArrayEffectBinding) itemStackAlchemyArrayRecipeEntry.getValue()
-							.getAlchemyArrayEffectForCatalyst(catalyst)).getOutputStack();
-
-					SimpleArrayRecipe recipe = new SimpleArrayRecipe(input, catalyst, output);
-					String key = recipe.getOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
-							"block/");
-
-					if (!autoMappedRecipes.containsKey(key)) {
-						autoMappedRecipes.put(key, recipe);
-						// System.out.println("Binding: " + key);
+						if (!autoMappedRecipes.containsKey(key)) {
+							autoMappedRecipes.put(key, simpleRecipe);
+							System.out.println("Binding: " + key);
+						}
 					}
 				}
 			}

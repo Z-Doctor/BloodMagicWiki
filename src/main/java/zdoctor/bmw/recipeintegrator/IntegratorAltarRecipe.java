@@ -11,17 +11,18 @@ import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.util.helper.NumeralHelper;
-import igwmod.TextureSupplier;
-import igwmod.api.IRecipeIntegrator;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.IReservedSpace;
-import igwmod.gui.IWidget;
-import igwmod.gui.LocatedStack;
-import igwmod.gui.LocatedString;
-import igwmod.gui.LocatedTexture;
+import embedded.igwmod.TextureSupplier;
+import embedded.igwmod.api.IRecipeIntegrator;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.IReservedSpace;
+import embedded.igwmod.gui.IWidget;
+import embedded.igwmod.gui.LocatedStack;
+import embedded.igwmod.gui.LocatedString;
+import embedded.igwmod.gui.LocatedTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
+import zdoctor.bmw.client.ClientProxy;
 
 public class IntegratorAltarRecipe implements IRecipeIntegrator {
 
@@ -120,13 +121,13 @@ public class IntegratorAltarRecipe implements IRecipeIntegrator {
 	}
 
 	public static void mapRecipes() {
-		Iterator<AltarRecipe> altarRecipes = AltarRecipeRegistry.getRecipes().values().iterator();
+		Iterator<AltarRecipe> altarRecipes = ClientProxy.AltarRecipes.iterator();
 		while (altarRecipes.hasNext()) {
 			AltarRecipe recipe = altarRecipes.next();
 			String key = recipe.getOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.", "block/");
 			if (!autoMappedRecipes.containsKey(key) && !recipe.isFillable()) {
 				autoMappedRecipes.put(key, recipe);
-				// System.out.println(key);
+//				 System.out.println("Altar: " + key);
 			}
 		}
 	}

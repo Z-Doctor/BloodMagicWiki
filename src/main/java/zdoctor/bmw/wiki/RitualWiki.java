@@ -1,9 +1,9 @@
 package zdoctor.bmw.wiki;
 
 import WayofTime.bloodmagic.registry.ModBlocks;
-import igwmod.api.WikiRegistry;
-import igwmod.gui.GuiWiki;
-import igwmod.gui.tabs.BaseWikiTab;
+import embedded.igwmod.api.WikiRegistry;
+import embedded.igwmod.gui.GuiWiki;
+import embedded.igwmod.gui.tabs.BaseWikiTab;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
