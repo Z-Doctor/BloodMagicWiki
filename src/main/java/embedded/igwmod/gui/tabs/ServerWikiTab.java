@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 import embedded.igwmod.InfoSupplier;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.LocatedTexture;
-import embedded.igwmod.lib.IGWLog;
+import embedded.igwmod.lib.WikiLog;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -31,7 +31,7 @@ public class ServerWikiTab extends BaseWikiTab{
 //                    iconStack = new ItemStack(GameRegistry.findItem(icon[0], icon[1]));
                     iconStack = GameRegistry.makeItemStack(icon[0] + ":" + icon[1], 1, 1, "");
                     if(iconStack == null) {
-                        IGWLog.warning("Couldn't find a server tab icon item stack for the name: " + entry[1]);
+                        WikiLog.warning("Couldn't find a server tab icon item stack for the name: " + entry[1]);
                     }
                 }
             }

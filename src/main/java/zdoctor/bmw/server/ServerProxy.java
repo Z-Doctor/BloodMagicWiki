@@ -2,7 +2,7 @@ package zdoctor.bmw.server;
 
 import java.io.File;
 
-import embedded.igwmod.lib.IGWLog;
+import embedded.igwmod.lib.WikiLog;
 import embedded.igwmod.network.MessageSendServerTab;
 import embedded.igwmod.network.NetworkHandler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,18 +31,13 @@ public class ServerProxy extends CommonProxy {
             if(!serverFolder.exists()) {
                 serverFolder = new File(ModMain.proxy.getSaveLocation() + "\\igwmodServer\\");//TODO legacy remove
                 if(serverFolder.exists()) {
-                    IGWLog.warning("Found IGW Mod server page in the 'igwmodServer' folder. This is deprecated! Rename the folder to 'igwmod' instead.");
+                    WikiLog.warning("Found IGW Mod server page in the 'igwmodServer' folder. This is deprecated! Rename the folder to 'igwmod' instead.");
                 }
             }
             if(serverFolder.exists()) {
                 NetworkHandler.sendTo(new MessageSendServerTab(serverFolder), (EntityPlayerMP)event.getEntity());
             }
         }
-    }
-
-    @Override
-    public void postInit(){
-
     }
 
     @Override

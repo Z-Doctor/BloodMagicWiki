@@ -48,6 +48,13 @@ public class BrowseHistory{
             throw new IllegalArgumentException("It's not possible to go to the next page here. Check for 'canGoNext()' first!");
         }
     }
+    
+    public static BrowseHistory current() {
+    	if(history.size() > curIndex && curIndex >= 0)
+    		return history.get(curIndex);
+    	else
+    		return null;
+    }
 
     public static boolean canGoPrevious(){
         return curIndex > 0;

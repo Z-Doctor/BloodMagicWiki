@@ -1,1 +1,1 @@
-[image{200,0,.315,zdoctorbmw:textures/screenshots/upgradeRemoveRitual.png}]
+[image{200,0,.315,bloodmagicwiki:textures/screenshots/upgradeRemoveRitual.png}]

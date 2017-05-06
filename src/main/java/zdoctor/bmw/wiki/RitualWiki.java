@@ -1,5 +1,6 @@
 package zdoctor.bmw.wiki;
 
+import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.gui.GuiWiki;
@@ -14,40 +15,40 @@ public class RitualWiki extends BaseWikiTab {
 	}
 
 	public RitualWiki() {
-		pageEntries.add("waterRitual");
-		pageEntries.add("lavaRitual");
-		pageEntries.add("greenGroveRitual");
-		pageEntries.add("jumpRitual");
-		pageEntries.add("wellOfSufferingRitual");
-		pageEntries.add("featheredKnifeRitual");
-		pageEntries.add("regenerationRitual");
-		pageEntries.add("harvestRitual");
-		pageEntries.add("magneticRitual");
-		pageEntries.add("crushingRitual");
-		pageEntries.add("fullStomachRitual");
-		pageEntries.add("interdictionRitual");
-		pageEntries.add("containmentRitual");
-		pageEntries.add("speedRitual");
-		pageEntries.add("suppressionRitual");
-		pageEntries.add("expulsionRitual");
-		pageEntries.add("zephyrRitual");
-		pageEntries.add("upgradeRemoveRitual");
-		pageEntries.add("armourEvolveRitual");
-		pageEntries.add("animalGrowthRitual");
-		pageEntries.add("forsakenSoulRitual");
-		pageEntries.add("crystalHarvestRitual");
-		pageEntries.add("cobblestoneRitual");
-		pageEntries.add("placerRitual");
-		pageEntries.add("fellingRitual");
-		pageEntries.add("pumpRitual");
-		pageEntries.add("altarBuilderRitual");
-		pageEntries.add("portalRitual");
+		pageEntries.add("WaterRitual");
+		pageEntries.add("LavaRitual");
+		pageEntries.add("GreenGroveRitual");
+		pageEntries.add("JumpRitual");
+		pageEntries.add("WellOfSufferingRitual");
+		pageEntries.add("FeatheredKnifeRitual");
+		pageEntries.add("RegenerationRitual");
+		pageEntries.add("HarvestRitual");
+		pageEntries.add("MagneticRitual");
+		pageEntries.add("CrushingRitual");
+		pageEntries.add("FullStomachRitual");
+		pageEntries.add("InterdictionRitual");
+		pageEntries.add("ContainmentRitual");
+		pageEntries.add("SpeedRitual");
+		pageEntries.add("SuppressionRitual");
+		pageEntries.add("ExpulsionRitual");
+		pageEntries.add("ZephyrRitual");
+		pageEntries.add("UpgradeRemoveRitual");
+		pageEntries.add("ArmourEvolveRitual");
+		pageEntries.add("AnimalGrowthRitual");
+		pageEntries.add("ForsakenSoulRitual");
+		pageEntries.add("CrystalHarvestRitual");
+		pageEntries.add("CobblestoneRitual");
+		pageEntries.add("PlacerRitual");
+		pageEntries.add("FellingRitual");
+		pageEntries.add("PumpRitual");
+		pageEntries.add("AltarBuilderRitual");
+		pageEntries.add("PortalRitual");
 
 	}
 
 	@Override
 	public String getName() {
-		return "wikitab.bloodmagic.ritual.name";
+		return "wikitab." + ModMain.MODID + ".ritual.name";
 	}
 
 	@Override
@@ -57,11 +58,11 @@ public class RitualWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("ritual.BloodMagic." + pageEntry);
+		return I18n.format("ritual." + ModMain.MODID + "." + pageEntry + ".page");
 	}
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID.toLowerCase() + ":bloodmagic/ritual" + pageEntry;
+		return ModMain.MODID.toLowerCase() + ":bloodmagic/ritual/" + pageEntry;
 	}
 }

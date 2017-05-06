@@ -1,29 +1,74 @@
-wikitab.bloodmagic.name=Blood Magic Wiki
+wikitab.bloodmagicwiki.name=Blood Magic Wiki
 
-wiki.bloodmagic.intro.page=Introductions
-wiki.bloodmagic.gettingstarted1.page=Entering the Arts
-wiki.bloodmagic.gettingstarted2.page=Soul Forging
-wiki.bloodmagic.gettingstarted3.page=Sentient Equipment
-wiki.bloodmagic.gettingstarted4.page=Crystal Farming
-wiki.bloodmagic.gettingstarted5.page=Arcane Ashes
-wiki.bloodmagic.gettingstarted6.page=Upgrading the Altar
-wiki.bloodmagic.gettingstarted7.page=Preforming Rituals
-wiki.bloodmagic.gettingstarted8.page=Demon Summoning
-wiki.bloodmagic.index.page=Index
-wiki.bloodmagic.acknowledgments.page=Acknowledgments
+wiki.bloodmagicwiki.intro.page=Introductions
+wiki.bloodmagicwiki.gettingstarted1.page=Entering the Arts
+wiki.bloodmagicwiki.gettingstarted2.page=Soul Forging
+wiki.bloodmagicwiki.gettingstarted3.page=Sentient Equipment
+wiki.bloodmagicwiki.gettingstarted4.page=Crystal Farming
+wiki.bloodmagicwiki.gettingstarted5.page=Arcane Ashes
+wiki.bloodmagicwiki.gettingstarted6.page=Upgrading the Altar
+wiki.bloodmagicwiki.gettingstarted7.page=Preforming Rituals
+wiki.bloodmagicwiki.gettingstarted8.page=Demon Summoning
+wiki.bloodmagicwiki.index.page=Index
+wiki.bloodmagicwiki.acknowledgments.page=Acknowledgments
+
+wikitab.bloodmagicwiki.ritual.name=Rituals
+
+ritual.bloodmagicwiki.waterritual.page=Water Ritual
+ritual.bloodmagicwiki.lavaritual.page=Lava Ritual
+ritual.bloodmagicwiki.greengroveritual.page=Green Grove Ritual
+ritual.bloodmagicwiki.jumpritual.page=Jump Ritual
+ritual.bloodmagicwiki.wellofsufferingritual.page=Well of Suffering Ritual
+ritual.bloodmagicwiki.featheredkniferitual.page=Feather Knife Ritual
+ritual.bloodmagicwiki.regenerationritual.page=Regeneration Ritual
+ritual.bloodmagicwiki.harvestritual.page=Harvest Ritual
+ritual.bloodmagicwiki.magneticritual.page=Magnetic Ritual
+ritual.bloodmagicwiki.crushingritual.page=Crushing Ritual
+ritual.bloodmagicwiki.fullstomachritual.page=Full Stomach Ritual
+ritual.bloodmagicwiki.interdictionritual.page=Interdiction Ritual
+ritual.bloodmagicwiki.containmentritual.page=Cotainment Ritual
+ritual.bloodmagicwiki.speedritual.page=Speed Ritual
+ritual.bloodmagicwiki.suppressionritual.page=Supression Ritual
+ritual.bloodmagicwiki.expulsionritual.page=Expulsion Ritual
+ritual.bloodmagicwiki.zephyrritual.page=Zephyr Ritual
+ritual.bloodmagicwiki.upgraderemoveritual.page=Upgrade Removal Ritual
+ritual.bloodmagicwiki.armourevolveritual.page=Armour Evolve Ritual
+ritual.bloodmagicwiki.animalgrowthritual.page=Animal Growth Ritual
+ritual.bloodmagicwiki.forsakensoulritual.page=Forsaken Soul Ritual
+ritual.bloodmagicwiki.crystalharvestritual.page=Crystal Havest Ritual
+ritual.bloodmagicwiki.cobblestoneritual.page=Cobble Stone Ritual
+ritual.bloodmagicwiki.placerritual.page=Placer Ritual
+ritual.bloodmagicwiki.fellingritual.page=Felling Ritual
+ritual.bloodmagicwiki.pumpritual.page=Pump Ritual
+ritual.bloodmagicwiki.altarbuilderritual.page=Altar Building Ritual
+ritual.bloodmagicwiki.portalritual.page=Portal Ritual
+
+wikitab.bloodmagicwiki.array.name=Alchemic Encyclopedia
+
+wikitab.bloodmagicwiki.items.name=Blood Magic Encyclopedia
 
 
-bmw.gui.crafting.shapedorb=Shaped Orb Crafting
-bmw.gui.altar.requiredTier.recipe=Tier
-bmw.gui.altar.requiredLP.recipe=LP
+bloodmagicwiki.gui.crafting.shapedorb=Shaped Orb Crafting
+bloodmagicwiki.gui.altar.requiredTier.recipe=Tier
+bloodmagicwiki.gui.altar.requiredLP.recipe=LP
 
 intergrator.bloodmagicwiki.minimumSouls.forge=Minimum WP
 intergrator.bloodmagicwiki.minimumDrain.forge=Minimum Drain
 
-bmw.keys.wiki=Open Wiki
-bmw.keys.category=Blood Magic Wiki
+bloodmagicwiki.keys.wiki=Open Wiki
+bloodmagicwiki.keys.category=Blood Magic Wiki
 
-bmw.gui.crafting.shaped=Shaped Crafting
-bmw.gui.crafting.shapeless=Shapeless Crafting
+bloodmagicwiki.gui.crafting.shaped=Shaped Crafting
+bloodmagicwiki.gui.crafting.shapeless=Shapeless Crafting
 
-bmw.info.text=for more info
+bloodmagicwiki.info.text=for more info
+
+bloodmagicwiki.keys.category=Blood Magic Wiki
+bloodmagicwiki.keys.wiki=Display Blood Magic Wiki
+
+bloodmagicwiki.tooltip.tabPageBrowse.next=Left click to navigate to the next page
+bloodmagicwiki.tooltip.tabPageBrowse.previous=Right click to navigate to the previous page
+
+
+bloodmagicwiki.gui.crafting.shapeless=Shapeless Crafting
+bloodmagicwiki.gui.crafting.shaped=Shaped Crafting

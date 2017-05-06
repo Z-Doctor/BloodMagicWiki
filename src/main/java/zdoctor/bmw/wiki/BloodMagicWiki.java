@@ -3,6 +3,7 @@ package zdoctor.bmw.wiki;
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
+import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.tabs.BaseWikiTab;
@@ -25,13 +26,12 @@ public class BloodMagicWiki extends BaseWikiTab {
 		pageEntries.add("GettingStarted6");
 		pageEntries.add("GettingStarted7");
 		pageEntries.add("GettingStarted8");
-		pageEntries.add("Index");
 		pageEntries.add("Acknowledgments");
 	}
 
 	@Override
 	public String getName() {
-		return "wikitab.bloodmagic.name";
+		return "wikitab." + ModMain.MODID + ".name";
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki.bloodmagic." + pageEntry + ".page");
+		return I18n.format("wiki." + ModMain.MODID + "." + pageEntry + ".page");
 	}
 
 	@Override

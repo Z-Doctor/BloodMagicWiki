@@ -1,7 +1,7 @@
 One of the surviving documents from the Lost Period is the subject of Altar Tiers and Upgrades. In short, the higher the tier, the more powerful aspect of Blood Magic that can be performed. Upgrades are in the form of Runes that can either be netural or have special properties that can be tailored to a Blood Mage.
 
 Blank Rune:
-[bmcrafting{200,110,key=block/bloodmagic.rune.blank}]
+[orbcrafting{200,110,key=block/bloodmagic.rune.blank}]
 
 
 

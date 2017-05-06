@@ -19,15 +19,15 @@ import embedded.igwmod.gui.IWidget;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.LocatedString;
 import embedded.igwmod.gui.LocatedTexture;
+import embedded.igwmod.lib.WikiLog;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.client.ClientProxy;
+import zdoctor.bmw.recipeintegrator.compact.BaseIntegratorRecipe;
 import zdoctor.bmw.recipeintegrator.compact.SimpleTartaricForgeRecipe;
 
-public class IntegratorHellfireRecipe implements IRecipeIntegrator {
-
-	public static Map<String, TartaricForgeRecipe> autoMappedRecipes = new HashMap<String, TartaricForgeRecipe>();
+public class IntegratorHellfireRecipe extends BaseIntegratorRecipe {
 	public static final int STACKS_X_OFFSET = 1;
 	public static final int STACKS_Y_OFFSET = 1;
 	private static final int RESULT_STACK_X_OFFSET = 74;
@@ -74,12 +74,13 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 			System.out.println("Manual recipes not supported");
 		}
 	}
-
-	private void addAutomaticCraftingRecipe(String code, List<LocatedStack> locatedStacks,
+	
+	@Override
+	public void addAutomaticCraftingRecipe(String code, List<LocatedStack> locatedStacks,
 			List<IWidget> locatedTextures, List<LocatedString> locatedStrings, int x, int y)
 			throws IllegalArgumentException {
 		String key = code.substring(4);
-		final TartaricForgeRecipe recipe = autoMappedRecipes.get(key);
+		final TartaricForgeRecipe recipe = ClientProxy.ForgeRecipes.get(key);
 		if (recipe != null) {
 			Iterator<Object> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {
@@ -127,20 +128,20 @@ public class IntegratorHellfireRecipe implements IRecipeIntegrator {
 								x * 2 + 125, y * 2 + 8, Color.gray.getRGB(), false));
 			}
 		} else
-			System.out.println("Not Found: " + key);
+			WikiLog.warning("Mapped Recipe found null item with key: " + key);
 	}
 
-	public static void mapRecipes() {
-		Iterator<TartaricForgeRecipe> gemRecipes = ClientProxy.GemRecipes.iterator();
-		while (gemRecipes.hasNext()) {
-			TartaricForgeRecipe recipe = gemRecipes.next();
-			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
-					"block/");
-			if (!autoMappedRecipes.containsKey(key)) {
-				autoMappedRecipes.put(key, recipe);
-//				System.out.println("Forge: " + key);
-			}
-		}
-	}
+//	public static void mapRecipes() {
+//		Iterator<TartaricForgeRecipe> gemRecipes = ClientProxy.ForgeRecipes.iterator();
+//		while (gemRecipes.hasNext()) {
+//			TartaricForgeRecipe recipe = gemRecipes.next();
+//			String key = recipe.getRecipeOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.",
+//					"block/");
+//			if (!autoMappedRecipes.containsKey(key)) {
+//				autoMappedRecipes.put(key, recipe);
+////				System.out.println("Forge: " + key);
+//			}
+//		}
+//	}
 
 }

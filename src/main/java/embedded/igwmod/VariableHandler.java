@@ -1,7 +1,7 @@
 package embedded.igwmod;
 
-import embedded.igwmod.api.VariableRetrievalEvent;
 import net.minecraftforge.common.MinecraftForge;
+import zdoctor.bmw.wiki.events.VariableRetrievalEvent;
 
 public class VariableHandler{
 

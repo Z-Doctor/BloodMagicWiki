@@ -16,7 +16,7 @@ public class Util{
         try {
             return entityClass.getConstructor(World.class).newInstance(FMLClientHandler.instance().getClient().world);
         } catch(Exception e) {
-            IGWLog.error("[LocatedEntity.java] An entity class doesn't have a constructor with a single World parameter! Entity = " + entityClass.getName());
+            WikiLog.error("[LocatedEntity.java] An entity class doesn't have a constructor with a single World parameter! Entity = " + entityClass.getName());
             e.printStackTrace();
             return null;
         }
@@ -31,7 +31,7 @@ public class Util{
             try {
                 entityNames = (HashMap<String, ModContainer>)ReflectionHelper.findField(EntityRegistry.class, "entityNames").get(EntityRegistry.instance());
             } catch(Exception e) {
-                IGWLog.warning("IGW-Mod failed to perform reflection! A result of this is that wiki pages related to Entities will not be found. Report to MineMaarten please!");
+                WikiLog.warning("IGW-Mod failed to perform reflection! A result of this is that wiki pages related to Entities will not be found. Report to MineMaarten please!");
                 e.printStackTrace();
                 reflectionFailed = true;
                 return "minecraft";
@@ -41,7 +41,7 @@ public class Util{
         if(entityReg == null) return "minecraft";
         ModContainer mod = entityNames.get(entityReg.getEntityName());
         if(mod == null) {
-            IGWLog.info("Couldn't find the owning mod of the entity " + entityReg.getEntityName() + " even though it's registered through the EntityRegistry!");
+            WikiLog.info("Couldn't find the owning mod of the entity " + entityReg.getEntityName() + " even though it's registered through the EntityRegistry!");
             return "minecraft";
         } else {
             return mod.getModId().toLowerCase();
@@ -54,7 +54,7 @@ public class Util{
             Object object = oclass.getMethod("getDesktop", new Class[0]).invoke((Object)null, new Object[0]);
             oclass.getMethod("browse", new Class[]{URI.class}).invoke(object, new Object[]{new URI(url)});
         } catch(Throwable throwable) {
-            IGWLog.error("Couldn\'t open link");
+            WikiLog.error("Couldn\'t open link");
             throwable.printStackTrace();
         }
     }

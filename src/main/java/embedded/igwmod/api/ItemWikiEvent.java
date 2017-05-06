@@ -2,6 +2,7 @@ package embedded.igwmod.api;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import zdoctor.bmw.wiki.events.BlockWikiEvent;
 
 /**
  * Event fired on MinecraftForge.EVENT_BUS when the player opens the IGW GUI by looking at an item in another GUI and pressing 'i' or when the player

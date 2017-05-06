@@ -1,4 +1,4 @@
-package embedded.igwmod.api;
+package zdoctor.bmw.wiki.events;
 
 import java.util.List;
 

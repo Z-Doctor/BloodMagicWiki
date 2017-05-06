@@ -1,4 +1,4 @@
-package embedded.igwmod.api;
+package zdoctor.bmw.wiki.events;
 
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.common.eventhandler.Event;

@@ -1,4 +1,4 @@
-package embedded.igwmod.api;
+package zdoctor.bmw.wiki.events;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;

@@ -54,16 +54,6 @@ public class IGWSupportNotifier{
         }
     }
 
-//    @SubscribeEvent
-//    public void onPlayerJoin(TickEvent.PlayerTickEvent event){
-//        if(event.player.world.isRemote && event.player == FMLClientHandler.instance().getClientPlayerEntity()) {
-////            event.player.(ITextComponent.Serializer.jsonToComponent("[\"" + TextFormatting.GOLD + "The mod " + supportingMod + " is supporting In-Game Wiki mod. " + TextFormatting.GOLD + "However, In-Game Wiki isn't installed! " + "[\"," + "{\"text\":\"Download Latest\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/igwmod_download\"}}," + "\"]\"]"));
-//        	GuiNewChat chat = Minecraft.getMinecraft().ingameGUI.getChatGUI();
-//        	chat.printChatMessage(ITextComponent.Serializer.jsonToComponent("[\"" + TextFormatting.GOLD + "The mod " + supportingMod + " is supporting In-Game Wiki mod. " + TextFormatting.GOLD + "However, In-Game Wiki isn't installed! " + "[\"," + "{\"text\":\"Download Latest\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/igwmod_download\"}}," + "\"]\"]"));
-//        	FMLCommonHandler.instance().bus().unregister(this);
-//        }
-//    }
-
 //    Removes so the original author can fix these commands/downloads
     
 //    private class CommandDownloadIGW extends CommandBase{

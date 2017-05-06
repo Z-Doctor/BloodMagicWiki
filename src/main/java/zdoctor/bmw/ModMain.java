@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import embedded.igwmod.lib.Constants;
+import org.lwjgl.input.Keyboard;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -109,10 +110,25 @@ public class ModMain {
 			String version = installedMods.get(MODID);
 			if (version.equals("${version}"))
 				return true;
-			return version != null && version.equals(Constants.fullVersionString());
+			return version != null && version.equals(fullVersionString());
 		} else {
 			return true;
 		}
 
+	}
+
+	private static final String MASSIVE = "@MASSIVE@";
+	private static final String MAJOR = "@MAJOR@";
+	private static final String MINOR = "@MINOR@";
+	private static final String BUILD = "@BUILD_NUMBER@";
+	private static final String MC_VERSION = "@MC_VERSION@";
+
+	public static final int DEFAULT_KEYBIND_OPEN_GUI = Keyboard.KEY_I;
+
+	public static final int TEXTURE_MAP_ID = 15595;
+
+	public static String fullVersionString() {
+
+		return String.format("%s-%s.%s.%s-%s", MC_VERSION, MASSIVE, MAJOR, MINOR, BUILD);
 	}
 }

@@ -1,1 +1,1 @@
-[image{200,0,.315,zdoctorbmw:textures/screenshots/interdictionRitual.png}]
+[image{200,0,.315,bloodmagicwiki:textures/screenshots/interdictionRitual.png}]

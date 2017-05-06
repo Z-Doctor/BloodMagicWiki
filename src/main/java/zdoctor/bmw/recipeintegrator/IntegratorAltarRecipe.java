@@ -1,36 +1,32 @@
 package zdoctor.bmw.recipeintegrator;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.lwjgl.opengl.GL11;
 
 import WayofTime.bloodmagic.api.ItemStackWrapper;
-import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.util.helper.NumeralHelper;
 import embedded.igwmod.TextureSupplier;
-import embedded.igwmod.api.IRecipeIntegrator;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.IReservedSpace;
 import embedded.igwmod.gui.IWidget;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.LocatedString;
 import embedded.igwmod.gui.LocatedTexture;
+import embedded.igwmod.lib.WikiLog;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.client.ClientProxy;
+import zdoctor.bmw.recipeintegrator.compact.BaseIntegratorRecipe;
 
-public class IntegratorAltarRecipe implements IRecipeIntegrator {
-
-	public static Map<String, AltarRecipe> autoMappedRecipes = new HashMap<String, AltarRecipe>();
+public class IntegratorAltarRecipe extends BaseIntegratorRecipe {
 	public static final int STACKS_X_OFFSET = 21;
 	public static final int STACKS_Y_OFFSET = 1;
-	private static final int RESULT_STACK_X_OFFSET = 115;
-	private static final int RESULT_STACK_Y_OFFSET = STACKS_Y_OFFSET + 30;
+	public static final int RESULT_STACK_X_OFFSET = 115;
+	public static final int RESULT_STACK_Y_OFFSET = STACKS_Y_OFFSET + 30;
 
 	@Override
 	public String getCommandKey() {
@@ -67,16 +63,16 @@ public class IntegratorAltarRecipe implements IRecipeIntegrator {
 			addAutomaticCraftingRecipe(arguments[2], locatedStacks, locatedTextures, locatedStrings,
 					(int) (x * GuiWiki.TEXT_SCALE), (int) (y * GuiWiki.TEXT_SCALE));
 		} else {
-			System.out.println("Manual Altar Recipe not supporte");
+			WikiLog.warning("Manual Altar Recipe not supported yet");
 		}
 	}
 
-	private void addAutomaticCraftingRecipe(String code, List<LocatedStack> locatedStacks,
-			List<IWidget> locatedTextures, List<LocatedString> locatedStrings, int x, int y)
-			throws IllegalArgumentException {
+	@Override
+	public void addAutomaticCraftingRecipe(String code, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures,
+			List<LocatedString> locatedStrings, int x, int y) throws IllegalArgumentException {
 
 		String key = code.substring(4);
-		AltarRecipe recipe = autoMappedRecipes.get(key);
+		AltarRecipe recipe = ClientProxy.AltarRecipes.get(key);
 		if (recipe != null) {
 			Iterator<ItemStackWrapper> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {
@@ -93,7 +89,7 @@ public class IntegratorAltarRecipe implements IRecipeIntegrator {
 				locatedStacks.add(
 						new LocatedStack(recipe.getOutput(), x + RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
 				locatedStrings.add(new LocatedString(
-						I18n.format("bmw.gui.altar.requiredTier.recipe") + ": "
+						I18n.format(ModMain.MODID + ".gui.altar.requiredTier.recipe") + ": "
 								+ NumeralHelper.toRoman(recipe.getMinTier().toInt()),
 						x * 2 + 148, y * 2 + 40, 0xFF00FF00, false) {
 					@Override
@@ -104,32 +100,20 @@ public class IntegratorAltarRecipe implements IRecipeIntegrator {
 						GL11.glPopMatrix();
 					}
 				});
-				locatedStrings.add(
-						new LocatedString(I18n.format("bmw.gui.altar.requiredLP.recipe") + ": " + recipe.getSyphon(),
-								x * 2 + 148, y * 2 + 50, 0x858585, false) {
-							@Override
-							public void renderBackground(GuiWiki gui, int mouseX, int mouseY) {
-								GL11.glPushMatrix();
-								GL11.glScaled(GuiWiki.TEXT_SCALE, GuiWiki.TEXT_SCALE, 1);
-								gui.getFontRenderer().drawString(getName(), getX(), getY(), 0x858585);
-								GL11.glPopMatrix();
-							}
-						});
+				locatedStrings.add(new LocatedString(
+						I18n.format(ModMain.MODID + ".gui.altar.requiredLP.recipe") + ": " + recipe.getSyphon(),
+						x * 2 + 148, y * 2 + 50, 0x858585, false) {
+					@Override
+					public void renderBackground(GuiWiki gui, int mouseX, int mouseY) {
+						GL11.glPushMatrix();
+						GL11.glScaled(GuiWiki.TEXT_SCALE, GuiWiki.TEXT_SCALE, 1);
+						gui.getFontRenderer().drawString(getName(), getX(), getY(), 0x858585);
+						GL11.glPopMatrix();
+					}
+				});
 			}
 		} else
-			System.out.println("Not Found: " + key);
-	}
-
-	public static void mapRecipes() {
-		Iterator<AltarRecipe> altarRecipes = ClientProxy.AltarRecipes.iterator();
-		while (altarRecipes.hasNext()) {
-			AltarRecipe recipe = altarRecipes.next();
-			String key = recipe.getOutput().getUnlocalizedName().replace("item.", "item/").replace("tile.", "block/");
-			if (!autoMappedRecipes.containsKey(key) && !recipe.isFillable()) {
-				autoMappedRecipes.put(key, recipe);
-//				 System.out.println("Altar: " + key);
-			}
-		}
+			WikiLog.warning("Mapped Recipe found null item with key: " + key);
 	}
 
 }

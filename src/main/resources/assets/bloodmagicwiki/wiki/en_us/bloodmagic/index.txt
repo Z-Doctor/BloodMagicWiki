@@ -1,7 +1,0 @@
-[link{zdoctorbmw:bloodmagic/AltarTiers}]Altar Tiers
-
-[link{zdoctorbmw:bloodmagic/item/BloodOrbs}]Blood Orbs
-
-[link{zdoctorbmw:bloodmagic/Rituals}]Rituals
-
-[link{zdoctorbmw:bloodmagic/SentientEquipment}]Sentient Equipment

@@ -18,7 +18,7 @@ import embedded.igwmod.gui.IReservedSpace;
 import embedded.igwmod.gui.IWidget;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.LocatedString;
-import embedded.igwmod.lib.IGWLog;
+import embedded.igwmod.lib.WikiLog;
 import embedded.igwmod.lib.Paths;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.resources.IResource;
@@ -59,14 +59,14 @@ public class InfoSupplier{
         if(!modid.equals("igwmod")) {
             info = getInfo("igwmod", objectName, language);
             if(info != null) {
-                if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
+                if(ConfigHandler.debugMode) WikiLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
                 return info;
             }
 
             if(!language.equals("en_US")) {
                 info = getInfo("igwmod", objectName, "en_US");
                 if(info != null) {
-                    if(ConfigHandler.debugMode) IGWLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
+                    if(ConfigHandler.debugMode) WikiLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
                     return info;
                 }
             }
@@ -144,7 +144,7 @@ public class InfoSupplier{
                             } catch(IllegalArgumentException e) {
                                 fileInfo.add(TextFormatting.RED + "Problem when parsing \"" + line.substring(i + 1, j) + "\":");
                                 fileInfo.add(TextFormatting.RED + e.getMessage());
-                                IGWLog.warning(e.getMessage());
+                                WikiLog.warning(e.getMessage());
                             }
                             break;
                         }
@@ -214,7 +214,7 @@ public class InfoSupplier{
                                 foundCode = true;
                             } catch(IllegalArgumentException e) {
                                 fileInfo.add(TextFormatting.RED + e.getMessage());
-                                IGWLog.warning(e.getMessage());
+                                WikiLog.warning(e.getMessage());
                             }
                             potentialCode = sentenceWords[currentWord];
                             i = potentialCode.indexOf('[');

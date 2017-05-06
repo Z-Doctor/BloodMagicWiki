@@ -17,6 +17,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
+import zdoctor.bmw.client.ClientProxy;
 
 public class WikiRegistry{
 
@@ -94,7 +95,6 @@ public class WikiRegistry{
     }
 
     public static List<ItemStack> getItemAndBlockPageEntries(){
-//        List<ItemStack> entries = new ArrayList<ItemStack>();
         NonNullList entries = NonNullList.<ItemStack>create();
         for(Map.Entry<String, ItemStack> entry : itemAndBlockPageEntries) {
             if(entry.getValue().getItemDamage() == OreDictionary.WILDCARD_VALUE) {

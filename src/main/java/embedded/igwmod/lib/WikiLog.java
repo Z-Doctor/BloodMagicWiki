@@ -4,8 +4,10 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class IGWLog{
-    private static Logger logger = LogManager.getLogger(Constants.MOD_ID);
+import zdoctor.bmw.ModMain;
+
+public class WikiLog{
+    private static Logger logger = LogManager.getLogger(ModMain.MODID);
 
     public static void info(String message){
         logger.log(Level.INFO, message);

@@ -82,5 +82,4 @@ public abstract class BaseWikiTab implements IWikiTab{
     protected abstract String getPageName(String pageEntry);
 
     protected abstract String getPageLocation(String pageEntry);
-
 }

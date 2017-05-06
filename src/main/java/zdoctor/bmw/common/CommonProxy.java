@@ -18,12 +18,6 @@ public class CommonProxy implements IProxy {
 	}
 
 	@Override
-	public void postInit() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void processIMC(IMCEvent event) {
 		// TODO Auto-generated method stub
 		
