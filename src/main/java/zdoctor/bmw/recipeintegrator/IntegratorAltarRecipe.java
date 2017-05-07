@@ -18,9 +18,11 @@ import embedded.igwmod.gui.LocatedTexture;
 import embedded.igwmod.lib.WikiLog;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.client.ClientProxy;
 import zdoctor.bmw.recipeintegrator.compact.BaseIntegratorRecipe;
+import zdoctor.bmw.wiki.events.CraftingRetrievalEvent;
 
 public class IntegratorAltarRecipe extends BaseIntegratorRecipe {
 	public static final int STACKS_X_OFFSET = 21;
@@ -72,16 +74,23 @@ public class IntegratorAltarRecipe extends BaseIntegratorRecipe {
 			List<LocatedString> locatedStrings, int x, int y) throws IllegalArgumentException {
 
 		String key = code.substring(4);
-		AltarRecipe recipe = ClientProxy.AltarRecipes.get(key);
+		CraftingRetrievalEvent recipeEvent = new CraftingRetrievalEvent(key);
+		MinecraftForge.EVENT_BUS.post(recipeEvent);
+		String newKey = recipeEvent.key;
+		AltarRecipe recipe = ClientProxy.AltarRecipes.get(newKey);
+		if(recipe == null)
+			recipe = ClientProxy.AltarRecipes.get(key);
 		if (recipe != null) {
 			Iterator<ItemStackWrapper> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {
 				for (int j = 0; j < 2; j++) {
 					if (req.hasNext()) {
 						ItemStack ingredientStack = req.next().toStack().copy();
-						if (ingredientStack != null)
+						if (ingredientStack != null) {
+							System.out.println("ing: " + ingredientStack);
 							locatedStacks.add(new LocatedStack(ingredientStack, x + STACKS_X_OFFSET + j * 18,
 									y + STACKS_Y_OFFSET + i * 18));
+						}
 					} else
 						break;
 				}

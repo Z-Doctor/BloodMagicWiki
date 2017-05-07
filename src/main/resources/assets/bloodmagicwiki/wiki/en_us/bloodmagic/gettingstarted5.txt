@@ -1,4 +1,4 @@
-Arcane Ashes are the basis of Sigil Creation and Binding, and are relatively cheap to produce. Both Sigil Creation and Binding are introduced here, but full listing of recipes can be found in the [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under[link{zdoctorbmw:bloodmagic/Sigils}] Sigils[link{}] or[link{zdoctorbmw:bloodmagic/BoundEquipment}] Bound Equipment[link{}] for more recipes.
+Arcane Ashes are the basis of Sigil Creation and Binding, and are relatively cheap to produce. Both Sigil Creation and Binding are introduced here.
 
 Arcane Ashes:
 [hellfire{200,90,key=item/bloodmagic.arcaneAshes}]

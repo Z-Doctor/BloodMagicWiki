@@ -1,4 +1,4 @@
 A Tier 2 altar is created by placing 8 Runes in the configuration below.
 
 Teir 2:
-[image{200,60,.2,zdoctorbmw:textures/screenshots/T2.png}]
+[image{200,60,.2,bloodmagicwiki:textures/screenshots/t2.png}]

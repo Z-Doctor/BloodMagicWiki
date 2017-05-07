@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -17,6 +17,17 @@ public class AltarWiki extends BaseWikiTab {
 	}
 
 	public AltarWiki() {
+		pageEntries.add("BloodOrbs");
+		pageEntries.add("Runes");
+		pageEntries.add("IncenseAltar");
+		
+		pageEntries.add("Tier1");
+		pageEntries.add("Tier2");
+		pageEntries.add("Tier3");
+		pageEntries.add("Tier4");
+		pageEntries.add("Tier5");
+		pageEntries.add("Tier6");
+		pageEntries.add("SanguineBook");
 	}
 
 	@Override
@@ -31,12 +42,16 @@ public class AltarWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki.bloodmagic." + pageEntry + ".page");
+		return I18n.format("wiki." + ModMain.MODID + "." + pageEntry + ".page");
 	}
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID + ":" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
+		if(pageEntry.contains("incensealtar"))
+			return Constants.Mod.MODID.toLowerCase() + "/block/" + pageEntry;
+		else if(pageEntry.contains("sanguinebook"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry;
+		return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
 	}
 
 }

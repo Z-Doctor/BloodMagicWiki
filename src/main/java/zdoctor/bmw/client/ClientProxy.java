@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.recipe.TartaricForgeRecipe;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
@@ -45,12 +47,13 @@ import zdoctor.bmw.recipeintegrator.IntegratorArrayRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBloodOrbCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
-import zdoctor.bmw.wiki.ArrayWiki;
-import zdoctor.bmw.wiki.BloodBaubleWiki;
-import zdoctor.bmw.wiki.BloodMagicWiki;
-import zdoctor.bmw.wiki.ItemsWiki;
-import zdoctor.bmw.wiki.RitualWiki;
 import zdoctor.bmw.wiki.events.EventRegistry;
+import zdoctor.bmw.wiki.tabs.AltarWiki;
+import zdoctor.bmw.wiki.tabs.ArrayWiki;
+import zdoctor.bmw.wiki.tabs.BloodBaubleWiki;
+import zdoctor.bmw.wiki.tabs.BloodMagicWiki;
+import zdoctor.bmw.wiki.tabs.ItemsWiki;
+import zdoctor.bmw.wiki.tabs.RitualWiki;
 
 public class ClientProxy extends CommonProxy {
 	public static final IForgeRegistry<Item> ItemRegistry = GameRegistry.findRegistry(Item.class);
@@ -74,6 +77,7 @@ public class ClientProxy extends CommonProxy {
 		ConfigHandler.init(e.getSuggestedConfigurationFile());
 
 		BloodMagicWiki.preInit();
+		AltarWiki.preInit();
 		RitualWiki.preInit();
 		ArrayWiki.preInit();
 		ItemsWiki.preInit();
@@ -152,9 +156,9 @@ public class ClientProxy extends CommonProxy {
 				if (recipe.getOutput() != null && !recipe.getOutput().isEmpty()) {
 					if (recipe.getOutput().getUnlocalizedName() != null) {
 						String blockCode = WikiUtils.getNameFromStack(recipe.getOutput());
-						if (!AltarRecipes.containsKey(blockCode)) {
+						if (!AltarRecipes.containsKey(blockCode) && !recipe.isFillable()) {
 							AltarRecipes.put(blockCode, recipe);
-							System.out.println("Added: " + blockCode);
+//							System.out.println("Added: " + blockCode);
 						}
 					} else
 						WikiLog.error("Item has no unlocalized name: " + recipe.getOutput().getItem());

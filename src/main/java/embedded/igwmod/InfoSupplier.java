@@ -56,15 +56,15 @@ public class InfoSupplier{
         }
 
         //Let's see if we can find the page where it used to be by default, in the igwmod folder.
-        if(!modid.equals("igwmod")) {
-            info = getInfo("igwmod", objectName, language);
+        if(!modid.equals(ModMain.MODID)) {
+            info = getInfo(ModMain.MODID, objectName, language);
             if(info != null) {
                 if(ConfigHandler.debugMode) WikiLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
                 return info;
             }
 
             if(!language.equals("en_US")) {
-                info = getInfo("igwmod", objectName, "en_US");
+                info = getInfo(ModMain.MODID, objectName, "en_US");
                 if(info != null) {
                     if(ConfigHandler.debugMode) WikiLog.warning("IGW-Mod had to look in the igwmod/assets/wiki/ folder to find the " + objectName + " page. This is deprecated. now you should use " + modid + "/assets/wiki/ instead!");
                     return info;
@@ -77,7 +77,7 @@ public class InfoSupplier{
         if(objectName.length() > 50) {
             objectName = objectName.substring(0, objectName.length() / 2) + " " + objectName.substring(objectName.length() / 2, objectName.length());
         }
-        return Arrays.asList("No info available about this topic. IGW-Mod is currently looking for " + objectName + ".");
+        return Arrays.asList("No info available about this topic. Blood Wiki is currently looking for " + objectName + ".");
     }
 
     public static List<String> getInfo(String modid, String objectName, String language){

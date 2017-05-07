@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -10,32 +10,38 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 
-public class BloodBaubleWiki extends BaseWikiTab {
+public class ArrayWiki extends BaseWikiTab {
 	public static void preInit() {
-		WikiRegistry.registerWikiTab(new BloodBaubleWiki());
+		WikiRegistry.registerWikiTab(new ArrayWiki());
 	}
 
-	public BloodBaubleWiki() {
+	public ArrayWiki() {
+		pageEntries.add("ArcaneAshe");
+		pageEntries.add("SentinentEquipment");
+		
+		
 	}
 
 	@Override
 	public String getName() {
-		return "wikitab.bloodmagic.name";
+		return "wikitab." + ModMain.MODID + ".array.name";
 	}
 
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
-		return OrbRegistry.getOrbStack(ModItems.ORB_WEAK);
+		return new ItemStack(ModItems.ARCANE_ASHES);
 	}
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki.bloodmagic." + pageEntry + ".page");
+		return I18n.format("wiki." + ModMain.MODID +"." + pageEntry + ".page");
 	}
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID + ":" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
+		if(pageEntry.contains("array"))
+			return Constants.Mod.MODID.toLowerCase() + "/array/" + pageEntry;
+		return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry;
 	}
 
 }

@@ -1,4 +1,4 @@
 A Tier 3 altar is created by adding 25 Runes to a Tier 2 altar in a 5 x 5 fashion. You then add Glowstone 2 blocks above the corners (the pillars are purely decorational).
 
 Tier 3:
-[image{200,80,.2,zdoctorbmw:textures/screenshots/T3.png}]
+[image{200,80,.2,bloodmagicwiki:textures/screenshots/t3.png}]

@@ -1,4 +1,4 @@
 A Tier 1 altar is created simply by placing a Blood Altar down and is used to transmute the weakest of items. Blood Altars have a 10 000 LP default storage with a 1 000 LP buffer.
 
 Teir 1:
-[image{200,80,.2,zdoctorbmw:textures/screenshots/T1.png}]
+[image{200,80,.2,bloodmagicwiki:textures/screenshots/t1.png}]

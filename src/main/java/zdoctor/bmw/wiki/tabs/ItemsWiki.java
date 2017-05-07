@@ -1,9 +1,11 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import WayofTime.bloodmagic.BloodMagic;
 import WayofTime.bloodmagic.api.Constants;
+import WayofTime.bloodmagic.registry.ModBlocks;
 import WayofTime.bloodmagic.registry.ModItems;
 import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.WikiRegistry;
@@ -11,7 +13,9 @@ import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.IPageLink;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.tabs.BlockAndItemWikiTab;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import zdoctor.bmw.ModMain;
@@ -44,10 +48,19 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 			if (WikiUtils.getOwningModId(stack).equalsIgnoreCase(Constants.Mod.MODID)
 					|| item instanceof BloodMagicItem) {
 				if (item.getCreativeTab() != null) {
-					if(stack.getHasSubtypes()) {
-						stack.getItem().getSubItems(stack.getItem(), CreativeTabs.SEARCH, entries);
-					} else {
-						entries.add(stack);
+					String unloc = stack.getUnlocalizedName().toLowerCase();
+					if (!unloc.endsWith("phantom")) {
+						if (stack.getHasSubtypes()
+								&& !(stack.getUnlocalizedName().toLowerCase().contains("upgradetome")
+										|| unloc.contains("downgradetome") || unloc.contains("bloodtank")
+										|| unloc.contains("upgradetrainer") || unloc.contains("sacrificialdagger")
+										|| unloc.matches("(.*)bricks(.*)") || unloc.matches("(.*)pillar[0-9](.*)")
+										|| unloc.matches("(.*)pillarcap[0-9](.*)") || unloc.contains("stair")
+										|| unloc.contains("wall") || unloc.contains(".extras."))) {
+							stack.getItem().getSubItems(item, CreativeTabs.SEARCH, entries);
+						} else {
+							entries.add(stack);
+						}
 					}
 				}
 			}

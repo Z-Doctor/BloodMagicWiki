@@ -1,4 +1,4 @@
 A Tier 4 altar needs an additional 28 Runes placed on the outskirts of a Tier 3 altar in a 7 x 7 fashion. Similarly to the Tier 3 Altar, 4 Large Stone Bricks  need to be placed 4 blocks above the corners (the pillars are purely decorational).
 
 Tier 4:
-[image{200,90,.2,zdoctorbmw:textures/screenshots/T4.png}]
+[image{200,90,.2,bloodmagicwiki:textures/screenshots/t4.png}]

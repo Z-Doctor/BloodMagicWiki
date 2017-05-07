@@ -10,6 +10,13 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
+import WayofTime.bloodmagic.block.BlockAltar;
+import WayofTime.bloodmagic.block.BlockDemonStairsBase;
+import WayofTime.bloodmagic.block.BlockMimic;
+import WayofTime.bloodmagic.block.BlockTeleposer;
+import WayofTime.bloodmagic.item.block.ItemBlockBloodTank;
+import WayofTime.bloodmagic.item.block.ItemBlockDemonCrystal;
+import WayofTime.bloodmagic.item.block.base.ItemBlockEnum;
 import embedded.igwmod.ConfigHandler;
 import embedded.igwmod.InfoSupplier;
 import embedded.igwmod.TickHandler;
@@ -17,9 +24,10 @@ import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.ItemWikiEvent;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.gui.tabs.IWikiTab;
-import embedded.igwmod.lib.WikiLog;
 import embedded.igwmod.lib.Textures;
 import embedded.igwmod.lib.Util;
+import embedded.igwmod.lib.WikiLog;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
@@ -31,6 +39,7 @@ import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.ClickType;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemBlock;
@@ -50,8 +59,7 @@ import zdoctor.bmw.wiki.events.PageChangeEvent;
  */
 
 public class GuiWiki extends GuiContainer {
-	private static String currentFile = ModMain.MODID.toLowerCase() + ":bloodmagic/intro"; // path (ResourceLocation) of the
-											// current wikipage
+	private static String currentFile = "";
 	private static List<String> fileInfo = new ArrayList<String>(); // The raw
 																	// info
 																	// directly
@@ -110,11 +118,16 @@ public class GuiWiki extends GuiContainer {
 
 	public GuiWiki() {
 		super(new ContainerBlockWiki());
+
 		allowUserInput = true;
 		ySize = 238;
 		xSize = 256;
 		if (currentTab == null)
 			currentTab = wikiTabs.get(0);
+	}
+	
+	public static String getCurrentFile() {
+		return currentFile;
 	}
 
 	@Override
@@ -634,12 +647,14 @@ public class GuiWiki extends GuiContainer {
 		PageChangeEvent pageChangeEvent = new PageChangeEvent(currentFile, pageStack, pageEntity);
 		MinecraftForge.EVENT_BUS.post(pageChangeEvent);
 		currentFile = pageChangeEvent.currentFile;
+		System.out.println("Page: " + currentFile);
 		fileInfo = pageChangeEvent.pageText;
 		if (fileInfo == null) {
 			String modid = currentModIdPage;
 			if (currentFile.contains(":")) {
 				String[] splitted = currentFile.split(":", 2);
 				modid = splitted[0];
+				System.out.println("Change modid: " + modid);
 				currentFile = splitted[1];
 			} else {
 				if (pageStack != null) {
@@ -839,38 +854,107 @@ public class GuiWiki extends GuiContainer {
 			};
 		}
 		entityItem.setEntityItemStack(stack);
-
-		GL11.glPushMatrix();
-		GL11.glTranslated(x + 1, y + 13, 20);
-		GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
-		GL11.glRotated(180, 1, 0, 0);
-		GL11.glRotated(30, 1, 0, 0);
-		GL11.glTranslated(0.1, 0.1, gui.zLevel);
-		GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
-		renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
-		GL11.glPopMatrix();
-		/*
-		 * RenderBlocks renderBlocks = new RenderBlocks();
-		 * 
-		 * Block block = Block.blocksList[stack.itemID];
-		 * FMLClientHandler.instance().getClient().renderEngine.bindTexture(
-		 * TextureMap.locationBlocksTexture); GL11.glPushMatrix();
-		 * GL11.glTranslatef(x - 2, y + 3, -3.0F + gui.zLevel);
-		 * GL11.glScalef(10.0F, 10.0F, 10.0F); GL11.glTranslatef(1.0F, 0.5F,
-		 * 1.0F); GL11.glScalef(1.0F * scale, 1.0F * scale, -1.0F);
-		 * GL11.glRotatef(210.0F, 1.0F, 0.0F, 0.0F);
-		 * GL11.glRotatef(-TickHandler.ticksExisted, 0.0F, 1.0F, 0.0F);
-		 * 
-		 * int var10 = Item.itemsList[stack.itemID].getColorFromItemStack(stack,
-		 * 0); float var16 = (var10 >> 16 & 255) / 255.0F; float var12 = (var10
-		 * >> 8 & 255) / 255.0F; float var13 = (var10 & 255) / 255.0F;
-		 * 
-		 * GL11.glColor4f(var16, var12, var13, 1.0F);
-		 * 
-		 * GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-		 * renderBlocks.useInventoryTint = true;
-		 * renderBlocks.renderBlockAsItem(block, stack.getItemDamage(), 1.0F);
-		 * renderBlocks.useInventoryTint = true; GL11.glPopMatrix();
-		 */
+		if (stack.getItem().getClass().toString().equalsIgnoreCase(ItemBlockDemonCrystal.class.toString())) {
+			// System.out.println(stack.getItem().getClass());
+			GL11.glPushMatrix();
+			GL11.glTranslated(x - 32, y - 25, 50);
+			GL11.glScaled(20 * scale, 15 * scale, -15 * scale);
+			GL11.glRotated(30, 0, 1, 0);
+			// GL11.glRotated(30, 1, 0, 0);
+			// GL11.glTranslated(0.1, 0.1, gui.zLevel);
+			// GL11.glRotated(-TickHandler.ticksExisted, 0, 0, 0);
+			renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+			GL11.glPopMatrix();
+			return;
+		}
+		if (!Block.getBlockFromItem(stack.getItem()).getClass().toString()
+				.equalsIgnoreCase(BlockTeleposer.class.toString())
+				&& !stack.getItem().getClass().toString().equalsIgnoreCase(ItemBlockEnum.class.toString())
+				&& !Block.getBlockFromItem(stack.getItem()).getClass().toString()
+						.equalsIgnoreCase(BlockMimic.class.toString())
+				&& Block.getBlockFromItem(stack.getItem()).hasTileEntity()
+				&& !stack.getItem().getClass().toString().equalsIgnoreCase(ItemBlockBloodTank.class.toString())) {
+			if (Block.getBlockFromItem(stack.getItem()).getClass().toString()
+					.equalsIgnoreCase(BlockAltar.class.toString())) {
+				GL11.glPushMatrix();
+				GL11.glTranslated(x + 1, y + 22, 20);
+				GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+				GL11.glRotated(180, 1, 0, 0);
+				GL11.glRotated(30, 1, 0, 0);
+				GL11.glTranslated(0.1, 0.1, gui.zLevel);
+				GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+				renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+				GL11.glPopMatrix();
+				// } else if
+				// (stack.getItem().getClass().toString().equalsIgnoreCase(ritualm.class.toString()))
+				// {
+				// GL11.glPushMatrix();
+				// GL11.glTranslated(x + 1, y + 13, 20);
+				// GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+				// GL11.glRotated(180, 1, 0, 0);
+				// GL11.glRotated(30, 1, 0, 0);
+				// GL11.glTranslated(0.1, 0.1, gui.zLevel);
+				// GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+				// renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+				// GL11.glPopMatrix();
+			} else {
+				GL11.glPushMatrix();
+				GL11.glTranslated(x + 1, y + 30, 20);
+				GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+				GL11.glRotated(180, 1, 0, 0);
+				GL11.glRotated(30, 1, 0, 0);
+				GL11.glTranslated(0.1, 0.1, gui.zLevel);
+				GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+				renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+				GL11.glPopMatrix();
+			}
+		} else if (Block.getBlockFromItem(stack.getItem()) == Blocks.AIR) {
+			GL11.glPushMatrix();
+			GL11.glTranslated(x + 1, y + 17, 20);
+			GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+			GL11.glRotated(180, 1, 0, 0);
+			GL11.glRotated(30, 1, 0, 0);
+			GL11.glTranslated(0.1, 0.1, gui.zLevel);
+			GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+			renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+			GL11.glPopMatrix();
+		} else if (stack.getItem().getClass().toString().equalsIgnoreCase(ItemBlockEnum.class.toString())
+				&& !Block.getBlockFromItem(stack.getItem()).getClass().toString()
+						.equalsIgnoreCase(BlockMimic.class.toString())
+				&& !Block.getBlockFromItem(stack.getItem()).isFullBlock(null)) {
+			// System.out.println(((ItemBlockEnum)stack.getItem()).getBlock().getClass());
+			if (((ItemBlockEnum) stack.getItem()).getBlock().getClass().toString()
+					.equalsIgnoreCase(BlockDemonStairsBase.class.toString())) {
+				GL11.glPushMatrix();
+				GL11.glTranslated(x + 1, y + 13, 20);
+				GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+				GL11.glRotated(180, 1, 0, 0);
+				GL11.glRotated(30, 1, 0, 0);
+				GL11.glTranslated(0.1, 0.1, gui.zLevel);
+				GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+				renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+				GL11.glPopMatrix();
+			} else {
+				GL11.glPushMatrix();
+				GL11.glTranslated(x + 1, y + 30, 20);
+				GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+				GL11.glRotated(180, 1, 0, 0);
+				GL11.glRotated(30, 1, 0, 0);
+				GL11.glTranslated(0.1, 0.1, gui.zLevel);
+				GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+				renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+				GL11.glPopMatrix();
+			}
+		} else {
+			GL11.glPushMatrix();
+			GL11.glTranslated(x + 1, y + 13, 20);
+			GL11.glScaled(40 * scale, 40 * scale, -40 * scale);
+			GL11.glRotated(180, 1, 0, 0);
+			GL11.glRotated(30, 1, 0, 0);
+			GL11.glTranslated(0.1, 0.1, gui.zLevel);
+			GL11.glRotated(-TickHandler.ticksExisted, 0, 1, 0);
+			renderItem.doRender(entityItem, 0.0, 0.0, 0, 0, 0);
+			GL11.glPopMatrix();
+		}
 	}
 }

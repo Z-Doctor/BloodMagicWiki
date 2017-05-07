@@ -65,4 +65,4 @@ Weak Blood Orb:
 
 
 
-Once finished, it is recommended to forge a Tartaric Gem. Further reading can be found in [link{zdoctorbmw:bloodmagic/GettingStarted2}]Soul Forging[link{}]
+Once finished, it is recommended to forge a Tartaric Gem. Further reading can be found in [link{bloodmagicwiki:bloodmagic/gettingstarted2}]Soul Forging[link{}]

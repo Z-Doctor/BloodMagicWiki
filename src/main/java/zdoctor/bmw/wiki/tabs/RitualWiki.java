@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
@@ -15,6 +15,10 @@ public class RitualWiki extends BaseWikiTab {
 	}
 
 	public RitualWiki() {
+		pageEntries.add("ImperfectRituals");
+		pageEntries.add("ActivationCrystals");
+		pageEntries.add("ScribeTools");
+		pageEntries.add("RitualDiviner");
 		pageEntries.add("WaterRitual");
 		pageEntries.add("LavaRitual");
 		pageEntries.add("GreenGroveRitual");
@@ -63,6 +67,12 @@ public class RitualWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID.toLowerCase() + ":bloodmagic/ritual/" + pageEntry;
+		if(pageEntry.contains("scribe"))
+			return Constants.Mod.MODID + "/item/" + pageEntry;
+		else if(pageEntry.contains("activation"))
+			return Constants.Mod.MODID + "/item/" + pageEntry;
+		else if(pageEntry.contains("diviner"))
+			return Constants.Mod.MODID + "/item/" + pageEntry;
+		return Constants.Mod.MODID + "/ritual/" + pageEntry;
 	}
 }

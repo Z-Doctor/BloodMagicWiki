@@ -1,7 +1,0 @@
-[link{zdoctorbmw:bloodmagic/Altar/T1}]Tiers 1
-
-[link{zdoctorbmw:bloodmagic/Altar/T2}]Tiers 2
-
-[link{zdoctorbmw:bloodmagic/Altar/T3}]Tiers 3
-
-[link{zdoctorbmw:bloodmagic/Altar/T4}]Tiers 4

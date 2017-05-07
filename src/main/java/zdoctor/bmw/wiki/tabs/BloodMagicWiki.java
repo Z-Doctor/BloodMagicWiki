@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -46,7 +46,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return ModMain.MODID + ":" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
+		return "test:" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
 	}
 
 	public static String getItemPage(String pageOpened) {

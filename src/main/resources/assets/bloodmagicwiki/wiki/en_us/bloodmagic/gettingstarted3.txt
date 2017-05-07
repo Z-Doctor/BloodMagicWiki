@@ -25,5 +25,3 @@ Sentient Bow:
 
 
 
-
-For a full listing of known Sentient Equipment check in [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/SentientEquipment}]Sentient Equipment.

@@ -12,38 +12,61 @@ wiki.bloodmagicwiki.gettingstarted8.page=Demon Summoning
 wiki.bloodmagicwiki.index.page=Index
 wiki.bloodmagicwiki.acknowledgments.page=Acknowledgments
 
-wikitab.bloodmagicwiki.ritual.name=Rituals
+wikitab.altar.name=Altar Index
 
-ritual.bloodmagicwiki.waterritual.page=Water Ritual
-ritual.bloodmagicwiki.lavaritual.page=Lava Ritual
-ritual.bloodmagicwiki.greengroveritual.page=Green Grove Ritual
-ritual.bloodmagicwiki.jumpritual.page=Jump Ritual
-ritual.bloodmagicwiki.wellofsufferingritual.page=Well of Suffering Ritual
-ritual.bloodmagicwiki.featheredkniferitual.page=Feather Knife Ritual
-ritual.bloodmagicwiki.regenerationritual.page=Regeneration Ritual
-ritual.bloodmagicwiki.harvestritual.page=Harvest Ritual
-ritual.bloodmagicwiki.magneticritual.page=Magnetic Ritual
-ritual.bloodmagicwiki.crushingritual.page=Crushing Ritual
-ritual.bloodmagicwiki.fullstomachritual.page=Full Stomach Ritual
-ritual.bloodmagicwiki.interdictionritual.page=Interdiction Ritual
-ritual.bloodmagicwiki.containmentritual.page=Cotainment Ritual
-ritual.bloodmagicwiki.speedritual.page=Speed Ritual
-ritual.bloodmagicwiki.suppressionritual.page=Supression Ritual
-ritual.bloodmagicwiki.expulsionritual.page=Expulsion Ritual
-ritual.bloodmagicwiki.zephyrritual.page=Zephyr Ritual
-ritual.bloodmagicwiki.upgraderemoveritual.page=Upgrade Removal Ritual
-ritual.bloodmagicwiki.armourevolveritual.page=Armour Evolve Ritual
-ritual.bloodmagicwiki.animalgrowthritual.page=Animal Growth Ritual
-ritual.bloodmagicwiki.forsakensoulritual.page=Forsaken Soul Ritual
-ritual.bloodmagicwiki.crystalharvestritual.page=Crystal Havest Ritual
-ritual.bloodmagicwiki.cobblestoneritual.page=Cobble Stone Ritual
-ritual.bloodmagicwiki.placerritual.page=Placer Ritual
-ritual.bloodmagicwiki.fellingritual.page=Felling Ritual
-ritual.bloodmagicwiki.pumpritual.page=Pump Ritual
-ritual.bloodmagicwiki.altarbuilderritual.page=Altar Building Ritual
-ritual.bloodmagicwiki.portalritual.page=Portal Ritual
+wiki.bloodmagicwiki.bloodorbs.page=Blood Orbs
+wiki.bloodmagicwiki.runes.page=Runes
+wiki.bloodmagicwiki.incensealtar.page=Incense Altar
+wiki.bloodmagicwiki.tier1.page=Tier 1
+wiki.bloodmagicwiki.tier2.page=Tier 2
+wiki.bloodmagicwiki.tier3.page=Tier 3
+wiki.bloodmagicwiki.tier4.page=Tier 4
+wiki.bloodmagicwiki.tier5.page=Tier 5
+wiki.bloodmagicwiki.tier6.page=Tier 6
+wiki.bloodmagicwiki.sanguinebook.page=Saguine Book
+
+wikitab.bloodmagicwiki.ritual.name=Codex of Rituals
+
+ritual.bloodmagicwiki.imperfectrituals.page=Imperfect Rituals
+ritual.bloodmagicwiki.scribetools.page=Scribe Tools
+ritual.bloodmagicwiki.activationcrystals.page=Activation Crystals
+ritual.bloodmagicwiki.ritualdiviner.page=Ritual Diviner
+
+ritual.bloodmagicwiki.waterritual.page=Full Spring
+ritual.bloodmagicwiki.lavaritual.page=Serenade of the Nether
+ritual.bloodmagicwiki.greengroveritual.page=Green Grove
+ritual.bloodmagicwiki.jumpritual.page=High Jump
+ritual.bloodmagicwiki.wellofsufferingritual.page=Well of Suffering
+ritual.bloodmagicwiki.featheredkniferitual.page=Feathered Knife
+ritual.bloodmagicwiki.regenerationritual.page=Regeneration
+ritual.bloodmagicwiki.harvestritual.page=Reap of the Harvest Moon
+ritual.bloodmagicwiki.magneticritual.page=Magnetism
+ritual.bloodmagicwiki.crushingritual.page=Crusher
+ritual.bloodmagicwiki.fullstomachritual.page=Satiated Stomach
+ritual.bloodmagicwiki.interdictionritual.page=Interdiction
+ritual.bloodmagicwiki.containmentritual.page=Containment
+ritual.bloodmagicwiki.speedritual.page=Speed
+ritual.bloodmagicwiki.suppressionritual.page=Suppression
+ritual.bloodmagicwiki.expulsionritual.page=Aura of Expulsion
+ritual.bloodmagicwiki.zephyrritual.page=Call of the Zephyr
+ritual.bloodmagicwiki.upgraderemoveritual.page=Sound of the Cleansing Soul
+ritual.bloodmagicwiki.armourevolveritual.page=Living Evolution
+ritual.bloodmagicwiki.animalgrowthritual.page=Shepherd
+ritual.bloodmagicwiki.forsakensoulritual.page=Gathering of the Forsaken Souls
+ritual.bloodmagicwiki.crystalharvestritual.page=Crack of the Fractured Crystal
+ritual.bloodmagicwiki.meteorritual.page=Mark of the Falling Tower
+ritual.bloodmagicwiki.cobblestoneritual.page=Le Vulcanos Frigius
+ritual.bloodmagicwiki.placerritual.page=Laying of the Filler
+ritual.bloodmagicwiki.fellingritual.page=Crash of the Timberman
+ritual.bloodmagicwiki.pumpritual.page=Hymn of Syphoning
+ritual.bloodmagicwiki.altarbuilderritual.page=The Assembly of the High Altar
+ritual.bloodmagicwiki.portalritual.page=The Gate of the Fold
+ritual.bloodmagicwiki.downgraderitual.page=Penance of the Leadened Soul
 
 wikitab.bloodmagicwiki.array.name=Alchemic Encyclopedia
+
+wiki.bloodmagicwiki.arcaneashe.page=Arcane Ashes
+wiki.bloodmagicwiki.sentinentequipment.page=Sentinent Equipment
 
 wikitab.bloodmagicwiki.items.name=Blood Magic Encyclopedia
 

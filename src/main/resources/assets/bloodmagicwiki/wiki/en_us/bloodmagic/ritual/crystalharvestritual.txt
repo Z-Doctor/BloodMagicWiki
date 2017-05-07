@@ -1,1 +1,1 @@
-[image{200,0,.315,bloodmagicwiki:textures/screenshots/crystalHarvestRitual.png}]
+[image{200,0,.141,bloodmagicwiki:textures/screenshots/crystalharvestritual.png}]

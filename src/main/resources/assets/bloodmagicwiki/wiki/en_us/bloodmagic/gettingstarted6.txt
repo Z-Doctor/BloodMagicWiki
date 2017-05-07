@@ -49,4 +49,3 @@ Tier 2 Altar:
 
 
 
-For more information check in [link{zdoctorbmw:bloodmagic/Index}]Index [link{}] under [link{zdoctorbmw:bloodmagic/AltarTiers}]Altar Tiers.

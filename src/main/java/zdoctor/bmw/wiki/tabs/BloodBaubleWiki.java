@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki;
+package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -10,22 +10,22 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 
-public class ArrayWiki extends BaseWikiTab {
+public class BloodBaubleWiki extends BaseWikiTab {
 	public static void preInit() {
-		WikiRegistry.registerWikiTab(new ArrayWiki());
+		WikiRegistry.registerWikiTab(new BloodBaubleWiki());
 	}
 
-	public ArrayWiki() {
+	public BloodBaubleWiki() {
 	}
 
 	@Override
 	public String getName() {
-		return "wikitab." + ModMain.MODID + ".array.name";
+		return "wikitab.bloodmagic.name";
 	}
 
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModItems.ARCANE_ASHES);
+		return OrbRegistry.getOrbStack(ModItems.ORB_WEAK);
 	}
 
 	@Override
