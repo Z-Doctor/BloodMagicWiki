@@ -16,8 +16,8 @@ public class ArrayWiki extends BaseWikiTab {
 	}
 
 	public ArrayWiki() {
-		pageEntries.add("ArcaneAshe");
-		pageEntries.add("SentinentEquipment");
+		pageEntries.add("ItemArcaneAshe");
+		pageEntries.add("ItemBound");
 		
 		
 	}
@@ -39,9 +39,11 @@ public class ArrayWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		if(pageEntry.contains("array"))
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
 			return Constants.Mod.MODID.toLowerCase() + "/array/" + pageEntry;
-		return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry;
+		else
+			return entry;
 	}
 
 }

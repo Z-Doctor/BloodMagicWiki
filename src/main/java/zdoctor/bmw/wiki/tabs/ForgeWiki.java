@@ -11,39 +11,38 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 
-public class AltarWiki extends BaseWikiTab {
+public class ForgeWiki extends BaseWikiTab {
 	public static void preInit() {
-		WikiRegistry.registerWikiTab(new AltarWiki());
+		WikiRegistry.registerWikiTab(new ForgeWiki());
 	}
 
-	public AltarWiki() {
+	public ForgeWiki() {
 		addSectionHeader("Items");
-		pageEntries.add("ItemSacrificialDagger");
-		pageEntries.add("ItemDaggerOfSacrifice");
-		pageEntries.add("ItemBloodOrbs");
-		pageEntries.add("ItemSanguineBook");
+		pageEntries.add("ItemSoulGem");
+		pageEntries.add("ItemSentinentArmour");
+		pageEntries.add("ItemSentinentSword");
+		pageEntries.add("ItemSentinentBow");
+		pageEntries.add("ItemSentinentPicaxe");
+		pageEntries.add("ItemSentinentAxe");
+		pageEntries.add("ItemSentinentShovel");
+		pageEntries.add("ItemNodeRouter");
 		addSectionHeader("Blocks");
-		pageEntries.add("BlockAltar");
-		pageEntries.add("BlockRunes");
-		pageEntries.add("BlockIncenseAltar");
-		pageEntries.add("BlockPaths");
-		addSectionHeader("UpgradingAltar");
-		pageEntries.add("Tier1");
-		pageEntries.add("Tier2");
-		pageEntries.add("Tier3");
-		pageEntries.add("Tier4");
-		pageEntries.add("Tier5");
-		pageEntries.add("Tier6");
+		pageEntries.add("BlockForge");
+		pageEntries.add("BlockDemonCrucible");
+		pageEntries.add("BlockDemonCrystal");
+		pageEntries.add("BlockDemonPylon");
+		pageEntries.add("BlockWillCluster");
+		pageEntries.add("BlockNodes");
 	}
 
 	@Override
 	public String getName() {
-		return "wikitab.altar.name";
+		return "wikitab.forge.name";
 	}
 
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModBlocks.ALTAR);
+		return new ItemStack(ModBlocks.SOUL_FORGE);
 	}
 
 	@Override
@@ -55,7 +54,7 @@ public class AltarWiki extends BaseWikiTab {
 	protected String getPageLocation(String pageEntry) {
 		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
 		if(entry == null)
-			return Constants.Mod.MODID.toLowerCase() + "/altar/" + pageEntry;
+			return Constants.Mod.MODID.toLowerCase() + "/forge/" + pageEntry;
 		else
 			return entry;
 	}

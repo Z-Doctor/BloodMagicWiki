@@ -52,6 +52,7 @@ import zdoctor.bmw.wiki.tabs.AltarWiki;
 import zdoctor.bmw.wiki.tabs.ArrayWiki;
 import zdoctor.bmw.wiki.tabs.BloodBaubleWiki;
 import zdoctor.bmw.wiki.tabs.BloodMagicWiki;
+import zdoctor.bmw.wiki.tabs.ForgeWiki;
 import zdoctor.bmw.wiki.tabs.ItemsWiki;
 import zdoctor.bmw.wiki.tabs.RitualWiki;
 
@@ -78,6 +79,7 @@ public class ClientProxy extends CommonProxy {
 
 		BloodMagicWiki.preInit();
 		AltarWiki.preInit();
+		ForgeWiki.preInit();
 		RitualWiki.preInit();
 		ArrayWiki.preInit();
 		ItemsWiki.preInit();

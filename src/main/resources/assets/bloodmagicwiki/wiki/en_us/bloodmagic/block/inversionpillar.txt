@@ -1,0 +1,32 @@
+Inversion Pillars
+
+Try to spread, uses will in air, after spreading far enough can create a pillar.
+
+No crafting recipes.
+
+public static double willPerOperation = 0.5;
+public static double inversionPerOperation = 4;
+public static double addedInversionPerFailedCheck = 1;
+public static double inversionToIncreaseRadius = 100;
+public static double inversionToAddPillar = 200;
+public static double operationThreshold = 20;
+public static double inversionToSpreadWill = 200;
+public static double willPushRate = 1;
+public static double inversionCostPerWillSpread = 4;
+public static double minimumWillForChunkWhenSpreading = 100;
+	
+generate invesion using will or when there are nearby pillars
+
+do not spawn natrually (yet).
+
+3 parts. pill top, bottom and pillar
+
+will rarely spawn blocks in air if it cannont replace anything else.
+
+resets inversion when it creates a pillar
+
+breakable same as stone
+
+public static final double maxWillForChunk = 1000;
+
+will create will in surronding chunks

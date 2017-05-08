@@ -15,10 +15,16 @@ public class RitualWiki extends BaseWikiTab {
 	}
 
 	public RitualWiki() {
-		pageEntries.add("ImperfectRituals");
-		pageEntries.add("ActivationCrystals");
-		pageEntries.add("ScribeTools");
-		pageEntries.add("RitualDiviner");
+		addSectionHeader("RitualTypes");
+		pageEntries.add("RefImperfectRituals");
+		pageEntries.add("RefRegularRituals");
+		addSectionHeader("Items");
+		pageEntries.add("ItemActivationCrystals");
+		pageEntries.add("ItemScribeTools");
+		pageEntries.add("ItemRitualDiviner");
+		addSectionHeader("Blocks");
+		pageEntries.add("BlockRitualBlocks");
+		addSectionHeader("Rituals");
 		pageEntries.add("WaterRitual");
 		pageEntries.add("LavaRitual");
 		pageEntries.add("GreenGroveRitual");
@@ -67,12 +73,10 @@ public class RitualWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		if(pageEntry.contains("scribe"))
-			return Constants.Mod.MODID + "/item/" + pageEntry;
-		else if(pageEntry.contains("activation"))
-			return Constants.Mod.MODID + "/item/" + pageEntry;
-		else if(pageEntry.contains("diviner"))
-			return Constants.Mod.MODID + "/item/" + pageEntry;
-		return Constants.Mod.MODID + "/ritual/" + pageEntry;
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
+			return Constants.Mod.MODID.toLowerCase() + "/ritual/" + pageEntry;
+		else
+			return entry;
 	}
 }

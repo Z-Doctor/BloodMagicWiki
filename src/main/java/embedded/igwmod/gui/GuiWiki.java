@@ -10,6 +10,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
+import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.block.BlockAltar;
 import WayofTime.bloodmagic.block.BlockDemonStairsBase;
 import WayofTime.bloodmagic.block.BlockMimic;
@@ -60,20 +61,11 @@ import zdoctor.bmw.wiki.events.PageChangeEvent;
 
 public class GuiWiki extends GuiContainer {
 	private static String currentFile = "";
-	private static List<String> fileInfo = new ArrayList<String>(); // The raw
-																	// info
-																	// directly
-																	// retrieved
-																	// from the
-																	// .txt
-																	// file.
+	// The raw info directly retrieved from the .txt file.
+	private static List<String> fileInfo = new ArrayList<String>();
+	// A list of all the tabs registered.
+	public static List<IWikiTab> wikiTabs = new ArrayList<IWikiTab>();
 
-	public static List<IWikiTab> wikiTabs = new ArrayList<IWikiTab>();// A list
-																		// of
-																		// all
-																		// the
-																		// tabs
-																		// registered.
 	private static IWikiTab currentTab;
 	private static int currentTabPage = 0;
 	private static String currentModIdPage = ModMain.MODID;
@@ -116,6 +108,8 @@ public class GuiWiki extends GuiContainer {
 	public static final int MAX_TEXT_Y = 453;
 	public static final int MIN_TEXT_Y = 10;
 
+	private static boolean clickDecbounce = false;
+
 	public GuiWiki() {
 		super(new ContainerBlockWiki());
 
@@ -125,7 +119,7 @@ public class GuiWiki extends GuiContainer {
 		if (currentTab == null)
 			currentTab = wikiTabs.get(0);
 	}
-	
+
 	public static String getCurrentFile() {
 		return currentFile;
 	}
@@ -234,12 +228,16 @@ public class GuiWiki extends GuiContainer {
 		}
 
 		for (IPageLink link : visibleWikiPages) {
-			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y))
+			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y)) {
+				System.out.println("Clicked link: " + link.getName());
 				return;
+			}
 		}
 		for (LocatedString link : locatedStrings) {
-			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y))
+			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y)) {
+				System.out.println("Clicked string: " + link.getName());
 				return;
+			}
 		}
 
 		if (hasMultipleTabPages() && x < 33 + guiLeft && x >= 1 + guiLeft && y >= 214 + guiTop && y <= 236 + guiTop) {
@@ -273,37 +271,55 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	public void setCurrentFile(ItemStack stack) {
+
 		String defaultName = WikiRegistry.getPageForItemStack(stack);
 		if (defaultName == null)
 			defaultName = stack.getUnlocalizedName().replace("tile.", "block/").replace("item.", "item/");
 		ItemWikiEvent wikiEvent = new ItemWikiEvent(stack, defaultName);
-		MinecraftForge.EVENT_BUS.post(wikiEvent);
-		if (stack != null) {
-			stack = stack.copy();
-			// stack.stackSize = 1;
-			stack.setCount(1);
+		if (WikiUtils.getOwningModId(stack).equalsIgnoreCase(Constants.Mod.MODID)) {
+			MinecraftForge.EVENT_BUS.post(wikiEvent);
+			if (stack != null) {
+				stack = stack.copy();
+				// stack.stackSize = 1;
+				stack.setCount(1);
+			}
+			// System.out.println("Chanign from item");
+			setCurrentFile(wikiEvent.pageOpened, stack);
+			clickDecbounce = true;
+			Thread waitThread = new Thread() {
+				@Override
+				public void run() {
+					try {
+						Thread.sleep(100);
+						clickDecbounce = false;
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			waitThread.start();
 		}
-
-		setCurrentFile(wikiEvent.pageOpened, stack);
 	}
 
 	public void setCurrentFile(String file, Object... metadata) {
-		BrowseHistory.updateHistory(currentPageScroll);
-		if (metadata.length == 0) {
-			ItemStack displayedStack = WikiUtils.getStackFromName(file);
-			if (displayedStack != null)
-				metadata = new Object[] { displayedStack };
+		if (!clickDecbounce) {
+			BrowseHistory.updateHistory(currentPageScroll);
+			if (metadata.length == 0) {
+				ItemStack displayedStack = WikiUtils.getStackFromName(file);
+				if (displayedStack != null)
+					metadata = new Object[] { displayedStack };
+			}
+			currentFile = file;
+			IWikiTab tab = getTabForPage(currentFile);
+			if (tab != null)
+				currentTab = tab;
+			currentTabPage = getPageNumberForTab(currentTab);
+			currentTab.onPageChange(this, file, metadata);
+			updateWikiPage(metadata);
+			updateSearch();
+			BrowseHistory.addHistory(file, currentTab, metadata);
+			initGui();// update the textfield location.
 		}
-		currentFile = file;
-		IWikiTab tab = getTabForPage(currentFile);
-		if (tab != null)
-			currentTab = tab;
-		currentTabPage = getPageNumberForTab(currentTab);
-		currentTab.onPageChange(this, file, metadata);
-		updateWikiPage(metadata);
-		updateSearch();
-		BrowseHistory.addHistory(file, currentTab, metadata);
-		initGui();// update the textfield location.
 	}
 
 	/**
@@ -647,7 +663,7 @@ public class GuiWiki extends GuiContainer {
 		PageChangeEvent pageChangeEvent = new PageChangeEvent(currentFile, pageStack, pageEntity);
 		MinecraftForge.EVENT_BUS.post(pageChangeEvent);
 		currentFile = pageChangeEvent.currentFile;
-		System.out.println("Page: " + currentFile);
+		// System.out.println("Page: " + currentFile);
 		fileInfo = pageChangeEvent.pageText;
 		if (fileInfo == null) {
 			String modid = currentModIdPage;

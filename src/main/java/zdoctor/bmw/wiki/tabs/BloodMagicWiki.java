@@ -17,7 +17,9 @@ public class BloodMagicWiki extends BaseWikiTab {
 	}
 
 	public BloodMagicWiki() {
+		addSectionHeader("Getting Started");
 		pageEntries.add("Intro");
+		skipLine();
 		pageEntries.add("GettingStarted1");
 		pageEntries.add("GettingStarted2");
 		pageEntries.add("GettingStarted3");
@@ -26,6 +28,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 		pageEntries.add("GettingStarted6");
 		pageEntries.add("GettingStarted7");
 		pageEntries.add("GettingStarted8");
+		skipLine();
 		pageEntries.add("Acknowledgments");
 	}
 
@@ -46,17 +49,16 @@ public class BloodMagicWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageLocation(String pageEntry) {
-		return "test:" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
+		return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
 	}
-
-	public static String getItemPage(String pageOpened) {
-		if (pageOpened.toLowerCase().contains("routing")) {
-			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/block/Routing";
-		} else if (pageOpened.toLowerCase().contains("item/orb")) {
-			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/BloodOrb";
-		} else if (pageOpened.toLowerCase().contains("soulgem") || pageOpened.toLowerCase().contains("monstersoul")) {
-			pageOpened = ModMain.MODID.toLowerCase() + ":bloodmagic/item/SoulGems";
-		}
-		return pageOpened;
+	
+	public static String getPageByPageEntry(String pageEntry) {
+		if(pageEntry.contains("item"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry.replace("item", "");
+		else if(pageEntry.contains("block"))
+			return Constants.Mod.MODID.toLowerCase() + "/block/" + pageEntry.replace("block", "");
+		else if(pageEntry.contains("ref"))
+			return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry.replace("ref", "");
+		return null;
 	}
 }

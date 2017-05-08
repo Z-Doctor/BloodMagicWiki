@@ -48,7 +48,7 @@ public class WikiUtils{
 
     public static String getOwningModId(ItemStack stack){
         String modid = "minecraft";
-        if(stack.getItem() == null) {
+        if(stack == null || stack.getItem() == null) {
             WikiLog.warning("Found an ItemStack with a null item! This isn't supposed to happen!");
         } else {
         	ResourceLocation id = Item.REGISTRY.getNameForObject(stack.getItem());

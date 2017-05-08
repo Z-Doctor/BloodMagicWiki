@@ -87,7 +87,6 @@ public class IntegratorAltarRecipe extends BaseIntegratorRecipe {
 					if (req.hasNext()) {
 						ItemStack ingredientStack = req.next().toStack().copy();
 						if (ingredientStack != null) {
-							System.out.println("ing: " + ingredientStack);
 							locatedStacks.add(new LocatedStack(ingredientStack, x + STACKS_X_OFFSET + j * 18,
 									y + STACKS_Y_OFFSET + i * 18));
 						}

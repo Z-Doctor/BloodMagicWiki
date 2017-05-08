@@ -14,16 +14,24 @@ wiki.bloodmagicwiki.acknowledgments.page=Acknowledgments
 
 wikitab.altar.name=Altar Index
 
-wiki.bloodmagicwiki.bloodorbs.page=Blood Orbs
-wiki.bloodmagicwiki.runes.page=Runes
-wiki.bloodmagicwiki.incensealtar.page=Incense Altar
+wiki.bloodmagicwiki.#items.page=Items
+wiki.bloodmagicwiki.#blocks.page=Blocks
+wiki.bloodmagicwiki.#upgradingaltar.page=Upgrading
+
+wiki.bloodmagicwiki.itemsacrificialdagger.page=Sacrificial Dagger
+wiki.bloodmagicwiki.itemdaggerofsacrifice.page=Dagger of Sacrifial
+wiki.bloodmagicwiki.blockaltar.page=Altar
+wiki.bloodmagicwiki.blockrunes.page=Runes
+wiki.bloodmagicwiki.blockincensealtar.page=Incense Altar
+wiki.bloodmagicwiki.blockpaths.page=Paths
+wiki.bloodmagicwiki.itembloodorbs.page=Blood Orbs
+wiki.bloodmagicwiki.itemsanguinebook.page=Saguine Book
 wiki.bloodmagicwiki.tier1.page=Tier 1
 wiki.bloodmagicwiki.tier2.page=Tier 2
 wiki.bloodmagicwiki.tier3.page=Tier 3
 wiki.bloodmagicwiki.tier4.page=Tier 4
 wiki.bloodmagicwiki.tier5.page=Tier 5
 wiki.bloodmagicwiki.tier6.page=Tier 6
-wiki.bloodmagicwiki.sanguinebook.page=Saguine Book
 
 wikitab.bloodmagicwiki.ritual.name=Codex of Rituals
 
@@ -67,6 +75,7 @@ wikitab.bloodmagicwiki.array.name=Alchemic Encyclopedia
 
 wiki.bloodmagicwiki.arcaneashe.page=Arcane Ashes
 wiki.bloodmagicwiki.sentinentequipment.page=Sentinent Equipment
+wiki.bloodmagicwiki.bound.page=Living Equipment
 
 wikitab.bloodmagicwiki.items.name=Blood Magic Encyclopedia
 
