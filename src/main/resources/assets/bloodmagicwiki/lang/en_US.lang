@@ -1,4 +1,5 @@
 wikitab.bloodmagicwiki.name=Blood Magic Wiki
+wiki.bloodmagicwiki.#gettingstarted.page=Getting Started
 
 wiki.bloodmagicwiki.intro.page=Introductions
 wiki.bloodmagicwiki.gettingstarted1.page=Entering the Arts
@@ -17,6 +18,7 @@ wikitab.altar.name=Altar Index
 wiki.bloodmagicwiki.#items.page=Items
 wiki.bloodmagicwiki.#blocks.page=Blocks
 wiki.bloodmagicwiki.#upgradingaltar.page=Upgrading
+wiki.bloodmagicwiki.#runes.page=Runes
 
 wiki.bloodmagicwiki.itemsacrificialdagger.page=Sacrificial Dagger
 wiki.bloodmagicwiki.itemdaggerofsacrifice.page=Dagger of Sacrifial
@@ -33,12 +35,50 @@ wiki.bloodmagicwiki.tier4.page=Tier 4
 wiki.bloodmagicwiki.tier5.page=Tier 5
 wiki.bloodmagicwiki.tier6.page=Tier 6
 
+wiki.bloodmagicwiki.blockblank.page=Blank
+wiki.bloodmagicwiki.blockefficiency.page=Efficiency
+wiki.bloodmagicwiki.blocksacrifice.page=Sacrifice
+wiki.bloodmagicwiki.blockselfsacrifice.page=Self Sacrifice
+wiki.bloodmagicwiki.blockaugcapacity.page=Augmented capacity
+wiki.bloodmagicwiki.blockorb.page=Orb
+wiki.bloodmagicwiki.blockacceleration.page=Acceleration
+wiki.bloodmagicwiki.blockcharging.page=Charging
+wiki.bloodmagicwiki.blockspeed.page=Speed
+wiki.bloodmagicwiki.blockdisplacement.page=Displacement
+wiki.bloodmagicwiki.blockcapacity.page=Capacity
+
+wikitab.forge.name=Hellfire Forge
+
+wiki.bloodmagicwiki.itemsoulgem.page=Soul Gem
+wiki.bloodmagicwiki.itemsentientarmour.page=Sentinent Armour
+wiki.bloodmagicwiki.itemsentientsword.page=Sentinent Sword
+wiki.bloodmagicwiki.itemsentientbow.page=Sentinent Bow
+wiki.bloodmagicwiki.itemsentientpicaxe.page=Sentinent Picaxe
+wiki.bloodmagicwiki.itemsentientaxe.page=Sentinent Axe
+wiki.bloodmagicwiki.itemsentientshovel.page=Sentinent Shovel
+wiki.bloodmagicwiki.itemnoderouter.page=Node Router
+wiki.bloodmagicwiki.itemwillgauge.page=Will Gauge
+wiki.bloodmagicwiki.blockforge.page=Forge
+wiki.bloodmagicwiki.blockdemoncrucible.page=Demon Crucible
+wiki.bloodmagicwiki.blockdemoncrystal.page=Demon Crystal
+wiki.bloodmagicwiki.blockdemonpylon.page=Demon Pylon
+wiki.bloodmagicwiki.blockwillcluster.page=Wll Cluster
+wiki.bloodmagicwiki.blocknodes.page=Nodes
+
 wikitab.bloodmagicwiki.ritual.name=Codex of Rituals
 
-ritual.bloodmagicwiki.imperfectrituals.page=Imperfect Rituals
-ritual.bloodmagicwiki.scribetools.page=Scribe Tools
-ritual.bloodmagicwiki.activationcrystals.page=Activation Crystals
-ritual.bloodmagicwiki.ritualdiviner.page=Ritual Diviner
+ritual.bloodmagicwiki.#ritualtypes.page=Ritual Types
+ritual.bloodmagicwiki.#items.page=Items
+ritual.bloodmagicwiki.#blocks.page=Blocks
+ritual.bloodmagicwiki.#rituals.page=Rituals
+
+ritual.bloodmagicwiki.refimperfectrituals.page=Imperfect Rituals
+ritual.bloodmagicwiki.refregularrituals.page=Regular Rituals
+ritual.bloodmagicwiki.itemscribetools.page=Scribe Tools
+ritual.bloodmagicwiki.itemactivationcrystals.page=Activation Crystals
+ritual.bloodmagicwiki.itemritualdiviner.page=Ritual Diviner
+ritual.bloodmagicwiki.itemlivingupgrades.page=Living Upgrades
+ritual.bloodmagicwiki.blockritualblocks.page=Ritual Blocks
 
 ritual.bloodmagicwiki.waterritual.page=Full Spring
 ritual.bloodmagicwiki.lavaritual.page=Serenade of the Nether
@@ -72,10 +112,39 @@ ritual.bloodmagicwiki.portalritual.page=The Gate of the Fold
 ritual.bloodmagicwiki.downgraderitual.page=Penance of the Leadened Soul
 
 wikitab.bloodmagicwiki.array.name=Alchemic Encyclopedia
+wiki.bloodmagicwiki.#bounditems.page=Bound Items
+wiki.bloodmagicwiki.#sigils.page=Sigils
 
-wiki.bloodmagicwiki.arcaneashe.page=Arcane Ashes
-wiki.bloodmagicwiki.sentinentequipment.page=Sentinent Equipment
+wiki.bloodmagicwiki.itemarcaneashe.page=Arcane Ashes
+wiki.bloodmagicwiki.itemboundblade.page=Bound Blade
+wiki.bloodmagicwiki.itemboundpicaxe.page=Bound Picaxe
+wiki.bloodmagicwiki.itemboundaxe.page=Bound Axe
+wiki.bloodmagicwiki.itemboundshovel.page=Bound Shovel
+wiki.bloodmagicwiki.sentientequipment.page=Sentinent Equipment
 wiki.bloodmagicwiki.bound.page=Living Equipment
+wiki.bloodmagicwiki.sigilvoid.page=Void Sigil
+wiki.bloodmagicwiki.sigilphantombridge.page=Phantom Bridge Sigil
+wiki.bloodmagicwiki.sigilteleposition.page=Teleposition Sigil
+wiki.bloodmagicwiki.sigiltransposition.page=Transposition Sigil
+wiki.bloodmagicwiki.sigilelementalaffinity.page=Elemental Affinity Sigil
+wiki.bloodmagicwiki.sigilmagnetism.page=Magnetism Sigil
+wiki.bloodmagicwiki.sigilwater.page=Water Sigil
+wiki.bloodmagicwiki.sigilcompression.page=Compression Sigil
+wiki.bloodmagicwiki.sigildivination.page=Divination Sigil
+wiki.bloodmagicwiki.sigilfrost.page=Frost Sigil
+wiki.bloodmagicwiki.sigilsuppression.page=Suppression Sigil
+wiki.bloodmagicwiki.sigillava.page=Lava Sigil
+wiki.bloodmagicwiki.sigilclaw.page=Claw Sigil
+wiki.bloodmagicwiki.sigilgreengrove.page=Green Gove Sigil
+wiki.bloodmagicwiki.sigilair.page=Air Sigil
+wiki.bloodmagicwiki.sigilenderseverance.page=Ender Severance Sigil
+wiki.bloodmagicwiki.sigilbloodlight.page=Blood Light Sigil
+wiki.bloodmagicwiki.sigilhaste.page=Haste Sigil
+wiki.bloodmagicwiki.sigilseer.page=Seer's Sigil
+wiki.bloodmagicwiki.sigilbounce.page=Bounce Sigil
+wiki.bloodmagicwiki.sigilfastminer.page=Fast Miner
+wiki.bloodmagicwiki.sigilholding.page=Holding Sigil
+wiki.bloodmagicwiki.sigilwhirlwind.page=Whirlwind Sigil
 
 wikitab.bloodmagicwiki.items.name=Blood Magic Encyclopedia
 

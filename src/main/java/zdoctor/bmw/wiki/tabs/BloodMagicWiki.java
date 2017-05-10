@@ -17,7 +17,7 @@ public class BloodMagicWiki extends BaseWikiTab {
 	}
 
 	public BloodMagicWiki() {
-		addSectionHeader("Getting Started");
+		addSectionHeader("GettingStarted");
 		pageEntries.add("Intro");
 		skipLine();
 		pageEntries.add("GettingStarted1");
@@ -57,6 +57,8 @@ public class BloodMagicWiki extends BaseWikiTab {
 			return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry.replace("item", "");
 		else if(pageEntry.contains("block"))
 			return Constants.Mod.MODID.toLowerCase() + "/block/" + pageEntry.replace("block", "");
+		else if(pageEntry.contains("sigil"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/sigil/" + pageEntry.replace("sigil", "");
 		else if(pageEntry.contains("ref"))
 			return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry.replace("ref", "");
 		return null;

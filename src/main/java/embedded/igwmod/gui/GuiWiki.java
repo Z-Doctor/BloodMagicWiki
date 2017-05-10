@@ -359,10 +359,15 @@ public class GuiWiki extends GuiContainer {
 			int[] indexes = new int[Math.min(
 					Math.min(matchingIndexes.size() - firstListedPageIndex, matchingIndexes.size()),
 					currentTab.pagesPerTab())];
-			for (int i = 0; i < indexes.length; i++) {
-				indexes[i] = matchingIndexes.get(firstListedPageIndex + i);
+			try {
+				System.out.println(getScrollStates() + " * " + currentPageLinkScroll + " + 0.5F" + " = " + firstListedPageIndex);
+				for (int i = 0; i < indexes.length; i++) {
+					indexes[i] = matchingIndexes.get(firstListedPageIndex + i);
+				}
+				visibleWikiPages = currentTab.getPages(indexes);
+			} catch (Exception e) {
+				System.out.println("Error: " + e.toString());
 			}
-			visibleWikiPages = currentTab.getPages(indexes);
 		} else {
 			visibleWikiPages = new ArrayList<IPageLink>();
 			matchingWikiPages = 0;

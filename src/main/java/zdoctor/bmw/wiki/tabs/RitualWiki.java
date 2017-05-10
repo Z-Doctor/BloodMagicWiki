@@ -22,8 +22,6 @@ public class RitualWiki extends BaseWikiTab {
 		pageEntries.add("ItemActivationCrystals");
 		pageEntries.add("ItemScribeTools");
 		pageEntries.add("ItemRitualDiviner");
-		addSectionHeader("Blocks");
-		pageEntries.add("BlockRitualBlocks");
 		addSectionHeader("Rituals");
 		pageEntries.add("WaterRitual");
 		pageEntries.add("LavaRitual");

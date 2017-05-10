@@ -16,10 +16,37 @@ public class ArrayWiki extends BaseWikiTab {
 	}
 
 	public ArrayWiki() {
+		addSectionHeader("Items");
 		pageEntries.add("ItemArcaneAshe");
-		pageEntries.add("ItemBound");
-		
-		
+		addSectionHeader("BoundItems");
+		pageEntries.add("ItemBoundBlade");
+		pageEntries.add("ItemBoundPicaxe");
+		pageEntries.add("ItemBoundAxe");
+		pageEntries.add("ItemBoundShovel");
+		addSectionHeader("Sigils");
+		pageEntries.add("SigilVoid");
+		pageEntries.add("SigilPhantomBridge");
+		pageEntries.add("SigilTeleposition");
+		pageEntries.add("SigilTransposition");
+		pageEntries.add("SigilElementalAffinity");
+		pageEntries.add("SigilMagnetism");
+		pageEntries.add("SigilWater");
+		pageEntries.add("SigilCompression");
+		pageEntries.add("SigilDivination");
+		pageEntries.add("SigilFrost");
+		pageEntries.add("SigilSuppression");
+		pageEntries.add("SigilLava");
+		pageEntries.add("SigilClaw");
+		pageEntries.add("SigilGreenGrove");
+		pageEntries.add("SigilAir");
+		pageEntries.add("SigilEnderSeverance");
+		pageEntries.add("SigilBloodLight");
+		pageEntries.add("SigilHaste");
+		pageEntries.add("SigilSeer");
+		pageEntries.add("SigilBounce");
+		pageEntries.add("SigilFastMiner");
+		pageEntries.add("SigilHolding");
+		pageEntries.add("SigilWhirlwind");
 	}
 
 	@Override

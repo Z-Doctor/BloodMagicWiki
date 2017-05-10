@@ -19,17 +19,17 @@ public class ForgeWiki extends BaseWikiTab {
 	public ForgeWiki() {
 		addSectionHeader("Items");
 		pageEntries.add("ItemSoulGem");
-		pageEntries.add("ItemSentinentArmour");
-		pageEntries.add("ItemSentinentSword");
-		pageEntries.add("ItemSentinentBow");
-		pageEntries.add("ItemSentinentPicaxe");
-		pageEntries.add("ItemSentinentAxe");
-		pageEntries.add("ItemSentinentShovel");
+		pageEntries.add("ItemSentientArmour");
+		pageEntries.add("ItemSentientSword");
+		pageEntries.add("ItemSentientBow");
+		pageEntries.add("ItemSentientPicaxe");
+		pageEntries.add("ItemSentientAxe");
+		pageEntries.add("ItemSentientShovel");
 		pageEntries.add("ItemNodeRouter");
+		pageEntries.add("ItemWillGauge");
 		addSectionHeader("Blocks");
-		pageEntries.add("BlockForge");
+		pageEntries.add("BlockSoulForge");
 		pageEntries.add("BlockDemonCrucible");
-		pageEntries.add("BlockDemonCrystal");
 		pageEntries.add("BlockDemonPylon");
 		pageEntries.add("BlockWillCluster");
 		pageEntries.add("BlockNodes");

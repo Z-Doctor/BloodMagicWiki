@@ -34,6 +34,18 @@ public class AltarWiki extends BaseWikiTab {
 		pageEntries.add("Tier4");
 		pageEntries.add("Tier5");
 		pageEntries.add("Tier6");
+		addSectionHeader("Runes");
+		pageEntries.add("BlockBlank");
+		pageEntries.add("BlockEfficiency");
+		pageEntries.add("BlockSacrifice");
+		pageEntries.add("BlockSelfsacrifice");
+		pageEntries.add("BlockAugcapacity");
+		pageEntries.add("BlockOrb");
+		pageEntries.add("BlockAcceleration");
+		pageEntries.add("BlockCharging");
+		pageEntries.add("BlockSpeed");
+		pageEntries.add("BlockDisplacement");
+		pageEntries.add("BlockCapacity");
 	}
 
 	@Override

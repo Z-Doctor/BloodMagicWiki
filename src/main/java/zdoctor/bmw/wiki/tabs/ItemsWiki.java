@@ -41,7 +41,7 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 
 	@Override
 	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModItems.SOUL_SNARE);
+		return new ItemStack(ModItems.SANGUINE_BOOK);
 	}
 
 	@Override
@@ -60,7 +60,11 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 								|| unloc.matches("(.*)bricks(.*)") || unloc.matches("(.*)pillar[0-9](.*)")
 								|| unloc.matches("(.*)pillarcap[0-9](.*)") || unloc.contains("stair")
 								|| unloc.contains("wall") || unloc.contains(".extras."))) {
-							stack.getItem().getSubItems(item, CreativeTabs.SEARCH, entries);
+							if (unloc.contains(".activationcrystal.")) {
+								entries.add(new ItemStack(stack.getItem(), 1, 0));
+								entries.add(new ItemStack(stack.getItem(), 1, 1));
+							} else
+								stack.getItem().getSubItems(item, CreativeTabs.SEARCH, entries);
 						} else {
 							entries.add(stack);
 						}
@@ -82,6 +86,7 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 	}
 
 	public static String getPageFromName(String pageOpened) {
+		System.out.println("Page: " + pageOpened);
 		pageOpened = pageOpened.toLowerCase();
 		if (pageOpened.contains(".orb."))
 			return Constants.Mod.MODID + "/item/bloodorbs";
@@ -98,7 +103,7 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 		else if (pageOpened.contains(".ritualdiviner"))
 			return Constants.Mod.MODID + "/item/diviners";
 		else if (pageOpened.contains(".activationcrystal."))
-			return Constants.Mod.MODID + "/item/activationcrystal";
+			return Constants.Mod.MODID + "/item/activationcrystals";
 		else if (pageOpened.contains(".soulsnare."))
 			return Constants.Mod.MODID + "/item/soulsnare";
 		else if (pageOpened.contains(".monstersoul."))
@@ -125,8 +130,8 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 			return Constants.Mod.MODID + "/item/bloodpac";
 		else if (pageOpened.contains("inversionpillar"))
 			return Constants.Mod.MODID + "/block/inversionpillar";
-		else if (pageOpened.contains("/crystal."))
-			return Constants.Mod.MODID + "/block/crystal";
+		else if (pageOpened.contains(".crystal."))
+			return Constants.Mod.MODID + "/block/crystalcluster";
 		else if (pageOpened.contains("stone.ritual"))
 			return Constants.Mod.MODID + "/block/" + pageOpened.replaceFirst("(.*)\\.stone\\.ritual\\.", "");
 		else if (pageOpened.contains(".ritualstone."))
