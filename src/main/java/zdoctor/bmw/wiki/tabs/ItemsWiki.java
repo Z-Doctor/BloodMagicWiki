@@ -33,6 +33,11 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 
 	public ItemsWiki() {
 	}
+	
+//	@Override
+//	public int pagesPerScroll() {
+//		return 2;
+//	}
 
 	@Override
 	public String getName() {

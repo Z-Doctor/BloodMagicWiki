@@ -54,6 +54,7 @@ import zdoctor.bmw.client.ClientProxy;
 import zdoctor.bmw.wiki.events.BlockWikiEvent;
 import zdoctor.bmw.wiki.events.EntityWikiEvent;
 import zdoctor.bmw.wiki.events.PageChangeEvent;
+import zdoctor.bmw.wiki.tabs.ItemsWiki;
 
 /**
  * Derived from Vanilla's GuiContainerCreative
@@ -342,7 +343,6 @@ public class GuiWiki extends GuiContainer {
 
 	private void updateSearch() {
 		List<IPageLink> pages = currentTab.getPages(null);// request all pages.
-
 		if (pages != null) {
 			List<Integer> matchingIndexes = new ArrayList<Integer>();
 			for (int i = 0; i < pages.size(); i++) {
@@ -359,15 +359,14 @@ public class GuiWiki extends GuiContainer {
 			int[] indexes = new int[Math.min(
 					Math.min(matchingIndexes.size() - firstListedPageIndex, matchingIndexes.size()),
 					currentTab.pagesPerTab())];
-			try {
-				System.out.println(getScrollStates() + " * " + currentPageLinkScroll + " + 0.5F" + " = " + firstListedPageIndex);
-				for (int i = 0; i < indexes.length; i++) {
+			for (int i = 0; i < indexes.length; i++) {
+				try {
 					indexes[i] = matchingIndexes.get(firstListedPageIndex + i);
+				} catch (Exception e) {
+					// TODO: handle exception
 				}
-				visibleWikiPages = currentTab.getPages(indexes);
-			} catch (Exception e) {
-				System.out.println("Error: " + e.toString());
 			}
+			visibleWikiPages = currentTab.getPages(indexes);
 		} else {
 			visibleWikiPages = new ArrayList<IPageLink>();
 			matchingWikiPages = 0;
@@ -453,6 +452,10 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	private int getScrollStates() {
+		System.out.println("Tab: " + currentTab.getName());
+		System.out.println("Scroll: " + currentTab.pagesPerScroll());
+		// System.out.println("Scroll: 1 + " + matchingWikiPages + " - " +
+		// currentTab.pagesPerTab() + " / " + currentTab.pagesPerScroll());
 		return (1 + matchingWikiPages - currentTab.pagesPerTab()) / currentTab.pagesPerScroll();
 	}
 
@@ -781,9 +784,11 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	private IWikiTab getTabForPage(String page) {
+		System.out.println("page: " + page);
 		if (page == null)
 			return null; // When there isn't a valid page just stay on the same
 							// page.
+		page = ItemsWiki.getPageFromName(page);
 		if (currentTab != null) {// give the current tab the highest priority.
 			List<IPageLink> links = currentTab.getPages(null);
 			if (links != null) {
