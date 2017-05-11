@@ -16,8 +16,8 @@ public class RitualWiki extends BaseWikiTab {
 
 	public RitualWiki() {
 		addSectionHeader("RitualTypes");
-		pageEntries.add("RefImperfectRituals");
-		pageEntries.add("RefRegularRituals");
+		pageEntries.add("ImperfectRituals");
+		pageEntries.add("RegularRituals");
 		addSectionHeader("Items");
 		pageEntries.add("ItemActivationCrystals");
 		pageEntries.add("ItemScribeTools");

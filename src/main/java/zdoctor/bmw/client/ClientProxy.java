@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.recipe.TartaricForgeRecipe;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
@@ -48,12 +46,13 @@ import zdoctor.bmw.recipeintegrator.IntegratorBloodOrbCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
 import zdoctor.bmw.wiki.events.EventRegistry;
+import zdoctor.bmw.wiki.tabs.AlchemyWiki;
 import zdoctor.bmw.wiki.tabs.AltarWiki;
 import zdoctor.bmw.wiki.tabs.ArrayWiki;
-import zdoctor.bmw.wiki.tabs.BloodBaubleWiki;
 import zdoctor.bmw.wiki.tabs.BloodMagicWiki;
 import zdoctor.bmw.wiki.tabs.ForgeWiki;
 import zdoctor.bmw.wiki.tabs.ItemsWiki;
+import zdoctor.bmw.wiki.tabs.MiscWiki;
 import zdoctor.bmw.wiki.tabs.RitualWiki;
 
 public class ClientProxy extends CommonProxy {
@@ -80,10 +79,12 @@ public class ClientProxy extends CommonProxy {
 		BloodMagicWiki.preInit();
 		AltarWiki.preInit();
 		ForgeWiki.preInit();
+		AlchemyWiki.preInit();
 		RitualWiki.preInit();
 		ArrayWiki.preInit();
+		MiscWiki.preInit();
 		ItemsWiki.preInit();
-//		BloodBaubleWiki.preInit();
+		// BloodBaubleWiki.preInit();
 	}
 
 	public void init(FMLInitializationEvent e) {
@@ -118,13 +119,14 @@ public class ClientProxy extends CommonProxy {
 						String blockCode = WikiUtils.getNameFromStack(recipe.getRecipeOutput());
 						if (!MappedRecipes.containsKey(blockCode)) {
 							MappedRecipes.put(blockCode, recipe);
-//							System.out.println("Registered: " + blockCode);
+							// System.out.println("Registered: " + blockCode);
 						}
 
 						if (WikiUtils.getOwningModId(recipe.getRecipeOutput()).equalsIgnoreCase(Constants.Mod.MODID)) {
 							if (!BloodMagicRecipes.containsKey(blockCode)) {
 								BloodMagicRecipes.put(blockCode, recipe);
-//								System.out.println("Registered: " + blockCode);
+								// System.out.println("Registered: " +
+								// blockCode);
 							}
 						}
 					} else
@@ -160,7 +162,7 @@ public class ClientProxy extends CommonProxy {
 						String blockCode = WikiUtils.getNameFromStack(recipe.getOutput());
 						if (!AltarRecipes.containsKey(blockCode) && !recipe.isFillable()) {
 							AltarRecipes.put(blockCode, recipe);
-//							System.out.println("Added: " + blockCode);
+							// System.out.println("Added: " + blockCode);
 						}
 					} else
 						WikiLog.error("Item has no unlocalized name: " + recipe.getOutput().getItem());

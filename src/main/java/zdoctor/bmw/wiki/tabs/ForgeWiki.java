@@ -1,9 +1,7 @@
 package zdoctor.bmw.wiki.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
-import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModBlocks;
-import WayofTime.bloodmagic.registry.ModItems;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.tabs.BaseWikiTab;
@@ -47,7 +45,7 @@ public class ForgeWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki." + ModMain.MODID + "." + pageEntry + ".page");
+		return I18n.format("forge." + ModMain.MODID + "." + pageEntry + ".page");
 	}
 
 	@Override

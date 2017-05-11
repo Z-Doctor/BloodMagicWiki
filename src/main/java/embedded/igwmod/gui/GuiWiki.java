@@ -54,7 +54,6 @@ import zdoctor.bmw.client.ClientProxy;
 import zdoctor.bmw.wiki.events.BlockWikiEvent;
 import zdoctor.bmw.wiki.events.EntityWikiEvent;
 import zdoctor.bmw.wiki.events.PageChangeEvent;
-import zdoctor.bmw.wiki.tabs.ItemsWiki;
 
 /**
  * Derived from Vanilla's GuiContainerCreative
@@ -230,13 +229,11 @@ public class GuiWiki extends GuiContainer {
 
 		for (IPageLink link : visibleWikiPages) {
 			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y)) {
-				System.out.println("Clicked link: " + link.getName());
 				return;
 			}
 		}
 		for (LocatedString link : locatedStrings) {
 			if (link.onMouseClick(this, -guiLeft + x, -guiTop + y)) {
-				System.out.println("Clicked string: " + link.getName());
 				return;
 			}
 		}
@@ -281,10 +278,8 @@ public class GuiWiki extends GuiContainer {
 			MinecraftForge.EVENT_BUS.post(wikiEvent);
 			if (stack != null) {
 				stack = stack.copy();
-				// stack.stackSize = 1;
 				stack.setCount(1);
 			}
-			// System.out.println("Chanign from item");
 			setCurrentFile(wikiEvent.pageOpened, stack);
 			clickDecbounce = true;
 			Thread waitThread = new Thread() {
@@ -312,8 +307,10 @@ public class GuiWiki extends GuiContainer {
 			}
 			currentFile = file;
 			IWikiTab tab = getTabForPage(currentFile);
-			if (tab != null)
+			if (tab != null) {
+				updateSearch();
 				currentTab = tab;
+			}
 			currentTabPage = getPageNumberForTab(currentTab);
 			currentTab.onPageChange(this, file, metadata);
 			updateWikiPage(metadata);
@@ -356,15 +353,14 @@ public class GuiWiki extends GuiContainer {
 			matchingWikiPages = matchingIndexes.size();
 			int firstListedPageIndex = (int) (getScrollStates() * currentPageLinkScroll + 0.5F)
 					* currentTab.pagesPerScroll();
+			if (firstListedPageIndex < 0)
+				firstListedPageIndex = 0;
+
 			int[] indexes = new int[Math.min(
 					Math.min(matchingIndexes.size() - firstListedPageIndex, matchingIndexes.size()),
 					currentTab.pagesPerTab())];
 			for (int i = 0; i < indexes.length; i++) {
-				try {
-					indexes[i] = matchingIndexes.get(firstListedPageIndex + i);
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
+				indexes[i] = matchingIndexes.get(firstListedPageIndex + i);
 			}
 			visibleWikiPages = currentTab.getPages(indexes);
 		} else {
@@ -452,10 +448,6 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	private int getScrollStates() {
-		System.out.println("Tab: " + currentTab.getName());
-		System.out.println("Scroll: " + currentTab.pagesPerScroll());
-		// System.out.println("Scroll: 1 + " + matchingWikiPages + " - " +
-		// currentTab.pagesPerTab() + " / " + currentTab.pagesPerScroll());
 		return (1 + matchingWikiPages - currentTab.pagesPerTab()) / currentTab.pagesPerScroll();
 	}
 
@@ -784,15 +776,17 @@ public class GuiWiki extends GuiContainer {
 	}
 
 	private IWikiTab getTabForPage(String page) {
-		System.out.println("page: " + page);
+		// System.out.println("page: " + page);
 		if (page == null)
 			return null; // When there isn't a valid page just stay on the same
 							// page.
-		page = ItemsWiki.getPageFromName(page);
+		// page = ItemsWiki.getPageFromName(page);
 		if (currentTab != null) {// give the current tab the highest priority.
+			System.out.println("Looking for owner of page: " + page);
 			List<IPageLink> links = currentTab.getPages(null);
 			if (links != null) {
 				for (IPageLink link : links) {
+					// System.out.println("checked: " + link.getLinkAddress());
 					if (page.equals(link.getLinkAddress()))
 						return currentTab;
 				}
@@ -803,6 +797,7 @@ public class GuiWiki extends GuiContainer {
 			List<IPageLink> links = tab.getPages(null);
 			if (links != null) {
 				for (IPageLink link : links) {
+					// System.out.println("checked: " + link.getLinkAddress());
 					if (page.equals(link.getLinkAddress()))
 						return tab;
 				}

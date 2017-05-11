@@ -26,7 +26,10 @@ public class AltarWiki extends BaseWikiTab {
 		pageEntries.add("BlockAltar");
 		pageEntries.add("BlockRunes");
 		pageEntries.add("BlockIncenseAltar");
+		pageEntries.add("BlockBloodTank");
 		pageEntries.add("BlockPaths");
+		pageEntries.add("BlockBloodStoneBrick");
+		pageEntries.add("BlockCrystalCluster");
 		addSectionHeader("UpgradingAltar");
 		pageEntries.add("Tier1");
 		pageEntries.add("Tier2");
@@ -60,7 +63,7 @@ public class AltarWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki." + ModMain.MODID + "." + pageEntry + ".page");
+		return I18n.format("altar." + ModMain.MODID + "." + pageEntry + ".page");
 	}
 
 	@Override

@@ -1,1 +1,3 @@
 Blood Shard
+
+Dropped when a player kills a living entity that is not an animal with a bound sword about 20% chance

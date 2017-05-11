@@ -3,7 +3,6 @@ package zdoctor.bmw.wiki.tabs;
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
 import WayofTime.bloodmagic.registry.ModItems;
-import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.tabs.BaseWikiTab;
@@ -53,14 +52,17 @@ public class BloodMagicWiki extends BaseWikiTab {
 	}
 	
 	public static String getPageByPageEntry(String pageEntry) {
-		if(pageEntry.contains("item"))
-			return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry.replace("item", "");
-		else if(pageEntry.contains("block"))
-			return Constants.Mod.MODID.toLowerCase() + "/block/" + pageEntry.replace("block", "");
-		else if(pageEntry.contains("sigil"))
-			return Constants.Mod.MODID.toLowerCase() + "/item/sigil/" + pageEntry.replace("sigil", "");
-		else if(pageEntry.contains("ref"))
-			return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry.replace("ref", "");
+//		System.out.println("Test: " + pageEntry);
+		if(pageEntry.matches("\\bitem\\w*"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/" + pageEntry.replaceFirst("(\\bitem)(\\w*)", "$2");
+		else if(pageEntry.matches("\\bblock\\w*"))
+			return Constants.Mod.MODID.toLowerCase() + "/block/" + pageEntry.replaceFirst("(\\bblock)(\\w*)", "$2");
+		else if(pageEntry.matches("\\bsigil\\w*"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/sigil/" + pageEntry.replaceFirst("(\\bsigil)(\\w*)", "$2");
+		else if(pageEntry.matches("\\bflask\\w*"))
+			return Constants.Mod.MODID.toLowerCase() + "/item/flask/" + pageEntry.replaceFirst("(\\bflask)(\\w*)", "$2");
+		else if(pageEntry.matches("\\bref\\w*"))
+			return Constants.Mod.MODID.toLowerCase() + "/" + pageEntry.replaceFirst("(\\bref)(\\w*)", "$2");
 		return null;
 	}
 }

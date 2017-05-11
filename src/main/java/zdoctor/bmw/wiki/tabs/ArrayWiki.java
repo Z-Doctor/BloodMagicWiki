@@ -19,6 +19,7 @@ public class ArrayWiki extends BaseWikiTab {
 		addSectionHeader("Items");
 		pageEntries.add("ItemArcaneAshe");
 		addSectionHeader("BoundItems");
+		pageEntries.add("ItemLivingArmour");
 		pageEntries.add("ItemBoundBlade");
 		pageEntries.add("ItemBoundPicaxe");
 		pageEntries.add("ItemBoundAxe");
@@ -61,7 +62,7 @@ public class ArrayWiki extends BaseWikiTab {
 
 	@Override
 	protected String getPageName(String pageEntry) {
-		return I18n.format("wiki." + ModMain.MODID +"." + pageEntry + ".page");
+		return I18n.format("array." + ModMain.MODID +"." + pageEntry + ".page");
 	}
 
 	@Override

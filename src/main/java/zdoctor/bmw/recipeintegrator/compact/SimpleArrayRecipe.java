@@ -3,8 +3,6 @@ package zdoctor.bmw.recipeintegrator.compact;
 import java.util.List;
 import java.util.Map;
 
-import com.sun.istack.internal.NotNull;
-
 import WayofTime.bloodmagic.api.ItemStackWrapper;
 import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffect;
 import WayofTime.bloodmagic.api.alchemyCrafting.AlchemyArrayEffectCrafting;
@@ -23,7 +21,7 @@ public class SimpleArrayRecipe {
 		this.output = output;
 	}
 
-	public SimpleArrayRecipe(@NotNull AlchemyArrayRecipe recipe) {
+	public SimpleArrayRecipe(AlchemyArrayRecipe recipe) {
 		for (Map.Entry<ItemStackWrapper, AlchemyArrayEffect> effectEntry : recipe.getCatalystMap().entrySet()) {
 			if (effectEntry.getValue() instanceof AlchemyArrayEffectCrafting) {
 				AlchemyArrayEffectCrafting craftingEffect = (AlchemyArrayEffectCrafting) effectEntry.getValue();

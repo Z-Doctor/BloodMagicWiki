@@ -1,0 +1,1 @@
+[image{200,0,.141,bloodmagicwiki:textures/screenshots/altarBuilderRitual.png}]

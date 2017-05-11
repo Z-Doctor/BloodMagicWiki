@@ -68,6 +68,12 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 							if (unloc.contains(".activationcrystal.")) {
 								entries.add(new ItemStack(stack.getItem(), 1, 0));
 								entries.add(new ItemStack(stack.getItem(), 1, 1));
+							} else if(unloc.contains(".soulgem.")) {
+								entries.add(new ItemStack(stack.getItem(), 1, 0));
+								entries.add(new ItemStack(stack.getItem(), 1, 1));
+								entries.add(new ItemStack(stack.getItem(), 1, 2));
+								entries.add(new ItemStack(stack.getItem(), 1, 3));
+								entries.add(new ItemStack(stack.getItem(), 1, 4));
 							} else
 								stack.getItem().getSubItems(item, CreativeTabs.SEARCH, entries);
 						} else {
@@ -133,8 +139,12 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 			return Constants.Mod.MODID + "/item/sentientarmour";
 		else if (pageOpened.contains(".pack."))
 			return Constants.Mod.MODID + "/item/bloodpac";
+		else if (pageOpened.contains(".itemfilter.") || pageOpened.contains(".fluidfilter."))
+			return Constants.Mod.MODID + "/item/filter";
 		else if (pageOpened.contains("inversionpillar"))
 			return Constants.Mod.MODID + "/block/inversionpillar";
+		else if (pageOpened.contains(".demoncrystal."))
+			return Constants.Mod.MODID + "/block/willcluster";
 		else if (pageOpened.contains(".crystal."))
 			return Constants.Mod.MODID + "/block/crystalcluster";
 		else if (pageOpened.contains("stone.ritual"))
@@ -143,16 +153,16 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 			return Constants.Mod.MODID + "/block/ritualstones";
 		else if (pageOpened.contains(".rune."))
 			return Constants.Mod.MODID + "/block/" + pageOpened.replaceFirst("(.*)\\.rune\\.", "");
-		else if (pageOpened.contains(".demoncrystal."))
-			return Constants.Mod.MODID + "/block/demoncrystals";
-		else if (pageOpened.contains("routing"))
-			return Constants.Mod.MODID + "/block/routing";
+		else if (pageOpened.matches("(.*)(routing)"))
+			return Constants.Mod.MODID + "/block/nodes";
 		else if (pageOpened.contains(".bloodstonebrick."))
 			return Constants.Mod.MODID + "/block/bloodstonebrick";
 		else if (pageOpened.contains(".path."))
 			return Constants.Mod.MODID + "/block/paths";
 		else if (pageOpened.contains(".mimic."))
 			return Constants.Mod.MODID + "/block/mimics";
+		else if (pageOpened.contains(".demonlight."))
+			return Constants.Mod.MODID + "/block/demonlight";
 		else if (pageOpened.matches("(.*)bricks[0-9](.*)") || pageOpened.matches("(.*)wall[0-9](.*)")
 				|| pageOpened.matches("(.*)stairs[0-9](.*)") || pageOpened.matches("(.*)pillar[0-9](.*)")
 				|| pageOpened.contains("extras") || pageOpened.matches("(.*)pillarcap[0-9](.*)"))

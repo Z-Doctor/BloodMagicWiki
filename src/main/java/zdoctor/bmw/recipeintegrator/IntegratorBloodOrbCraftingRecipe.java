@@ -56,8 +56,10 @@ public class IntegratorBloodOrbCraftingRecipe extends BaseIntegratorRecipe {
 						}
 					}
 				}
-				locatedStacks.add(new LocatedStack(recipe.getRecipeOutput(), x + RESULT_STACK_X_OFFSET,
+				locatedStacks.add(new LocatedStack(recipe.func_77571_b(), x + RESULT_STACK_X_OFFSET,
 						y + RESULT_STACK_Y_OFFSET));
+//				locatedStacks.add(new LocatedStack(recipe.getRecipeOutput(), x + RESULT_STACK_X_OFFSET,
+//						y + RESULT_STACK_Y_OFFSET));
 				locatedStrings.add(new LocatedString(I18n.format(ModMain.MODID + ".gui.crafting.shapedorb"), x * 2 + 120, y * 2,
 						0xFF000000, false));
 				locatedStrings.add(

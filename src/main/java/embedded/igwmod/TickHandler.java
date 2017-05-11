@@ -1,5 +1,7 @@
 package embedded.igwmod;
 
+import org.lwjgl.input.Keyboard;
+
 import WayofTime.bloodmagic.api.Constants;
 import embedded.igwmod.gui.GuiWiki;
 import net.minecraft.block.state.IBlockState;
@@ -15,7 +17,6 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import zdoctor.bmw.ModMain;
 
 public class TickHandler {
 	private static int ticksHovered;
@@ -64,29 +65,31 @@ public class TickHandler {
 
 	public static void openWikiGui() {
 		// if(showTooltip()) {
-		ConfigHandler.disableTooltip();
-		if (lastEntityHovered != null && EntityList.getKey(lastEntityHovered.getClass()).getResourceDomain()
-				.equalsIgnoreCase(Constants.Mod.MODID)) {
-			GuiWiki gui = new GuiWiki();
-			FMLCommonHandler.instance().showGuiScreen(gui);
-			gui.setCurrentFile(lastEntityHovered);
-			return;
-		} else if (coordHovered != null) {
-			World world = FMLClientHandler.instance().getClient().world;
-			if (world != null) {
-				if (!world.isAirBlock(coordHovered)
-						&& WikiUtils.getOwningModId(new ItemStack(world.getBlockState(coordHovered).getBlock()))
-								.equalsIgnoreCase(Constants.Mod.MODID)) {
-					GuiWiki gui = new GuiWiki();
-					FMLCommonHandler.instance().showGuiScreen(gui);
-					gui.setCurrentFile(world, coordHovered);
-					return;
+		// ConfigHandler.disableTooltip();
+		if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+			if (lastEntityHovered != null && EntityList.getKey(lastEntityHovered.getClass()).getResourceDomain()
+					.equalsIgnoreCase(Constants.Mod.MODID)) {
+				GuiWiki gui = new GuiWiki();
+				FMLCommonHandler.instance().showGuiScreen(gui);
+				gui.setCurrentFile(lastEntityHovered);
+				return;
+			} else if (coordHovered != null) {
+				World world = FMLClientHandler.instance().getClient().world;
+				if (world != null) {
+					if (!world.isAirBlock(coordHovered)
+							&& WikiUtils.getOwningModId(new ItemStack(world.getBlockState(coordHovered).getBlock()))
+									.equalsIgnoreCase(Constants.Mod.MODID)) {
+						GuiWiki gui = new GuiWiki();
+						FMLCommonHandler.instance().showGuiScreen(gui);
+						gui.setCurrentFile(world, coordHovered);
+						return;
+					}
 				}
 			}
 		}
 		GuiWiki gui = new GuiWiki();
 		FMLCommonHandler.instance().showGuiScreen(gui);
-		if(gui.getCurrentFile().equals(""))
+		if (gui.getCurrentFile().equals(""))
 			gui.setCurrentFile("bloodmagic/intro");
 	}
 
@@ -112,6 +115,28 @@ public class TickHandler {
 			return TextFormatting.RED + "<ERROR>";
 		}
 
+	}
+
+	public static Object getCurrentObject() {
+		if (lastEntityHovered != null) {
+			return lastEntityHovered;
+		} else {
+			try {
+				World world = FMLClientHandler.instance().getClient().world;
+				IBlockState blockState = world.getBlockState(coordHovered);
+				if (blockState != null) {
+					ItemStack idPicked = blockState.getBlock().getPickBlock(blockState,
+							FMLClientHandler.instance().getClient().objectMouseOver, world, coordHovered,
+							FMLClientHandler.instance().getClientPlayerEntity());
+					return idPicked;
+					// return (idPicked != null ? idPicked
+					// : new ItemStack(blockState.getBlock(), 1,
+					// blockState.getBlock().getMetaFromState(blockState)));
+				}
+			} catch (Throwable e) {
+			}
+			return null;
+		}
 	}
 
 }
