@@ -19,7 +19,7 @@ public class WikiUtils{
             unlocMap = new HashMap<String, ItemStack>();
             NonNullList<ItemStack> stackList = NonNullList.<ItemStack>create();
             ClientProxy.ItemRegistry.forEach(item -> {
-                if(item != null && item.getCreativeTab() != null)
+                if(item != null)
                     item.getSubItems(item, (CreativeTabs)null, stackList);
                 });
         

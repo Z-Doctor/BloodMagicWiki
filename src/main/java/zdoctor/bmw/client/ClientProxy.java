@@ -2,15 +2,11 @@ package zdoctor.bmw.client;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
-import WayofTime.bloodmagic.api.registry.TartaricForgeRecipeRegistry;
 import embedded.igwmod.ConfigHandler;
-import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.WikiRegistry;
 import embedded.igwmod.lib.WikiLog;
 import embedded.igwmod.recipeintegration.IntegratorComment;
@@ -23,7 +19,6 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -39,11 +34,10 @@ import zdoctor.bmw.common.CommonProxy;
 import zdoctor.bmw.recipeintegrator.IntegratorAltarRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorArrayRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBloodOrbCraftingRecipe;
+import zdoctor.bmw.recipeintegrator.IntegratorCraftingMeta;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorRecipe;
 import zdoctor.bmw.recipeintegrator.compact.AutoRecipe;
-import zdoctor.bmw.recipeintegrator.compact.AutoRecipe.RecipeType;
-import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
 import zdoctor.bmw.wiki.registry.EventRegistry;
 import zdoctor.bmw.wiki.registry.tabs.AlchemyWiki;
 import zdoctor.bmw.wiki.registry.tabs.AltarWiki;
@@ -117,6 +111,7 @@ public class ClientProxy extends CommonProxy {
 		WikiRegistry.registerRecipeIntegrator(new IntegratorAltarRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorArrayRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorRecipe());
+		WikiRegistry.registerRecipeIntegrator(new IntegratorCraftingMeta());
 	}
 
 	private void addDefaultKeys() {

@@ -265,7 +265,7 @@ public class InfoSupplier{
     }
 
     public static boolean decomposeTemplate(String code, List<IReservedSpace> reservedSpaces, List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures) throws IllegalArgumentException{
-        System.out.println("Test Code: " + code);
+        System.out.println("Start Code: " + code);
     	for(IRecipeIntegrator integrator : WikiRegistry.recipeIntegrators) {
             if(code.startsWith(integrator.getCommandKey() + "{")) {
                 String[] args = code.substring(integrator.getCommandKey().length() + 1, code.length() - 1).split(",");

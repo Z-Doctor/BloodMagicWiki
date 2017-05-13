@@ -92,7 +92,25 @@ public class AutoRecipe {
 	}
 
 	public static enum RecipeType {
-		CRAFT, ORB, FORGE, ARRAY, ALTAR, FURNACE;
+		CRAFT("crafting"),
+		ORB("orbcrafting"),
+		FORGE("hellfire"),
+		ARRAY("array"),
+		ALTAR("altar"),
+		FURNACE("furnace"),
+		METACRAFT("meta"),
+		COMMENT("comment");
+		
+		private String ref;
+
+		private RecipeType(String ref) {
+			this.ref = ref;
+		}
+		
+		@Override
+		public String toString() {
+			return this.ref;
+		}
 	}
 
 }

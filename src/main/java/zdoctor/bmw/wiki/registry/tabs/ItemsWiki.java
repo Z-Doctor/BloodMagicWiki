@@ -5,9 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import WayofTime.bloodmagic.BloodMagic;
 import WayofTime.bloodmagic.api.Constants;
-import WayofTime.bloodmagic.registry.ModBlocks;
 import WayofTime.bloodmagic.registry.ModItems;
 import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.WikiRegistry;
@@ -15,9 +13,7 @@ import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.IPageLink;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.tabs.BlockAndItemWikiTab;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import zdoctor.bmw.ModMain;
@@ -51,12 +47,13 @@ public class ItemsWiki extends BlockAndItemWikiTab {
 
 	@Override
 	public List<IPageLink> getPages(int[] indexes) {
+//		RecipeWiki.getTAB().refreshWiki();
 		NonNullList<ItemStack> entries = NonNullList.<ItemStack>create();
 		ClientProxy.ItemRegistry.getValues().forEach(item -> {
 			ItemStack stack = new ItemStack(item);
 			if (WikiUtils.getOwningModId(stack).equalsIgnoreCase(Constants.Mod.MODID)
 					|| item instanceof BloodMagicItem) {
-				if (item.getCreativeTab() != null) {
+				if (item.getCreativeTab() != null || WikiUtils.getNameFromStack(stack).contains(".ritualReader")) {
 					String unloc = stack.getUnlocalizedName().toLowerCase();
 					if (!unloc.endsWith("phantom")) {
 						if (stack.getHasSubtypes() && !(stack.getUnlocalizedName().toLowerCase().contains("upgradetome")

@@ -8,6 +8,8 @@ import embedded.igwmod.gui.IWidget;
 import embedded.igwmod.gui.LocatedStack;
 import embedded.igwmod.gui.LocatedString;
 import zdoctor.bmw.client.ClientProxy;
+import zdoctor.bmw.recipeintegrator.compact.AutoRecipe;
+import zdoctor.bmw.recipeintegrator.compact.AutoRecipe.RecipeType;
 import zdoctor.bmw.recipeintegrator.compact.BaseIntegratorRecipe;
 
 public class IntegratorRecipe extends BaseIntegratorRecipe {
@@ -25,32 +27,16 @@ public class IntegratorRecipe extends BaseIntegratorRecipe {
 	public void onCommandInvoke(String[] arguments, List<IReservedSpace> reservedSpaces,
 			List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures)
 			throws IllegalArgumentException {
-		if (arguments.length < 3)
-			throw new IllegalArgumentException("Code needs at least 3 arguments!");
-		int x;
-		try {
-			x = Integer.parseInt(arguments[0]);
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException(
-					"The first parameter (the x coordinate) contains an invalid number. Check for spaces or invalid characters!");
-		}
-		int y;
-		try {
-			y = Integer.parseInt(arguments[1]);
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException(
-					"The second parameter (the y coordinate) contains an invalid number. Check for spaces or invalid characters!");
-		}
-
-		if (arguments[2].startsWith("key=")) {
-			if (arguments.length != 3)
-				throw new IllegalArgumentException(
-						"An RecipeRetrievalEvent crafting code can only have 3 parameters: x, y and the key!");
-			String key = arguments[2].replaceFirst("key=", "");
+		if (arguments[arguments.length-1].startsWith("key=")) {
+			String key = arguments[arguments.length-1].replaceFirst("key=", "");
 //			ItemStack stack = WikiUtils.getStackFromName(key);
 
-			String code = getType(key) + "{" + x + "," + y + ",key=" + key + "}";
-			System.out.println("Code: " + code);
+			String code = "";
+			for (String arg : arguments) {
+				code += arg + ",";
+			}
+			code = getType(key) + "{" + code.substring(0, code.length()-1) + "}";
+			System.out.println("End Code: " + code);
 			InfoSupplier.decomposeTemplate(code, reservedSpaces, locatedStrings, locatedStacks, locatedTextures);
 			// locatedTextures.add(new
 			// LocatedTexture(TextureSupplier.getTexture(ModMain.MODID + ":" +
@@ -61,7 +47,8 @@ public class IntegratorRecipe extends BaseIntegratorRecipe {
 			// addAutomaticCraftingRecipe(key, locatedStacks, locatedTextures,
 			// locatedStrings,
 			// (int) (x * GuiWiki.TEXT_SCALE), (int) (y * GuiWiki.TEXT_SCALE));
-		}
+		} else
+			throw new IllegalArgumentException("Recipes must at least end with key=");
 
 	}
 
@@ -73,29 +60,13 @@ public class IntegratorRecipe extends BaseIntegratorRecipe {
 	}
 
 	private static String getType(String key) {
-		String type = "comment";
+		String type = RecipeType.COMMENT.toString();
 		if (ClientProxy.RecipeMap.containsKey(key)) {
 //			System.out.println("Key found: " + RecipeWiki.RecipeMap.get(key).getRecipeType());
-			switch (ClientProxy.RecipeMap.get(key).get(0).getRecipeType()) {
-			case ALTAR:
-				type = "altar";
-				break;
-			case ORB:
-				type = "orbcrafting";
-				break;
-			case ARRAY:
-				type = "array";
-				break;
-			case CRAFT:
-				type = "crafting";
-				break;
-			case FORGE:
-				type = "hellfire";
-				break;
-			case FURNACE:
-				type = "furnace";
-				break;
-			}
+//			for (AutoRecipe auto : ClientProxy.RecipeMap.get(key)) {
+//				auto.getRecipeType()
+//			}
+			type = ClientProxy.RecipeMap.get(key).get(0).getRecipeType().toString();
 		}
 		return type;
 
