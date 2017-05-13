@@ -1,4 +1,7 @@
-Incense Altars are a new discovery. Blood Mages have found that similarly to Blood Runes, they increase the potency of self sacrifice.
+Incense Altars are a new discovery. Blood Mages have found that similarly to the Runes of Self Sacrifice, they can increase the potency of self muti-... sacrifice.
 
-More research is required to fully understand the Altars, but their is talk about roads and even increasing effiecieny. Currently, the best way to create them is as follows:
-[orbcrafting{200,100,key=block/bloodmagic.incenseAltar}]
+More research is required to fully understand the Altars, but what is known is that praying within 5 units of one will increase ones will. Mages have reported a feeling of tranquility when doing so. It has been found the [link{bloodmagicwiki:bloodmagic/block/paths}]paths [link{}]can increase the calming area and further increase the potency of sacrifice. Interestingly enough, interacting with a Divination Sigil or Seer's Sigil will provide information about the tranquility bonus in an area.
+
+Currently, the best way to create an Incense Altar is as follows:
+
+[orbcrafting{200,190,key=block/bloodmagic.incenseAltar}]

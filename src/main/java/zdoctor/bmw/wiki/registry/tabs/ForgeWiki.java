@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
@@ -15,22 +15,7 @@ public class ForgeWiki extends BaseWikiTab {
 	}
 
 	public ForgeWiki() {
-		addSectionHeader("Items");
-		pageEntries.add("ItemSoulGem");
-		pageEntries.add("ItemSentientArmour");
-		pageEntries.add("ItemSentientSword");
-		pageEntries.add("ItemSentientBow");
-		pageEntries.add("ItemSentientPicaxe");
-		pageEntries.add("ItemSentientAxe");
-		pageEntries.add("ItemSentientShovel");
-		pageEntries.add("ItemNodeRouter");
-		pageEntries.add("ItemWillGauge");
-		addSectionHeader("Blocks");
-		pageEntries.add("BlockSoulForge");
-		pageEntries.add("BlockDemonCrucible");
-		pageEntries.add("BlockDemonPylon");
-		pageEntries.add("BlockWillCluster");
-		pageEntries.add("BlockNodes");
+		refreshWiki();
 	}
 
 	@Override
@@ -55,6 +40,26 @@ public class ForgeWiki extends BaseWikiTab {
 			return Constants.Mod.MODID.toLowerCase() + "/forge/" + pageEntry;
 		else
 			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
+		addSectionHeader("Items");
+		pageEntries.add("ItemSoulGem");
+		pageEntries.add("ItemSentientArmour");
+		pageEntries.add("ItemSentientSword");
+		pageEntries.add("ItemSentientBow");
+		pageEntries.add("ItemSentientPicaxe");
+		pageEntries.add("ItemSentientAxe");
+		pageEntries.add("ItemSentientShovel");
+		pageEntries.add("ItemNodeRouter");
+		pageEntries.add("ItemWillGauge");
+		addSectionHeader("Blocks");
+		pageEntries.add("BlockSoulForge");
+		pageEntries.add("BlockDemonCrucible");
+		pageEntries.add("BlockDemonPylon");
+		pageEntries.add("BlockWillCluster");
+		pageEntries.add("BlockNodes");
 	}
 
 }

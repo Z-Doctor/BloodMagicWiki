@@ -100,4 +100,10 @@ public class BlockAndItemWikiTab implements IWikiTab{
         }
     }
 
+	@Override
+	public void refreshWiki() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

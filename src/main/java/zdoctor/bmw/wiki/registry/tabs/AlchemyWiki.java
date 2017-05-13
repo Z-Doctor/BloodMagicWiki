@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
@@ -15,6 +15,35 @@ public class AlchemyWiki extends BaseWikiTab {
 	}
 
 	public AlchemyWiki() {
+		refreshWiki();
+	}
+
+	@Override
+	public String getName() {
+		return "wikitab." + ModMain.MODID + ".alchemy.name";
+	}
+
+	@Override
+	public ItemStack renderTabIcon(GuiWiki gui) {
+		return new ItemStack(ModBlocks.ALCHEMY_TABLE);
+	}
+
+	@Override
+	protected String getPageName(String pageEntry) {
+		return I18n.format("alchemy." + ModMain.MODID + "." + pageEntry + ".page");
+	}
+
+	@Override
+	protected String getPageLocation(String pageEntry) {
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
+			return Constants.Mod.MODID.toLowerCase() + "/alchemy/" + pageEntry;
+		else
+			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
 		addSectionHeader("Blocks");
 		pageEntries.add("BlockAlchemyTable");
 		addSectionHeader("Items");
@@ -65,30 +94,5 @@ public class AlchemyWiki extends BaseWikiTab {
 		pageEntries.add("Antispectic");
 		pageEntries.add("DraftAngelus");
 		pageEntries.add("Holding");
-		
-	}
-
-	@Override
-	public String getName() {
-		return "wikitab." + ModMain.MODID + ".alchemy.name";
-	}
-
-	@Override
-	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModBlocks.ALCHEMY_TABLE);
-	}
-
-	@Override
-	protected String getPageName(String pageEntry) {
-		return I18n.format("alchemy." + ModMain.MODID + "." + pageEntry + ".page");
-	}
-
-	@Override
-	protected String getPageLocation(String pageEntry) {
-		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
-		if(entry == null)
-			return Constants.Mod.MODID.toLowerCase() + "/alchemy/" + pageEntry;
-		else
-			return entry;
 	}
 }

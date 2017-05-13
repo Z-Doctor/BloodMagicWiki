@@ -171,4 +171,10 @@ public class EntityWikiTab implements IWikiTab{
         }
     }
 
+	@Override
+	public void refreshWiki() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

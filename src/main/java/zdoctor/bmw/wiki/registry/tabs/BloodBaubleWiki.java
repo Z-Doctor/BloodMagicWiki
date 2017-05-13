@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -36,6 +36,12 @@ public class BloodBaubleWiki extends BaseWikiTab {
 	@Override
 	protected String getPageLocation(String pageEntry) {
 		return ModMain.MODID + ":" + Constants.Mod.MODID.toLowerCase() + "/" + pageEntry;
+	}
+
+	@Override
+	public void refreshWiki() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

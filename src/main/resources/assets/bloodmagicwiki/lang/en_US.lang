@@ -212,18 +212,24 @@ wikitab.bloodmagicwiki.misc.name=Misc
 
 misc.bloodmagicwiki.#items.page=Items
 misc.bloodmagicwiki.#blocks.page=Blocks
+misc.bloodmagicwiki.#misc.page=Misc
 
 misc.bloodmagicwiki.itemexperiencetome.page=Experience Tome
 misc.bloodmagicwiki.itemupgradetome.page=Upgrade Tome
+misc.bloodmagicwiki.itemfilter.page=Item Filter
 misc.bloodmagicwiki.blockmimics.page=Mimics
 misc.bloodmagicwiki.blockwillblocks.page=Will Blocks
 misc.bloodmagicwiki.blockdemonlight.page=Demon Light
 misc.bloodmagicwiki.blockinversion.page=Inversion Pillars
+misc.bloodmagicwiki.soulfray.page=Soul Fray
 
-wikitab.bloodmagicwiki.items.name=Blood Magic Encyclopedia
+wikitab.bloodmagicwiki.items.name=Blood Magic Index
 
+
+wikitab.bloodmagicwiki.recipes.name=Recipe Index
 
 bloodmagicwiki.gui.crafting.shapedorb=Shaped Orb Crafting
+bloodmagicwiki.gui.crafting.shapelessorb=Shapeless Orb Crafting
 bloodmagicwiki.gui.altar.requiredTier.recipe=Tier
 bloodmagicwiki.gui.altar.requiredLP.recipe=LP
 

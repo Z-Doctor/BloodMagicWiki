@@ -1,13 +1,18 @@
-package zdoctor.bmw.wiki.events;
+package zdoctor.bmw.wiki.registry;
 
 import WayofTime.bloodmagic.api.Constants;
 import embedded.igwmod.WikiUtils;
 import embedded.igwmod.api.ItemWikiEvent;
 import embedded.igwmod.gui.BrowseHistory;
+import embedded.igwmod.gui.GuiWiki;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zdoctor.bmw.ModMain;
-import zdoctor.bmw.wiki.tabs.ItemsWiki;
+import zdoctor.bmw.wiki.events.BlockWikiEvent;
+import zdoctor.bmw.wiki.events.EntityWikiEvent;
+import zdoctor.bmw.wiki.events.PageChangeEvent;
+import zdoctor.bmw.wiki.registry.tabs.ItemsWiki;
+import zdoctor.bmw.wiki.registry.tabs.RecipeWiki;
 
 public class EventRegistry {
 	public static void postInit() {
@@ -18,7 +23,10 @@ public class EventRegistry {
 		@SubscribeEvent(receiveCanceled = false)
 		public void wikiEvent(ItemWikiEvent e) {
 //			System.out.println("Item Wiki Event: " + e.pageOpened);
-			e.pageOpened = ItemsWiki.getPageFromName(e.pageOpened);
+			if(GuiWiki.getCurrentTab().getName().equalsIgnoreCase(RecipeWiki.wikiName)) {
+				e.pageOpened = "$Recipe";
+			} else
+				e.pageOpened = ItemsWiki.getPageFromName(e.pageOpened);
 		}
 
 		@SubscribeEvent
@@ -35,6 +43,11 @@ public class EventRegistry {
 
 		@SubscribeEvent
 		public void pageChanged(PageChangeEvent e) {
+			if(e.currentFile.equalsIgnoreCase("$Recipe")) {
+				e.pageText = RecipeWiki.generatePageFromStack(e.associatedStack);
+				if(e.pageText == null)
+					e.currentFile = ItemsWiki.getPageFromName(WikiUtils.getNameFromStack(e.associatedStack));
+			}
 		}
 
 		// @SubscribeEvent

@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import java.util.ArrayList;
 import java.util.HashMap;

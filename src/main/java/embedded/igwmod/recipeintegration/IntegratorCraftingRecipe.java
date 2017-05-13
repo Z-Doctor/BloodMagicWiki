@@ -86,8 +86,13 @@ public class IntegratorCraftingRecipe implements IRecipeIntegrator {
 			throws IllegalArgumentException {
 		String key = code.substring(4);
 		CraftingRetrievalEvent recipeEvent = new CraftingRetrievalEvent(key);
-		IRecipe autoMappedRecipe = ClientProxy.MappedRecipes.get(key);
-		System.out.println("Fire Event: looking for: " + key);
+		IRecipe autoMappedRecipe = null;
+		try {
+			autoMappedRecipe = ClientProxy.RecipeMap.get(key).get(0).getRecipe(IRecipe.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		System.out.println("Fire Event: looking for: " + key);
 		if (autoMappedRecipe != null) {
 			recipeEvent.recipe = autoMappedRecipe;
 		} else {

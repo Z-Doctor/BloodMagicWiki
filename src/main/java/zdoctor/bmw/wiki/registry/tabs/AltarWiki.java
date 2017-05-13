@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -17,6 +17,35 @@ public class AltarWiki extends BaseWikiTab {
 	}
 
 	public AltarWiki() {
+		refreshWiki();
+	}
+
+	@Override
+	public String getName() {
+		return "wikitab.altar.name";
+	}
+
+	@Override
+	public ItemStack renderTabIcon(GuiWiki gui) {
+		return new ItemStack(ModBlocks.ALTAR);
+	}
+
+	@Override
+	protected String getPageName(String pageEntry) {
+		return I18n.format("altar." + ModMain.MODID + "." + pageEntry + ".page");
+	}
+
+	@Override
+	protected String getPageLocation(String pageEntry) {
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
+			return Constants.Mod.MODID.toLowerCase() + "/altar/" + pageEntry;
+		else
+			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
 		addSectionHeader("Items");
 		pageEntries.add("ItemSacrificialDagger");
 		pageEntries.add("ItemDaggerOfSacrifice");
@@ -49,30 +78,6 @@ public class AltarWiki extends BaseWikiTab {
 		pageEntries.add("BlockSpeed");
 		pageEntries.add("BlockDisplacement");
 		pageEntries.add("BlockCapacity");
-	}
-
-	@Override
-	public String getName() {
-		return "wikitab.altar.name";
-	}
-
-	@Override
-	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModBlocks.ALTAR);
-	}
-
-	@Override
-	protected String getPageName(String pageEntry) {
-		return I18n.format("altar." + ModMain.MODID + "." + pageEntry + ".page");
-	}
-
-	@Override
-	protected String getPageLocation(String pageEntry) {
-		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
-		if(entry == null)
-			return Constants.Mod.MODID.toLowerCase() + "/altar/" + pageEntry;
-		else
-			return entry;
 	}
 
 }

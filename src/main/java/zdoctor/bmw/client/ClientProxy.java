@@ -2,16 +2,12 @@ package zdoctor.bmw.client;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import WayofTime.bloodmagic.api.Constants;
-import WayofTime.bloodmagic.api.recipe.TartaricForgeRecipe;
 import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry;
-import WayofTime.bloodmagic.api.registry.AlchemyArrayRecipeRegistry.AlchemyArrayRecipe;
-import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
-import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.api.registry.TartaricForgeRecipeRegistry;
 import embedded.igwmod.ConfigHandler;
 import embedded.igwmod.WikiUtils;
@@ -44,27 +40,37 @@ import zdoctor.bmw.recipeintegrator.IntegratorAltarRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorArrayRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorBloodOrbCraftingRecipe;
 import zdoctor.bmw.recipeintegrator.IntegratorHellfireRecipe;
+import zdoctor.bmw.recipeintegrator.IntegratorRecipe;
+import zdoctor.bmw.recipeintegrator.compact.AutoRecipe;
+import zdoctor.bmw.recipeintegrator.compact.AutoRecipe.RecipeType;
 import zdoctor.bmw.recipeintegrator.compact.SimpleArrayRecipe;
-import zdoctor.bmw.wiki.events.EventRegistry;
-import zdoctor.bmw.wiki.tabs.AlchemyWiki;
-import zdoctor.bmw.wiki.tabs.AltarWiki;
-import zdoctor.bmw.wiki.tabs.ArrayWiki;
-import zdoctor.bmw.wiki.tabs.BloodMagicWiki;
-import zdoctor.bmw.wiki.tabs.ForgeWiki;
-import zdoctor.bmw.wiki.tabs.ItemsWiki;
-import zdoctor.bmw.wiki.tabs.MiscWiki;
-import zdoctor.bmw.wiki.tabs.RitualWiki;
+import zdoctor.bmw.wiki.registry.EventRegistry;
+import zdoctor.bmw.wiki.registry.tabs.AlchemyWiki;
+import zdoctor.bmw.wiki.registry.tabs.AltarWiki;
+import zdoctor.bmw.wiki.registry.tabs.ArrayWiki;
+import zdoctor.bmw.wiki.registry.tabs.BloodMagicWiki;
+import zdoctor.bmw.wiki.registry.tabs.ForgeWiki;
+import zdoctor.bmw.wiki.registry.tabs.ItemsWiki;
+import zdoctor.bmw.wiki.registry.tabs.MiscWiki;
+import zdoctor.bmw.wiki.registry.tabs.RecipeWiki;
+import zdoctor.bmw.wiki.registry.tabs.RitualWiki;
 
 public class ClientProxy extends CommonProxy {
 	public static final IForgeRegistry<Item> ItemRegistry = GameRegistry.findRegistry(Item.class);
 
 	public static final List<IRecipe> GameRecipes = CraftingManager.getInstance().getRecipeList();
 
-	public static final Map<String, IRecipe> MappedRecipes = new HashMap<>();
-	public static final Map<String, IRecipe> BloodMagicRecipes = new HashMap<>();
-	public static final Map<String, TartaricForgeRecipe> ForgeRecipes = new HashMap<>();
-	public static final Map<String, AltarRecipe> AltarRecipes = new HashMap<>();;
-	public static final Map<String, AlchemyArrayRecipe> ArrayRecipes = new HashMap<>();
+	// public static final Map<String, IRecipe> MappedRecipes = new HashMap<>();
+	// public static final Map<String, IRecipe> BloodMagicRecipes = new
+	// HashMap<>();
+	// public static final Map<String, TartaricForgeRecipe> ForgeRecipes = new
+	// HashMap<>();
+	// public static final Map<String, AltarRecipe> AltarRecipes = new
+	// HashMap<>();;
+	// public static final Map<String, AlchemyArrayRecipe> ArrayRecipes = new
+	// HashMap<>();
+
+	public static final Map<String, List<AutoRecipe>> RecipeMap = new HashMap<>();
 
 	public static KeyBinding openInterfaceKey;
 
@@ -84,6 +90,7 @@ public class ClientProxy extends CommonProxy {
 		ArrayWiki.preInit();
 		MiscWiki.preInit();
 		ItemsWiki.preInit();
+		RecipeWiki.preInit();
 		// BloodBaubleWiki.preInit();
 	}
 
@@ -109,99 +116,11 @@ public class ClientProxy extends CommonProxy {
 		WikiRegistry.registerRecipeIntegrator(new IntegratorBloodOrbCraftingRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorAltarRecipe());
 		WikiRegistry.registerRecipeIntegrator(new IntegratorArrayRecipe());
+		WikiRegistry.registerRecipeIntegrator(new IntegratorRecipe());
 	}
 
 	private void addDefaultKeys() {
-		GameRecipes.forEach(recipe -> {
-			try {
-				if (recipe.getRecipeOutput() != null && !recipe.getRecipeOutput().isEmpty()) {
-					if (recipe.getRecipeOutput().getUnlocalizedName() != null) {
-						String blockCode = WikiUtils.getNameFromStack(recipe.getRecipeOutput());
-						if (!MappedRecipes.containsKey(blockCode)) {
-							MappedRecipes.put(blockCode, recipe);
-							// System.out.println("Registered: " + blockCode);
-						}
-
-						if (WikiUtils.getOwningModId(recipe.getRecipeOutput()).equalsIgnoreCase(Constants.Mod.MODID)) {
-							if (!BloodMagicRecipes.containsKey(blockCode)) {
-								BloodMagicRecipes.put(blockCode, recipe);
-								// System.out.println("Registered: " +
-								// blockCode);
-							}
-						}
-					} else
-						WikiLog.error("Item has no unlocalized name: " + recipe.getRecipeOutput().getItem());
-				}
-			} catch (Throwable e) {
-				WikiLog.error("Wiki failed to add recipe handling support for " + recipe.getRecipeOutput());
-				e.printStackTrace();
-			}
-
-		});
-		// Forge Recipes
-		TartaricForgeRecipeRegistry.getRecipeList().forEach(recipe -> {
-			try {
-				if (recipe.getRecipeOutput() != null && !recipe.getRecipeOutput().isEmpty()) {
-					if (recipe.getRecipeOutput().getUnlocalizedName() != null) {
-						String blockCode = WikiUtils.getNameFromStack(recipe.getRecipeOutput());
-						if (!ForgeRecipes.containsKey(blockCode))
-							ForgeRecipes.put(blockCode, recipe);
-					} else
-						WikiLog.error("Item has no unlocalized name: " + recipe.getRecipeOutput().getItem());
-				}
-			} catch (Throwable e) {
-				WikiLog.error("Wiki failed to add recipe handling support for " + recipe.getRecipeOutput());
-				e.printStackTrace();
-			}
-		});
-		// Altar Recipes
-		AltarRecipeRegistry.getRecipes().values().forEach(recipe -> {
-			try {
-				if (recipe.getOutput() != null && !recipe.getOutput().isEmpty()) {
-					if (recipe.getOutput().getUnlocalizedName() != null) {
-						String blockCode = WikiUtils.getNameFromStack(recipe.getOutput());
-						if (!AltarRecipes.containsKey(blockCode) && !recipe.isFillable()) {
-							AltarRecipes.put(blockCode, recipe);
-							// System.out.println("Added: " + blockCode);
-						}
-					} else
-						WikiLog.error("Item has no unlocalized name: " + recipe.getOutput().getItem());
-				} else
-					WikiLog.error("Outpt is null: " + recipe);
-			} catch (Throwable e) {
-				WikiLog.error("Wiki failed to add recipe handling support for " + recipe.getOutput());
-				e.printStackTrace();
-			}
-		});
-		// Binding Recipes
-		AlchemyArrayRecipeRegistry.getRecipes().values().forEach(array -> {
-			if (array != null) {
-				SimpleArrayRecipe recipe = new SimpleArrayRecipe(array);
-				try {
-					if (recipe.getOutput() != null && !recipe.getOutput().isEmpty()) {
-						if (recipe.getOutput().getUnlocalizedName() != null) {
-							String blockCode = WikiUtils.getNameFromStack(recipe.getOutput());
-							if (!ArrayRecipes.containsKey(blockCode))
-								ArrayRecipes.put(blockCode, array);
-						} else
-							WikiLog.error("Item has no unlocalized name: " + recipe.getOutput().getItem());
-					}
-				} catch (Throwable e) {
-					WikiLog.error("Wiki failed to add recipe handling support for " + recipe.getOutput());
-					e.printStackTrace();
-				}
-			} else
-				WikiLog.error("Binding recipe is null: " + array);
-		});
-		// Furnace Recipes
-		FurnaceRecipes.instance().getSmeltingList().entrySet().forEach(entry -> {
-			if (entry.getValue() != null && entry.getValue().getItem() != null) {
-				String blockCode = WikiUtils.getNameFromStack(entry.getValue());
-				if (!IntegratorFurnace.autoMappedFurnaceRecipes.containsKey(blockCode))
-					IntegratorFurnace.autoMappedFurnaceRecipes.put(blockCode, entry.getKey());
-			}
-		});
-
+		RecipeWiki.getTAB().refreshWiki();
 	}
 
 	@Override

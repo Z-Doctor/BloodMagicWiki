@@ -1,1 +1,27 @@
-path
+Paths are used to increase an [link{bloodmagicwiki:bloodmagic/block/incensealtar}]Incense Altar's [link{}]efficiency. Through trial an error, mages have discovered that the optimal placement of Paths starts around 2 blocks out from the altar in a row of 3 in each cardinal direction. The path blocks must be on the same level, but they can be up to 5 units above or below the altar itself. Blocks directly around the altar and underneath seem to have no effect whatsoever.
+
+After the intial path is set up, the area around the paths will influence the tranquility of an altar depending on the type of block. These areas of influence increase as the altar is expanded and start from the level of the path to up to 2 units up.
+
+Expanding an altar is very straight foward. Simple continue out the path in each direction. These paths follow the same rules as the initial blocks: (1) all of the paths must be on the same level, (2) they can be up to 5 units above or below the last row, (3) blocks can be placed in their filed of influence on the path level up to 2 units up. Architect's have noted that this unusual property allows for the posibilty for prymaids and inverted pyramids to be created.
+
+It should also be noted that placing blocks on top, underneath, or outside their field of influence will not effect their mystical properties, and subbing a higher tier for a lower tier stone works, but not the other way around.
+
+The folowing is an example, where the gold is the area of influence.
+[image{200,360,.143,bloodmagicwiki:textures/screenshots/incensealtar1.png}]
+
+Example of expansion:
+[image{200,530,.143,bloodmagicwiki:textures/screenshots/incensealtar3.png}]
+
+There are currently 5 know types of tranquility: Plant, Lava, Fire, Eath, Tree, Water.
+Here is a list of known blocks and how much they can contriubte
+Plants - Crops(1), Leaves(1)
+Lava - Lava Source or flow(1.2)
+Fire - Fire(1), Netherrack(0.5)
+Earth - Dirt(.25), Grass(.5),Farmland(1)
+Tree - Log(1)
+Water - Water(1), Life Essence(1.5)
+
+Additional there are 4 types of paths: Wood, Stone, Worn Stone and Obsidian, and each has a subtype of brick and tiled.
+
+[recipe{200,1000,key=block/bloodmagic.path.wood}]
+[recipe{200,1125,key=block/bloodmagic.path.woodtile}]

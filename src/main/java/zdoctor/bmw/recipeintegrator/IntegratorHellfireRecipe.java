@@ -1,18 +1,14 @@
 package zdoctor.bmw.recipeintegrator;
 
 import java.awt.Color;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import WayofTime.bloodmagic.api.recipe.TartaricForgeRecipe;
-import WayofTime.bloodmagic.api.registry.TartaricForgeRecipeRegistry;
 import WayofTime.bloodmagic.api.soul.EnumDemonWillType;
 import WayofTime.bloodmagic.api.soul.IDemonWill;
 import WayofTime.bloodmagic.api.soul.IDemonWillGem;
 import embedded.igwmod.TextureSupplier;
-import embedded.igwmod.api.IRecipeIntegrator;
 import embedded.igwmod.gui.GuiWiki;
 import embedded.igwmod.gui.IReservedSpace;
 import embedded.igwmod.gui.IWidget;
@@ -24,6 +20,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import zdoctor.bmw.ModMain;
 import zdoctor.bmw.client.ClientProxy;
+import zdoctor.bmw.recipeintegrator.compact.AutoRecipe;
 import zdoctor.bmw.recipeintegrator.compact.BaseIntegratorRecipe;
 import zdoctor.bmw.recipeintegrator.compact.SimpleTartaricForgeRecipe;
 
@@ -80,7 +77,17 @@ public class IntegratorHellfireRecipe extends BaseIntegratorRecipe {
 			List<IWidget> locatedTextures, List<LocatedString> locatedStrings, int x, int y)
 			throws IllegalArgumentException {
 		String key = code.substring(4);
-		final TartaricForgeRecipe recipe = ClientProxy.ForgeRecipes.get(key);
+		TartaricForgeRecipe recipe = null;
+		try {
+			System.out.println("Variants " + key +": " + ClientProxy.RecipeMap.get(key).size());
+			for(AutoRecipe auto : ClientProxy.RecipeMap.get(key)) {
+				if(auto.getRecipe(TartaricForgeRecipe.class) != null)
+					recipe = auto.getRecipe(TartaricForgeRecipe.class);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		if (recipe != null) {
 			Iterator<Object> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {

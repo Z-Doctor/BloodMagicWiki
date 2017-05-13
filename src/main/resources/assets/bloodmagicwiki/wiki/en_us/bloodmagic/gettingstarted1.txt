@@ -1,7 +1,7 @@
 The first item any aspiring Blood Mage should craft is a Rudimentary Snare. The purpose of these snares is to bind a beast's soul, that, when killed, will drop an artifact known as "Demonic Will." Snares are used by throwing a number of them at a monster, with each having a chance to bind the monster's soul. The easiest way to tell whether the monster's soul is snared is to look for white particles radiating from the beast.
 
 Rudimentary Snare:
-[crafting{200,130,key=item/bloodmagic.soulSnare.base}]
+[recipe{200,130,key=item/bloodmagic.soulSnare.base}]
 
 
 
@@ -19,7 +19,7 @@ It is recommended to obtain at least two pieces of Demonic Will, and  a piece of
 Once a sufficient amount of Demonic Will is obtained, use the lower quality Demonic Will to craft a Blood Altar and save the other one for later.
 
 Blood Altar:
-[crafting{200,350,key=block/bloodmagic.altar}]
+[recipe{200,350,key=block/bloodmagic.altar}]
 
 
 
@@ -35,7 +35,7 @@ Blood Altar:
 In order to use to  a Blood Altar, a Sacrificial Knife of some kind is needed to put Blood (measured in Life Points or LP) into it. A Sacrificial Knife, when used, will hurt the user, but fill the Altar with 200 LP per use. This can be increased later on.
 
 Sacrificial Knife:
-[crafting{200,540,key=item/bloodmagic.sacrificialDagger.normal}]
+[recipe{200,540,key=item/bloodmagic.sacrificialDagger.normal}]
 
 
 
@@ -51,7 +51,7 @@ Sacrificial Knife:
 Only one step remains before one can truly be called a Blood Mage, that is, to setup their Soul Network. The Soul Network is a Blood Mages link to the Arcane. It is what allows them to store LP in the Ethereal Plane in order to be used when the time arises. In order for one to reach this higher existence, one must transmute a Diamond with 1000 LP in the Blood Altar to create a Blood Orb. By interacting with the orb, a Blood Mages Soul Network will be created.
 
 Weak Blood Orb:
-[altar{200,770,key=item/bloodmagic.orb.weak}]
+[recipe{200,770,key=item/bloodmagic.orb.weak}]
 
 
 

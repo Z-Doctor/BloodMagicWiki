@@ -34,7 +34,7 @@ public class IntegratorArrayRecipe implements IRecipeIntegrator {
 
 	@Override
 	public String getCommandKey() {
-		return "binding";
+		return "array";
 	}
 
 	@Override
@@ -76,12 +76,17 @@ public class IntegratorArrayRecipe implements IRecipeIntegrator {
 			throws IllegalArgumentException {
 
 		String key = code.substring(4);
-		SimpleArrayRecipe recipe = new SimpleArrayRecipe(ClientProxy.ArrayRecipes.get(key));
-		locatedStacks.add(new LocatedStack(recipe.getInput().get(0), x + INPUT_X_OFFSET, y + INPUT_Y_OFFSET));
-		locatedStacks.add(new LocatedStack(recipe.getCatalyst(), x + CATALYST_X_OFFSET, y + CATALYST_Y_OFFSET));
-		locatedStacks.add(new LocatedStack(recipe.getOutput(), x + RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
-		locatedStacks.add(new LocatedStack(new ItemStack(ModItems.ARCANE_ASHES), x + CATALYST_X_OFFSET + 20,
-				y + CATALYST_Y_OFFSET));
+		try {
+			SimpleArrayRecipe recipe = ClientProxy.RecipeMap.get(key).get(0).getRecipe(SimpleArrayRecipe.class);
+			locatedStacks.add(new LocatedStack(recipe.getInput().get(0), x + INPUT_X_OFFSET, y + INPUT_Y_OFFSET));
+			locatedStacks.add(new LocatedStack(recipe.getCatalyst(), x + CATALYST_X_OFFSET, y + CATALYST_Y_OFFSET));
+			locatedStacks
+					.add(new LocatedStack(recipe.getOutput(), x + RESULT_STACK_X_OFFSET, y + RESULT_STACK_Y_OFFSET));
+			locatedStacks.add(new LocatedStack(new ItemStack(ModItems.ARCANE_ASHES), x + CATALYST_X_OFFSET + 20,
+					y + CATALYST_Y_OFFSET));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 

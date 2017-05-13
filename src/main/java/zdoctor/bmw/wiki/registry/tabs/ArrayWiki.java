@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.api.registry.OrbRegistry;
@@ -16,6 +16,35 @@ public class ArrayWiki extends BaseWikiTab {
 	}
 
 	public ArrayWiki() {
+		refreshWiki();
+	}
+
+	@Override
+	public String getName() {
+		return "wikitab." + ModMain.MODID + ".array.name";
+	}
+
+	@Override
+	public ItemStack renderTabIcon(GuiWiki gui) {
+		return new ItemStack(ModItems.ARCANE_ASHES);
+	}
+
+	@Override
+	protected String getPageName(String pageEntry) {
+		return I18n.format("array." + ModMain.MODID +"." + pageEntry + ".page");
+	}
+
+	@Override
+	protected String getPageLocation(String pageEntry) {
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
+			return Constants.Mod.MODID.toLowerCase() + "/array/" + pageEntry;
+		else
+			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
 		addSectionHeader("Items");
 		pageEntries.add("ItemArcaneAshe");
 		addSectionHeader("BoundItems");
@@ -48,30 +77,6 @@ public class ArrayWiki extends BaseWikiTab {
 		pageEntries.add("SigilFastMiner");
 		pageEntries.add("SigilHolding");
 		pageEntries.add("SigilWhirlwind");
-	}
-
-	@Override
-	public String getName() {
-		return "wikitab." + ModMain.MODID + ".array.name";
-	}
-
-	@Override
-	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModItems.ARCANE_ASHES);
-	}
-
-	@Override
-	protected String getPageName(String pageEntry) {
-		return I18n.format("array." + ModMain.MODID +"." + pageEntry + ".page");
-	}
-
-	@Override
-	protected String getPageLocation(String pageEntry) {
-		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
-		if(entry == null)
-			return Constants.Mod.MODID.toLowerCase() + "/array/" + pageEntry;
-		else
-			return entry;
 	}
 
 }

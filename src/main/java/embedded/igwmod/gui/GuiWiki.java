@@ -119,6 +119,10 @@ public class GuiWiki extends GuiContainer {
 		if (currentTab == null)
 			currentTab = wikiTabs.get(0);
 	}
+	
+	public static IWikiTab getCurrentTab() {
+		return currentTab;
+	}
 
 	public static String getCurrentFile() {
 		return currentFile;
@@ -670,7 +674,7 @@ public class GuiWiki extends GuiContainer {
 			if (currentFile.contains(":")) {
 				String[] splitted = currentFile.split(":", 2);
 				modid = splitted[0];
-				System.out.println("Change modid: " + modid);
+//				System.out.println("Change modid: " + modid);
 				currentFile = splitted[1];
 			} else {
 				if (pageStack != null) {
@@ -782,7 +786,7 @@ public class GuiWiki extends GuiContainer {
 							// page.
 		// page = ItemsWiki.getPageFromName(page);
 		if (currentTab != null) {// give the current tab the highest priority.
-			System.out.println("Looking for owner of page: " + page);
+//			System.out.println("Looking for owner of page: " + page);
 			List<IPageLink> links = currentTab.getPages(null);
 			if (links != null) {
 				for (IPageLink link : links) {

@@ -90,5 +90,7 @@ public interface IWikiTab{
      * @param metadata
      */
     public void onPageChange(GuiWiki gui, String pageName, Object... metadata);
+    
+    public void refreshWiki();
 
 }

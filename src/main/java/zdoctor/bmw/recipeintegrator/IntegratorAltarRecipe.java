@@ -77,9 +77,11 @@ public class IntegratorAltarRecipe extends BaseIntegratorRecipe {
 		CraftingRetrievalEvent recipeEvent = new CraftingRetrievalEvent(key);
 		MinecraftForge.EVENT_BUS.post(recipeEvent);
 		String newKey = recipeEvent.key;
-		AltarRecipe recipe = ClientProxy.AltarRecipes.get(newKey);
-		if(recipe == null)
-			recipe = ClientProxy.AltarRecipes.get(key);
+		AltarRecipe recipe = null;
+		if(ClientProxy.RecipeMap.containsKey(newKey))
+			recipe = ClientProxy.RecipeMap.get(newKey).get(0).getRecipe(AltarRecipe.class);
+//		if(recipe == null)
+//			recipe = ClientProxy.AltarRecipes.get(key);
 		if (recipe != null) {
 			Iterator<ItemStackWrapper> req = recipe.getInput().iterator();
 			for (int i = 0; i < 2; i++) {

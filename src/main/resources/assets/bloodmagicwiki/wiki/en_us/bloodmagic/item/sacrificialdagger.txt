@@ -1,1 +1,6 @@
 Sacrificial Dagger
+
+Does 1 heart (2 points) of damage - default
+
+Generates 100 LP each point of damage (200 for 1 heart) - default no modifiers
+

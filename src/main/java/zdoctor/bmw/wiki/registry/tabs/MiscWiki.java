@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
@@ -16,15 +16,7 @@ public class MiscWiki extends BaseWikiTab {
 	}
 
 	public MiscWiki() {
-		addSectionHeader("Items");
-		pageEntries.add("ItemExperienceTome");
-		pageEntries.add("ItemUpgradeTome");
-		pageEntries.add("ItemFilter");
-		addSectionHeader("Blocks");
-		pageEntries.add("BlockMimics");
-		pageEntries.add("BlockWillBlocks");
-		pageEntries.add("BlockDemonLight");
-		pageEntries.add("BlockInversion");
+		refreshWiki();
 	}
 
 	@Override
@@ -49,5 +41,21 @@ public class MiscWiki extends BaseWikiTab {
 			return Constants.Mod.MODID.toLowerCase() + "/misc/" + pageEntry;
 		else
 			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
+		addSectionHeader("Items");
+		pageEntries.add("ItemRitualTinkerer");
+		pageEntries.add("ItemExperienceTome");
+		pageEntries.add("ItemUpgradeTome");
+		pageEntries.add("ItemFilter");
+		addSectionHeader("Blocks");
+		pageEntries.add("BlockMimics");
+		pageEntries.add("BlockWillBlocks");
+		pageEntries.add("BlockDemonLight");
+		pageEntries.add("BlockInversion");
+		addSectionHeader("Misc");
+		pageEntries.add("SoulFray");
 	}
 }

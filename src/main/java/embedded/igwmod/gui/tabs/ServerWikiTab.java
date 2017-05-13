@@ -83,4 +83,10 @@ public class ServerWikiTab extends BaseWikiTab{
         return "server/" + pageEntry;
     }
 
+	@Override
+	public void refreshWiki() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

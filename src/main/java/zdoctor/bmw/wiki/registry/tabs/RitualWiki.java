@@ -1,4 +1,4 @@
-package zdoctor.bmw.wiki.tabs;
+package zdoctor.bmw.wiki.registry.tabs;
 
 import WayofTime.bloodmagic.api.Constants;
 import WayofTime.bloodmagic.registry.ModBlocks;
@@ -15,6 +15,36 @@ public class RitualWiki extends BaseWikiTab {
 	}
 
 	public RitualWiki() {
+		this.refreshWiki();
+	}
+
+	@Override
+	public String getName() {
+		return "wikitab." + ModMain.MODID + ".ritual.name";
+	}
+
+	@Override
+	public ItemStack renderTabIcon(GuiWiki gui) {
+		return new ItemStack(ModBlocks.RITUAL_STONE);
+	}
+
+	@Override
+	protected String getPageName(String pageEntry) {
+		return I18n.format("ritual." + ModMain.MODID + "." + pageEntry + ".page");
+	}
+
+	@Override
+	protected String getPageLocation(String pageEntry) {
+		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
+		if(entry == null)
+			return Constants.Mod.MODID.toLowerCase() + "/ritual/" + pageEntry;
+		else
+			return entry;
+	}
+
+	@Override
+	public void refreshWiki() {
+		pageEntries.clear();
 		addSectionHeader("RitualTypes");
 		pageEntries.add("ImperfectRituals");
 		pageEntries.add("RegularRituals");
@@ -51,30 +81,5 @@ public class RitualWiki extends BaseWikiTab {
 		pageEntries.add("PumpRitual");
 		pageEntries.add("AltarBuilderRitual");
 		pageEntries.add("PortalRitual");
-
-	}
-
-	@Override
-	public String getName() {
-		return "wikitab." + ModMain.MODID + ".ritual.name";
-	}
-
-	@Override
-	public ItemStack renderTabIcon(GuiWiki gui) {
-		return new ItemStack(ModBlocks.RITUAL_STONE);
-	}
-
-	@Override
-	protected String getPageName(String pageEntry) {
-		return I18n.format("ritual." + ModMain.MODID + "." + pageEntry + ".page");
-	}
-
-	@Override
-	protected String getPageLocation(String pageEntry) {
-		String entry = BloodMagicWiki.getPageByPageEntry(pageEntry);
-		if(entry == null)
-			return Constants.Mod.MODID.toLowerCase() + "/ritual/" + pageEntry;
-		else
-			return entry;
 	}
 }

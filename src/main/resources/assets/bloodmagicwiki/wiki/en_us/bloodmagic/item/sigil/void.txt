@@ -1,1 +1,5 @@
 Void Sigil
+
+Acts like an empty bucket for 50 LP per use.
+
+[recipe{200,50,key=item/bloodmagic.sigil.void}]
